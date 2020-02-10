@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from 127.0.0.1:8000/password/reset by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Feb 2020 08:57:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="7yt4cFmQJPrBk8FoD0JO29TnOtzr3b4BITqeSIM1">
+
+    <title>Laravel</title>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="../js/modernizr.custom.79639.js"></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="http://fonts.gstatic.com/">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/custom.html">
+    <link href="../css/custom.css" rel="stylesheet" type="text/css" >
+    <link href="../css/style.css" rel="stylesheet" type="text/css" >
+    <!-- Styles -->
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/app.css" rel="stylesheet">
+    <link href="../css/slick.min.css" rel="stylesheet">
+               <!-- Add icon library -->
+<link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div id="app">
+        <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark shadow-sm custom_nav" id="navbar">
+            <div class="container">
+                 <a class="navbar-brand" href="#">
+                    <img src=../images/capture.png width="120" height="35" alt="">
+                  </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav mr-auto site-nav">
+                                                                      <li class="nav-item ">
+                            <a class="nav-link active" href="home.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="#aboutus">ABOUT US</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="services.html">SERVICES</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="#footer">DOMESTIC AGENCIES </a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="contact.html">CONTACT US</a>
+                    </li>
+                                                
+
+                    </ul>
+                   
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto right-nav">
+                        <!-- Authentication Links -->
+                                                    <li class="nav-item loginbutton">
+                                <a class="nav-link" href="../login.html">Login</a>
+                            </li>
+                                                            <li class="nav-item registerbutton">
+                                    <a class="nav-link" href="../register.html">Register</a>
+                                </li>
+
+                                                                        </ul>
+                </div>
+            </div>
+        </nav>
+<!--                              <nav class="navbar navbar-expand-lg navbar-light bg-light custom_nav">
+            <div class="container">
+                <a class="navbar-brand" href="http://127.0.0.1:8000">
+                    Laravel
+                </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+            </div>
+  
+</nav>           -->
+
+
+        <main>
+            <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Reset Password</div>
+
+                <div class="card-body">
+                    
+                    <form method="POST" action="http://127.0.0.1:8000/password/email">
+                        <input type="hidden" name="_token" value="7yt4cFmQJPrBk8FoD0JO29TnOtzr3b4BITqeSIM1">
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control " name="email" value="" required autocomplete="email" autofocus>
+
+                                                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Send Password Reset Link
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        </main>
+    </div>
+
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.ba-cond.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.slitslider.js"></script>
+    <script type="text/javascript" src="../js/my_custom.js"></script>
+    <script type="text/javascript" src="../js/slick.min.js"></script>
+    <script>
+    
+$(document).ready(function() {
+  $(".testimonial-carousel").slick({
+    infinite: true,
+    slidesToShow: 1,
+    speed: 500,
+    slidesToScroll: 1,
+    centerMode: 1,
+    autoplaySpeed: 3e3,
+    autoplay: true,
+    arrows: true,
+    prevArrow: $(".testimonial-carousel-controls .prev"),
+    nextArrow: $(".testimonial-carousel-controls .next")
+  });
+});
+
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+    </script>
+
+</body>
+
+<!-- Mirrored from 127.0.0.1:8000/password/reset by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 07 Feb 2020 08:57:12 GMT -->
+</html>
