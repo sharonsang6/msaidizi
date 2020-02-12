@@ -116,3 +116,7 @@
       <!--Section: Contact v.1-->
         
 </div>
+                    </div>
+                    </div>
+                    </main>
+<?php require_once 'navigation/bottom.php'; ?>

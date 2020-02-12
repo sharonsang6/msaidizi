@@ -120,6 +120,10 @@ content: '';
 	left: 0;
 	z-index: 1000;
 }
+#aboutus{
+	height: 400px;
+	margin:0 !important
+}
 
 .nav-dots span {
 	display: inline-block;

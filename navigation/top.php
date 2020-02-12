@@ -8,11 +8,15 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+    <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
       <li class="nav-item"><a class="nav-link" href="contact.php">Contact us</a></li>
-      <li class="nav-item"><a class="nav-link" href="about.php">About us</a></li>
+      <li class="nav-item"><a class="nav-link" href="#aboutus">About us</a></li>
+      <li class="nav-item"><a class="nav-link" href="ourservices.php">Our Services</a></li>
+      <li class="nav-item"><a class="nav-link" href="#footer">Domestic Agencies</a></li>
       </ul>
      <ul class="nav navbar-nav navbar-right">
-      <li class="nav-item"><a class="nav-link" href="services.php">Services</a></li>
+      <li class="nav-item"><a class="nav-link" href="services.php">Find worker</a></li>
+      <li class="nav-item"><a class="nav-link" href="profile.php">My services</a></li>
       <?php if($user->is_loggedin()!="") { ?>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

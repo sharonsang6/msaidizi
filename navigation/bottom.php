@@ -23,7 +23,7 @@
         </div>
 
         <div class="col-lg-3">
-            <h4 class="footer-heading"><span>Domestic Agencies</span></h4><br />
+            <h4 class="footer-heading"><span>Domestic Agencies</span></h4>
             <ul class="list-unstyled">
                 <li><a href="https://www.nairobinanny.com/">Nairobi Nanny Services</a></li>
                <li><a href="https://www.facebook.com/Angels-Domestic-Workers-Agency-181539105259365/">Angels domestic workers agency</a></li>

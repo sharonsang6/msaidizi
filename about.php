@@ -2,6 +2,7 @@
 <?php require_once 'app/sessionconfig/loginsession.php'; ?>
 <?php require_once 'configurations/config.php'; ?>
 <?php require_once "api/includer.php"; ?>
+<?php require_once "css/custom.css"; ?>
 
 <div id="app">
 <?php require_once 'navigation/top.php'; ?>
