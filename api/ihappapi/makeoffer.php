@@ -1,5 +1,7 @@
 <?php
 if (isset($_POST['make_offer_post'])) {
+  print_r($_POST);
+  $services_id = $_POST['services_id'];
     $worker_id = $_POST['worker_id'];
     $start_date = $_POST['start_date'];
     $duration = $_POST['duration'];
@@ -11,7 +13,7 @@ if (isset($_POST['make_offer_post'])) {
     {
       try
       {
-        if($user->makeapplicationoffet($public_id, $worker_id, $start_date, $duration)){  
+        if($user->makeapplicationoffet($services_id, $public_id, $worker_id, $start_date, $duration)){  
             $alert = "Job scheduled";
           }
       }

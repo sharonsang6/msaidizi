@@ -2,12 +2,6 @@
 <?php require_once 'app/sessionconfig/loginsession.php'; ?>
 <?php require_once 'configurations/config.php'; ?>
 <?php require_once "api/includer.php"; ?>
-<?php
-if (userRow['admin'] == 1) {
-	echo '<script type="text/javascript">window.location = "users.php"</script>';
-}
-
-?>
 <div id="app">
 <?php require_once 'navigation/top.php'; ?>
 <main>
@@ -105,28 +99,12 @@ if (isset($_GET['pesapal_transaction_tracking_id'])) {
 
 ?>             
 <div class="col-md-6 sunken">
-<?php
-if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+669600) { ?>
-	<div class="btn-group btn-group-lg" role="group" aria-label="Basic example" style="width: 100%;">
-		<form action="mpesa/pesapal-iframe.php" method="post"  style="width: 100%;">
-		<input hidden type="text" name="amount" value="350" />
-		<input hidden type="text" name="type" value="MERCHANT" readonly="readonly" />
-		<input hidden type="text" name="description" value="Subscription" />
-		<input hidden type="text" name="reference" value="<?php echo $userRow['public_id']; ?>" />
-		<input hidden type="text" name="first_name" value="<?php echo $userRow['user_name']; ?>" />
-		<input hidden type="text" name="last_name" value="null" />
-		<input hidden type="text" name="email" value="<?php echo $userRow['user_email']; ?>" />
-	  <button type="submit" class="btn btn-secondary" style="width: inherit;">Make payment to enjoy services</button>
-		</form>
-	</div>	
 
-<?php }else{ ?>
 	<div class="btn-group btn-group-lg" role="group" aria-label="Basic example" style="width: 100%;">
 	  <!-- <button type="button" class="btn btn-secondary" style="width: inherit;">Left</button> -->
 	  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter" style="width: inherit;">Create service</button>
 	</div>	
-<?php }
-?>
+
 
 
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

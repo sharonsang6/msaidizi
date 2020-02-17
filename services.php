@@ -2,7 +2,11 @@
 <?php //require_once 'app/sessionconfig/loginsession.php'; ?>
 <?php require_once 'configurations/config.php'; ?>
 <?php require_once "api/includer.php"; ?>
-
+<?php
+if ($userRow['user_account'] == "worker") {
+	echo '<script type="text/javascript">window.location = "profile.php"</script>';
+}
+?>
 <div id="app">
 <?php require_once 'navigation/top.php'; ?>
 <main>
@@ -65,6 +69,28 @@
   <div class="col-md-9 sunken">
     <div class="rows flexbox-container">
 
+
+<?php
+
+if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+95656) { ?>
+	<div class="btn-group btn-group-lg" role="group" aria-label="Basic example" style="width: 100%;">
+		<form action="mpesa/pesapal-iframe.php" method="post"  style="width: 100%;">
+		<input hidden type="text" name="amount" value="350" />
+		<input hidden type="text" name="type" value="MERCHANT" readonly="readonly" />
+		<input hidden type="text" name="description" value="Subscription" />
+		<input hidden type="text" name="reference" value="<?php echo $userRow['public_id']; ?>" />
+		<input hidden type="text" name="first_name" value="<?php echo $userRow['user_name']; ?>" />
+		<input hidden type="text" name="last_name" value="null" />
+		<input hidden type="text" name="email" value="<?php echo $userRow['user_email']; ?>" />
+	  <button type="submit" class="btn btn-secondary" style="width: inherit;">Make payment to enjoy services</button>
+		</form>
+	</div>	
+
+<?php die(); } 
+
+?>
+
+
         <?php
           if (isset($_GET['typeofworker'])) {
             $typeofworker = $_GET['typeofworker'];
@@ -72,13 +98,22 @@
             $experiance = $_GET['experiance'];
             $town = $_GET['town'];
             $cost = $_GET['cost'];
-            ?>
+
+
+            $stmt = $auth_user->runQuery("SELECT * FROM services 
+              LEFT JOIN users 
+              ON `users`.`public_id`=`services`.`public_id`
+              LEFT JOIN profile 
+              ON `profile`.`public_id`=`users`.`public_id` WHERE `services`.`typeofworker`='$typeofworker' AND `services`.`job`='$job' AND `services`.`experiance`>'$experiance' AND `services`.`town`='$town' AND `services`.`cost`>'$cost' ");
+              $stmt->execute(array());
+              $services=$stmt->rowCount();
+              if ($services > 0) { ?>
               <?php
               $stmt = $auth_user->runQuery("SELECT * FROM services 
               LEFT JOIN users 
               ON `users`.`public_id`=`services`.`public_id`
               LEFT JOIN profile 
-              ON `profile`.`public_id`=`users`.`public_id` WHERE `services`.`typeofworker`='$typeofworker' AND `services`.`job`='$job' AND `services`.`experiance`>'$experiance' AND `services`.`town`='$town' AND `services`.`cost`>'$cost' ");
+              ON `profile`.`public_id`=`users`.`public_id` WHERE `services`.`typeofworker`='$typeofworker' AND `services`.`job`='$job' AND `services`.`experiance`>='$experiance' AND `services`.`town`='$town' AND `services`.`cost`>='$cost' ");
               $stmt->execute(array());
               $services=$stmt->fetchAll(PDO::FETCH_OBJ);
               foreach ($services as $service) { ?>
@@ -140,7 +175,13 @@
               </div>
             </div>
                    
-              <?php } ?>              
+              <?php } ?>        
+              <?php }else{ ?>
+                <div class="card" style="width: 48%;float:left;margin: 0.5%;padding: 10%;font-size: xx-large;text-align: center;">
+                NO SERVICE FOUND
+                </div>
+              <?php } ?>
+
             <?php
           }else{ ?>
             <?php
@@ -183,7 +224,8 @@
                     <div class="card card-body">
                       <form method="post" enctype="multipart/form-data" >
                         <div class="form-group findworkergroup">
-                          <input id="inputState" name="worker_id" placeholder="Duration" type="text" value="<?php echo $service->public_id; ?>" class="form-control" />
+                        <input id="inputState" name="services_id" placeholder="Duration" type="text" value="<?php echo $service->services_id; ?>" class="form-control" />
+                        <input id="inputState" name="worker_id" placeholder="Duration" type="text" value="<?php echo $service->public_id; ?>" class="form-control" />
                         </div>
                         <div class="form-group findworkergroup">
                           <label>Select start date</label>
@@ -198,7 +240,7 @@
                     </div>
                   </div>
 
-            </div>   
+            </div>
 
             <div class="modal fade" id="<?php echo $service->user_name; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">

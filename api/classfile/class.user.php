@@ -20,19 +20,20 @@ class USER
 		return $stmt;
 	}
 
-	public function register($public_id, $user_name, $user_email, $user_password)
+	public function register($public_id, $user_name, $user_email, $user_password, $user_account)
 	{
 
 		try
 		{
 			$new_password = password_hash($user_password, PASSWORD_DEFAULT);
 
-			$stmt = $this->conn->prepare("INSERT INTO users(public_id, user_name, user_email, user_password)VALUES(:public_id, :user_name, :user_email, :user_password)");
+			$stmt = $this->conn->prepare("INSERT INTO users(public_id, user_name, user_email, user_password, user_account)VALUES(:public_id, :user_name, :user_email, :user_password, :user_account)");
 
 			$stmt->bindparam(":public_id", $public_id);
 			$stmt->bindparam(":user_name", $user_name);
 			$stmt->bindparam(":user_email", $user_email);
 			$stmt->bindparam(":user_password", $new_password);
+			$stmt->bindparam(":user_account", $user_account);
 			$stmt->execute();
 
 			return $stmt;
@@ -101,12 +102,13 @@ class USER
 	// 	}
 	// }
 
-	public function makeapplicationoffet($public_id, $worker_id, $start_date, $duration)
+	public function makeapplicationoffet($services_id, $public_id, $worker_id, $start_date, $duration)
 	{
 		try
 		{
-			$stmt = $this->conn->prepare("INSERT INTO offers(public_id, worker_id, start_date, duration)VALUES(:public_id, :worker_id, :start_date, :duration)");
+			$stmt = $this->conn->prepare("INSERT INTO offers(services_id, public_id, worker_id, start_date, duration)VALUES(:services_id, :public_id, :worker_id, :start_date, :duration)");
 
+			$stmt->bindparam(":services_id", $services_id);
 			$stmt->bindparam(":public_id", $public_id);
 			$stmt->bindparam(":worker_id", $worker_id);
 			$stmt->bindparam(":start_date", $start_date);

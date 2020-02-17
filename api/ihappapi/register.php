@@ -1,8 +1,10 @@
 <?php
 if (isset($_POST['registrationbutton'])) {
+  
     $public_id = time();
     $user_name = strip_tags($_POST['user_name']);
     $user_email = strip_tags($_POST['user_email']);
+    $user_account = strip_tags($_POST['user_account']);
     $user_password = strip_tags($_POST['user_password']);
 
     if($user_name == "") {$alert = "Provide user name"; }
@@ -21,7 +23,7 @@ if (isset($_POST['registrationbutton'])) {
         }
         else
         {
-          if($user->register($public_id, $user_name, $user_email, $user_password)){  
+          if($user->register($public_id, $user_name, $user_email, $user_password, $user_account)){  
             $alert = 'Registration successful.';
           }
         }

@@ -2,7 +2,11 @@
 <?php require_once 'app/sessionconfig/loginsession.php'; ?>
 <?php require_once 'configurations/config.php'; ?>
 <?php require_once "api/includer.php"; ?>
-
+<?php
+if ($userRow['user_account'] == "employer") {
+	echo '<script type="text/javascript">window.location = "profile.php"</script>';
+}
+?>
 <div id="app">
 <?php require_once 'navigation/top.php'; ?>
 <main>
@@ -73,18 +77,18 @@ if (isset($_GET['id'])) {
 
             <?php
             $stmt = $auth_user->runQuery("SELECT * FROM services 
+             LEFT JOIN offers 
+              ON `offers`.`services_id`=`services`.`services_id`
               LEFT JOIN users 
-              ON `users`.`public_id`=`services`.`public_id`
+              ON `users`.`public_id`=`offers`.`public_id`
               LEFT JOIN profile 
               ON `profile`.`public_id`=`users`.`public_id`
-              LEFT JOIN offers 
-              ON `offers`.`worker_id`=`users`.`public_id`
               WHERE status=0 AND `offers`.`worker_id`='$public_id'
                ");
             $stmt->execute(array());
             $services=$stmt->fetchAll(PDO::FETCH_OBJ);
             foreach ($services as $service) { ?>
-            <div class="card col-md-2">
+            <div class="card col-md-2" style="float:left;">
               <div style="margin: 5px;max-width: fit-content;">
                   <div class="sunken">
                     <center>

@@ -15,7 +15,7 @@
         <!--Section heading-->
         
         <!--Section description-->
-        <p class="section-description pb-4">Contact us by filling and submitting the form below. Find us using directions from the mapm below.</p>
+        <p class="section-description pb-4">Contact us by filling and submitting the form below. Find us using directions from the map below.</p>
       
         <div class="row contactrowtwo" >
       
@@ -89,20 +89,20 @@
             <div class="row text-center">
               <div class="col-md-4">
                 <a class="btn-floating blue accent-1"><i class="fa fa-map-marker fa-2x"></i></a>
-                <p>San Francisco, CA 94126</p>
-                <p>United States</p>
+                <p>Kenyatta University, 44380</p>
+                <p>Nairobi, Kenya</p>
               </div>
       
               <div class="col-md-4">
                 <a class="btn-floating blue accent-1"><i class="fa fa-phone fa-2x"></i></a>
-                <p>+ 01 234 567 89</p>
+                <p>+257 720 467 383</p>
                 <p>Mon - Fri, 8:00-22:00</p>
               </div>
       
               <div class="col-md-4">
                 <a class="btn-floating blue accent-1"><i class="fa fa-envelope fa-2x"></i></a>
-                <p>info@gmail.com</p>
-                <p>sale@gmail.com</p>
+                <p>info@msaidizi.co.ke</p>
+               
               </div>
             </div>
       

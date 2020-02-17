@@ -30,11 +30,21 @@ if($auth_user->is_loggedin()!="")
             </div>
         </div>
         <div class="form-group row">
+            <label for="account" name="user_account" class="col-md-4 col-form-label text-md-right">Account type</label>
+            <div class="col-md-6">
+            <select id="account" name="user_account" class="form-control ">
+                <option value="employer">Employer</option>
+                <option value="worker">Worker</option>
+            </select>
+            </div>
+        </div>
+        <div class="form-group row">
             <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
             <div class="col-md-6">
             <input id="password" type="password" class="form-control " name="user_password" />
             </div>
         </div>
+
         <div class="form-group row mb-0">
             <div class="col-md-6 offset-md-4">
             <button type="submit" name="registrationbutton" class="btn btn-primary">

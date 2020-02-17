@@ -2,7 +2,11 @@
 <?php require_once 'app/sessionconfig/loginsession.php'; ?>
 <?php require_once 'configurations/config.php'; ?>
 <?php require_once "api/includer.php"; ?>
-
+<?php
+if ($userRow['user_account'] == "worker") {
+	echo '<script type="text/javascript">window.location = "profile.php"</script>';
+}
+?>
 <div id="app">
 <?php require_once 'navigation/top.php'; ?>
 <main>

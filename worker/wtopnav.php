@@ -15,29 +15,19 @@
       <li class="nav-item"><a class="nav-link" href="#footer">Domestic Agencies</a></li>
       </ul>
      <ul class="nav navbar-nav navbar-right">
-     <?php
-     if ($userRow['user_account'] == "employer") { ?>
-      <li class="nav-item"><a class="nav-link" href="services.php">Find worker</a></li>
-     <?php }
-     ?>
-      <?php
-     if ($userRow['user_account'] == "worker") { ?>
-          <li class="nav-item"><a class="nav-link" href="profile.php">My services</a></li>
-          <li class="nav-item"><a class="nav-link" href="offers.php">My offers</a></li>
-     <?php }
-     ?>
-  
+      <!-- <li class="nav-item"><a class="nav-link" href="services.php">Find worker</a></li>
+      <li class="nav-item"><a class="nav-link" href="profile.php">My services</a></li> -->
       <?php if($user->is_loggedin()!="") { ?>
-      <li class="nav-item dropdown">
-      <?php if ($userRow['user_account'] == "employer") { ?>
+        <li class="nav-item"><a class="nav-link" href="#footer">Job offers</a></li>
+        <li class="nav-item"><a class="nav-link" href="#footer">My Services</a></li>
+      <!-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Simple reports
         </a>
-      <?php } ?>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="expenses.php">Employer expenditure</a>
         </div>
-      </li>
+      </li> -->
       <?php } ?>
       <?php if($user->is_loggedin()!="") { ?>
         <?php
@@ -60,7 +50,7 @@
           <?php if($user->is_loggedin()!="") { ?>
           welcome <?php echo $userRow['user_name']; ?>
           <?php }else{ ?>
-          <button class="btn logginbtn" href="login.php">LOGIN</button>
+          Account 
           <?php } ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -70,12 +60,8 @@
           <?php } ?>
           <?php if($user->is_loggedin()!="") { ?>
           <a class="dropdown-item"  href="profile.php">PROFILE</a>
-          <?php if ($userRow['user_account'] == "employer") { ?>
-            <a class="dropdown-item"  href="myservices.php">Hired workers</a>
-          <?php } ?>
-          <?php if ($userRow['user_account'] == "worker") { ?>
-            <a class="dropdown-item"  href="offers.php">My offers</a>
-          <?php } ?>      
+          
+          <a class="dropdown-item"  href="offers.php">My offers</a>
           <a class="dropdown-item"  href="logout.php?logout=true">LOGOUT</a>
           <?php } ?>
         </div>

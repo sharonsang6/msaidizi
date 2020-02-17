@@ -23,6 +23,15 @@ if($auth_user->is_loggedin()!="")
             <input id="user_email" type="email" class="form-control " name="user_email" required />
             </div>
         </div>
+        <!-- <div class="form-group row">
+            <label for="account" class="col-md-4 col-form-label text-md-right">Account type</label>
+            <div class="col-md-6">
+            <select id="account" name="uer_account">
+                <option>Employer</option>
+                <option>Worker</option>
+            </select>
+            </div>
+            </div> -->
         <div class="form-group row">
             <label for="user_password" class="col-md-4 col-form-label text-md-right">Password</label>
             <div class="col-md-6">

@@ -32,6 +32,8 @@
 <th>F name</th>
 <th>M name</th>
 <th>L name</th>
+<th>Account</th>
+<th>reg_date</th>
 <th>Image</th>
 <th>worker_id</th>
     </tr>
@@ -48,6 +50,8 @@
 <td><?php echo $user->first_name; ?></td>
 <td><?php echo $user->middle_name; ?></td>
 <td><?php echo $user->last_name; ?></td>
+<td><?php echo $user->user_account; ?></td>
+<var><td><?php echo $user->reg_date; ?></td></var>
 <td><img src="<?php echo $user->profileimage; ?>" style="height:50px;"></td>
 
 <td>

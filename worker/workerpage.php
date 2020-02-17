@@ -3,7 +3,7 @@
 <?php require_once "api/includer.php"; ?>
 
 <div id="app">
-<?php require_once 'navigation/top.php'; ?>
+<?php require_once 'worker/wtopnav.php'; ?>
 <main>
             <div id="slider" class="sl-slider-wrapper">
 
@@ -14,7 +14,7 @@
 							<div class="bg-img bg-img-1"></div>
 							<h2>Welcome to Msaidizi</h2>
 							<blockquote><p class="sl-caption">Join thousands of Kenyans looking for workers and employment.Make finding a job or work easy with minimum effort.</blockquote>
-								<center><button class="btn slider-btn btn-danger"> <a href="ourservices.php" class="sliderbutton">Learn more</a></button></center>
+								<center><button class="btn slider-btn btn-danger"> <a href="ourservices.php">Learn more</a></button></center>
 							</div>
 					</div>
 					
@@ -23,7 +23,7 @@
 							<div class="bg-img bg-img-2"></div>
 							<h2>Welcome to Msaidizi</h2>
 							<blockquote><p class="sl-caption">Join thousands of Kenyans looking for workers and employment.Make finding a job or work easy with minimum effort.</blockquote>
-								<center><button class="btn slider-btn btn-danger"><a class="sliderbutton" href="ourservices.php">Learn more</a></button></center>
+								<center><button class="btn slider-btn btn-danger"><a href="ourservices.php">Learn more</a></button></center>
 							</div>
 					</div>
 					
@@ -34,7 +34,7 @@
 							<div class="bg-img bg-img-4"></div>
 							<h2>Welcome to Msaidizi</h2>
 							<blockquote><p>Join thousands of Kenyans looking for workers and employment.Make finding a job or work easy with minimum effort.</blockquote>
-								<center><button class="btn slider-btn btn-danger"><a class="sliderbutton" href="ourservices.php">Learn more</a></button></center>
+								<center><button class="btn slider-btn btn-danger"><a href="ourservices.php">Learn more</a></button></center>
 							</div>
 					</div>
 
@@ -51,7 +51,7 @@
 
 			
 
-<div class="container" style="text-align: center;height:400px;margin-top:10px">
+<div class="container" style="text-align: center;height:400px;margin-top:50px">
 			<div>
 			<h3 class="page_title">Our Services</h3>
 		</div>
@@ -61,17 +61,17 @@
 		<div class="col-md-4">
 			<h3>Nanny Services</h3>
 			<p>Nannies are people who provide housework and are very involved in the children's lives. Babysitters are short-term caretakers who are typically hired to watch the children for a set period.</p>
-			<button class="btn slider-btn"><a class="sliderbutton" href="ourservices.php">Learn more</a></button>
+			<button class="btn slider-btn"><a href="ourservices.php">Learn more</a></button>
 		</div>
 		<div class="col-md-4">
 			<h3>Caregiver Services</h3>
 			<p>A caregiver is someone who is actively engaged in providing care and needs to another such as a chronically ill, disabled or aged family member or friend.</p>
-			<button class="btn slider-btn"><a class="sliderbutton" href="ourservices.php">Learn more</a></button>
+			<button class="btn slider-btn"><a href="ourservices.php">Learn more</a></button>
 		</div>
 		<div class="col-md-4">
 			<h3>Laundry services</h3>
 			<p style="margin-bottom: 35px">Laundry services is the act of washing and ironing clothes and is done either by leave-in workers or leave-out workers.</p>
-			<button class="btn slider-btn"><a class="sliderbutton" href="ourservices.php">Learn more</a></button>
+			<button class="btn slider-btn"><a href="ourservices.php">Learn more</a></button>
 		</div>
 	</div>
 	
@@ -105,20 +105,18 @@
 
   </div>
 	<section class="testimonials py-5 text-white px-1 px-md-5 margin-top-xl">
- 
-  <div class="container" style="height:200px">
-
-    <div class="row" style="height:200px">
-		<img src="images/banner.jpg" class="icon-overlay" />
+  <img src="../raw.githubusercontent.com/solodev/testimonial-slider-fullwidth/master/solodev-logo-stacked.png" class="icon-overlay" />
+  <div class="container">
+    <div class="row">
       <div class="col-sm-12">
         <h2 class="pt-2 text-center font-weight-bold">Our Customers Are Seeing Big Results</h2>
 
-        <!-- <div class="carousel-controls testimonial-carousel-controls">
+        <div class="carousel-controls testimonial-carousel-controls">
           <div class="control d-flex align-items-center justify-content-center prev mt-3"><i class="fa fa-chevron-left"></i></div>
           <div class="control d-flex align-items-center justify-content-center next mt-3"><i class="fa fa-chevron-right"></i></div>
 
           <div class="testimonial-carousel">
-             -->
+            
             <?php
             $stmt = $auth_user->runQuery("SELECT * FROM  offers 
             LEFT JOIN users ON `users`.`public_id`=`offers`.`public_id` ");

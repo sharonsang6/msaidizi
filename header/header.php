@@ -14,7 +14,7 @@
 <script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
 <link rel="dns-prefetch" href="http://fonts.gstatic.com/">
 <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css/custom.css">
+<!-- <link rel="stylesheet" type="text/css" href="css/custom.css"> -->
 <link href="css/custom.css" rel="stylesheet" type="text/css" >
 <link href="css/style.css" rel="stylesheet" type="text/css" >
 <link href="css/main.css" rel="stylesheet">
