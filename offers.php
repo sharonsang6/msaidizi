@@ -18,7 +18,7 @@ if ($userRow['user_account'] == "employer") {
   </style>
 
 
-  <div class="col-md-3 card">
+  <!-- <div class="col-md-3 card"> -->
   <!-- <p style="margin-top:20px">Filter your search by specifying the type of worker you need</p> -->
   <?php
 
@@ -58,7 +58,7 @@ if (isset($_GET['id'])) {
 // <p>You have no job offers</p>
 }
   ?>
-  </div>
+  <!-- </div> -->
 <style>
 .flexbox-container {
   display: -ms-flex;
@@ -72,8 +72,8 @@ if (isset($_GET['id'])) {
   margin-right: 20px;
 }*/
 </style>
-  <div class="col-md-9 sunken">
-    <div class="rows flexbox-container">
+  <div class="col-md-12 sunken">
+    <div class="row flexbox-container">
 
             <?php
             $stmt = $auth_user->runQuery("SELECT * FROM services 
@@ -88,11 +88,11 @@ if (isset($_GET['id'])) {
             $stmt->execute(array());
             $services=$stmt->fetchAll(PDO::FETCH_OBJ);
             foreach ($services as $service) { ?>
-            <div class="card col-md-2" style="float:left;">
-              <div style="margin: 5px;max-width: fit-content;">
+            <div class="card col-md-2" style="float:left; margin:25px">
+              <div style="margin: 5px; width:100%;">
                   <div class="sunken">
                     <center>
-                        <img src="<?php echo $service->profileimage; ?>" alt="image" style="width:100px;height: 100px;border-radius: 50%;border: 10px solid #f0f6f9;" /><br /><br />
+                        <img src="<?php echo $service->profileimage; ?>" alt="image" style="width:100px;height: 100px;border-radius: 50%;border: 2px solid #ff4700;" /><br /><br />
                         <?php echo $service->first_name; ?> <?php echo $service->middle_name; ?> <?php echo $service->last_name; ?><br />
                         <?php echo $service->country; ?> - <?php echo $service->town; ?><br />
                         <?php echo $service->phonenumber; ?><br />   

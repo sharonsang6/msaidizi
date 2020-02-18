@@ -3,7 +3,7 @@
 <?php require_once 'configurations/config.php'; ?>
 <?php require_once "api/includer.php"; ?>
 <?php
-if ($userRow['user_account'] == "employer") {
+if ($userRow['user_account'] != "employer") {
 	echo '<script type="text/javascript">window.location = "profile.php"</script>';
 }
 ?>

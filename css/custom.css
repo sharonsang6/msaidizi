@@ -1680,6 +1680,10 @@ margin: 0 5px 0;
 	position: relative;
 	z-index: 100;
 }
+/* main{
+	margin:0 !important
+
+} */
 .searchcol{
 	border: 1px solid #000;
 	margin-left: 20px;
@@ -1688,6 +1692,13 @@ margin: 0 5px 0;
 .findworkergroup{
 	width:60%;
 	margin-bottom:10px !important;
+	margin-left: 10px !important;
+}
+.createservice{
+	background-color: #ff4700 !important
+}
+.modal-dialog{
+	width:100% !important
 }
 .aboutusrow{
 	height: 400px;
@@ -1697,6 +1708,10 @@ margin: 0 5px 0;
 }
 .sliderbutton{
 	color:#fff
+}
+.profilecard{
+	margin-top: 10px;
+    margin-bottom: 20px;
 }
 .icon-overlay{
 	width:80px;

@@ -66,7 +66,7 @@
 if ($user->premium ==0) { ?>
   <button type="button" class="btn btn-success btn-sm" style="width: inherit;">Not prmium</button>
 <?php }else{ ?>
-<button type="button" class="btn btn-success btn-sm" style="width: inherit;">Premium account</button>
+<button type="button" class="btn btn-success btn-sm createservice" style="width: inherit;">Premium account</button>
 <?php }
  ?>
 </td>

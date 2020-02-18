@@ -20,5 +20,6 @@ require_once 'ihappapi/makeoffer.php';
 require_once 'ihappapi/joboffer.php';
 require_once 'ihappapi/blogpost.php';
 require_once 'ihappapi/comments.php';
+require_once 'ihappapi/addjob.php';
 
 ?>

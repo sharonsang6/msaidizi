@@ -50,7 +50,7 @@ if ($userRow['user_account'] == "worker") {
             <label>Cost per day ( Ksh ) </label>
             <input id="inputState" min="0" name="cost" placeholder="Enter service cost" type="number" class="form-control" />
           </div>
-          <button type="submit" name="filter" class="btn btn-primary btn-block findworkergroup">Filter</button>
+          <button type="submit" name="filter" class="btn btn-primary btn-block findworkergroup createservice">Filter</button>
         </form>
   </div>
 <style>
@@ -150,7 +150,7 @@ if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+95656) { ?>
                           <label>Job duration in days</label>
                           <input id="inputState" min="1" name="duration" placeholder="Duration" type="number" class="form-control" />
                         </div>
-                        <button type="submit" name="make_offer_post" class="btn btn-primary btn-block findworkergroup">Post service</button>
+                        <button type="submit" name="make_offer_post" class="btn btn-primary btn-block findworkergroup createservice">Post service</button>
                       </form>
                     </div>
                   </div>

@@ -18,10 +18,12 @@
      <?php
      if ($userRow['user_account'] == "employer") { ?>
       <li class="nav-item"><a class="nav-link" href="services.php">Find worker</a></li>
+      <li class="nav-item"><a class="nav-link" href="postjob.php">Post Job</a></li>
      <?php }
      ?>
       <?php
      if ($userRow['user_account'] == "worker") { ?>
+     <li class="nav-item"><a class="nav-link" href="jobs.php">Jobs</a></li>
           <li class="nav-item"><a class="nav-link" href="profile.php">My services</a></li>
           <li class="nav-item"><a class="nav-link" href="offers.php">My offers</a></li>
      <?php }
@@ -35,7 +37,7 @@
         </a>
       <?php } ?>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="expenses.php">Employer expenditure</a>
+          <a class="dropdown-item" href="expenses.php">My expenditure</a>
         </div>
       </li>
       <?php } ?>
@@ -72,6 +74,7 @@
           <a class="dropdown-item"  href="profile.php">PROFILE</a>
           <?php if ($userRow['user_account'] == "employer") { ?>
             <a class="dropdown-item"  href="myservices.php">Hired workers</a>
+            <a class="dropdown-item"  href="myjobs.php">My jobs</a>
           <?php } ?>
           <?php if ($userRow['user_account'] == "worker") { ?>
             <a class="dropdown-item"  href="offers.php">My offers</a>
