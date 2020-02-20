@@ -368,21 +368,19 @@ content: '';
 .demo-1 .bg-5 blockquote:before {
 	color: #ecd82c;
 }
+.imageservices{
+		width: 100%;
+		margin-bottom:20px
+}
 
  .bg-img-1 {
-	background-image: url(../images/workplace.jpg);
+	background-image: url(../images/imagenine.jpg);
 }
 .bg-img-2 {
-	background-image: url(../images/slider2.jpg);
+	background-image: url(../images/workplace.jpg);
 }
  .bg-img-3 {
-	background-image: url(../images/3.jpg);
-}
-.bg-img-4 {
-	background-image: url(../images/banner.jpg);
-}
-.bg-img-5 {
-	background-image: url(../images/5.jpg);
+	background-image: url(../images/imageten.jpg);
 }
 
 /* Animations for content elements */
@@ -1170,7 +1168,7 @@ content: '';
 	color: #ecd82c;
 }
 
- .bg-img-1 {
+ /* .bg-img-1 {
 	background-image: url(../images/workplace.jpg);
 }
 .bg-img-2 {
@@ -1184,7 +1182,7 @@ content: '';
 }
 .bg-img-5 {
 	background-image: url(../images/5.jpg);
-}
+} */
 
 /* Animations for content elements */
 
@@ -1632,7 +1630,7 @@ margin: 0 5px 0;
 }
 .logincontainer{
 	height: 500px;
-	background-image: url(../images/cook.jpg);
+	background-image: url(../images/workplace.jpg);
 	padding:0 !important;
 	text-align: center;
 	background-repeat: no-repeat;
@@ -1643,22 +1641,27 @@ margin: 0 5px 0;
 .logincontainer:after{
 	content: "";
 	position: absolute;
-	width: 10px;
-	height: 10px;
-	top: 3px;
-	left: 3px;
-	border-radius: 50%;
-	background: rgba(255,255,255,0.8);
+	width:100%;
+	height:100%;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index:100;
 }
 .regcard{
 	width: 550px;
 	margin-top: 30px;
-    margin-left: 50px;
+	margin-left: 50px;
+	box-shadow: none !important;
+	z-index: 110
 }
 .logincard{
 	width: 550px;
 	margin-top: 80px;
-    margin-left: 50px;
+	margin-left: 50px;
+	box-shadow: none !important;
+	z-index: 110;
+	
 
 }
 .loginheader{
@@ -2138,7 +2141,7 @@ content: '';
 	background: rgb(0,0,0,0.68);
 	z-index: 100;	
 } */
-
+/* 
  .bg-img-1 {
 	background-image: url(../images/cook.jpg);
 }
@@ -2153,7 +2156,7 @@ content: '';
 }
 .bg-img-5 {
 	background-image: url(../images/5.jpg);
-}
+} */
 
 /* Animations for content elements */
 
@@ -2564,6 +2567,9 @@ margin-right: 10px;
 	width:100%;
 	position:absolute;
 	}
+	.aboutparagraph{
+	text-align: left
+	}
 	.employersliderrow{
 		padding-top: 100px;
 		background-image: url(../images/workplace.jpg);	
@@ -2615,7 +2621,9 @@ margin-right: 10px;
 		position: relative;
 		display: inline-block;
 	  }
-	  
+	  .myjobs{
+		  padding:0 !important
+	  }
 	  /* Dropdown Content (Hidden by Default) */
 	  .dropdown-content {
 		display: none;
@@ -2630,6 +2638,9 @@ margin-right: 10px;
 		  width: 100%;
 		  margin-top:70px
 		
+	  }
+	  col{
+		  padding
 	  }
 	  .searchform{
 		  height:15%;

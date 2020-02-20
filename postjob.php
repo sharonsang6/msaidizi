@@ -7,7 +7,25 @@
 <?php require_once 'navigation/top.php'; ?>
 <main>
 <div class="row postrow">
-  <div class="postjobtitle">
+<?php
+
+if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+669585) { ?>
+	<div class="btn-group btn-group-lg" role="group" aria-label="Basic example" style="width: 100%;">
+		<form action="mpesa/pesapal-iframe.php" method="post"  style="width: 100%;">
+		<input hidden type="text" name="amount" value="350" />
+		<input hidden type="text" name="type" value="MERCHANT" readonly="readonly" />
+		<input hidden type="text" name="description" value="Subscription" />
+		<input hidden type="text" name="reference" value="<?php echo $userRow['public_id']; ?>" />
+		<input hidden type="text" name="first_name" value="<?php echo $userRow['user_name']; ?>" />
+		<input hidden type="text" name="last_name" value="null" />
+		<input hidden type="text" name="email" value="<?php echo $userRow['user_email']; ?>" />
+	  <button type="submit" class="btn btn-secondary" style="width: inherit;">Make payment to enjoy services</button>
+		</form>
+	</div>	
+
+<?php die(); } 
+else{ ?>
+      <div class="postjobtitle">
     <h3>Kindly fill the form below to post a job</h3>
   </div>
     <div class="col-md-2 postrowmimage">
@@ -70,23 +88,23 @@
         <!-- Default unchecked -->
         <div class="form-group">
           <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" value="English"id="english" name="language">
+              <input type="checkbox" class="custom-control-input" value="English" id="english" name="language[]">
               <label class="custom-control-label" for="english">English </label>
           </div>
           <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="Swahilli" value="Swahilli" name="language">
+              <input type="checkbox" class="custom-control-input" id="Swahilli" value="Swahilli" name="language[]">
               <label class="custom-control-label" for="Swahilli">Swahilli </label>
           </div>
           <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="French" value="French" name="language">
+              <input type="checkbox" class="custom-control-input" id="French" value="French" name="language[]">
               <label class="custom-control-label" for="French">French </label>
           </div>
           <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="Spanish" value="Spanish" name="language">
+              <input type="checkbox" class="custom-control-input" id="Spanish" value="Spanish" name="language[]">
               <label class="custom-control-label" for="Spanish">Spanish </label>
           </div>
           <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="Chinese" value="Chinese"  name="language">
+              <input type="checkbox" class="custom-control-input" id="Chinese" value="Chinese"  name="language[]">
               <label class="custom-control-label" for="Chinese">Chinese</label>
           </div>
         </div>
@@ -106,5 +124,8 @@
       </form>
     </div>
     <div class="col-md-1"></div>
+
 </div>
+<?php } ?>
+  
 <?php require_once 'navigation/bottom.php'; ?>

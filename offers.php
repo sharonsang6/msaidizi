@@ -72,7 +72,7 @@ if (isset($_GET['id'])) {
   margin-right: 20px;
 }*/
 </style>
-  <div class="col-md-12 sunken">
+  <div class="col-md-12 sunken myjobs">
     <div class="row flexbox-container">
 
             <?php
@@ -95,8 +95,13 @@ if (isset($_GET['id'])) {
                         <img src="<?php echo $service->profileimage; ?>" alt="image" style="width:100px;height: 100px;border-radius: 50%;border: 2px solid #ff4700;" /><br /><br />
                         <?php echo $service->first_name; ?> <?php echo $service->middle_name; ?> <?php echo $service->last_name; ?><br />
                         <?php echo $service->country; ?> - <?php echo $service->town; ?><br />
-                        <?php echo $service->phonenumber; ?><br />   
+                        <?php echo $service->phonenumber; ?><br /> 
+                        Type of Job:   <?php echo $service->job; ?><br /> 
                         <a href="https://api.whatsapp.com/send?phone=<?php echo $service->phonenumber; ?>" style="color:green;font-size: 25px;text-decoration: none;"  class="fa fa-whatsapp"></a> 
+                        <form method="post">
+                            <!-- <input type="text" hidden name="public_id" value="<?php echo $userRow['public_id']; ?>"> -->
+                            <button type="submit" name="terminateoffer" class="btn createservice btn-sm" style="width: inherit;">Terminate Offer</button>
+                          </form>
                     </center>
                   </div>         
                 </div>

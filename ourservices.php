@@ -18,7 +18,7 @@
         <p class="section-description pb-4">Below are the services that we offer. You can also add a service you can offer at my services page.</p>
       
         <div class="row servicesrow" >
-            <div class="col-md-9">
+            <div class="col-md-7">
             <div >
                 <h3>Nanny Service</h3>
                 <p class="servicedetails">Nannies are people who provide housework and are very involved in the children's lives. 
@@ -37,10 +37,9 @@
                 </p>
             </div>
             <div>
-            <h3>Gardening Service</h3>
-            <p class="servicedetails">kncdvkjbc jcb vhdfvbfd vbdfkjv fjkv kd vkdfv  nk dnfvjkdf vncd  kvdfmvk df vkdn df vdfn kdf kfdn vkf jkfn dfv
-                    v fvkdf kvkn dknmkdn vcnknnmvckndf nvc vkjdnv ckkj cjdkvn jlvndfm vjnjflkdv nkvd,f kvn kj jkvdnfkjv jkvndfv ckcv fk
-                </p>
+            <h3>Plumbing Service</h3>
+            <p class="servicedetails">A plumber is tradesperson who specializes in installing and maintaining systems used for potable (drinking) water, sewage and drainage in plumbing systems.
+</p>
             </div>
             <div>
             <h3>Laundry Service</h3>
@@ -49,22 +48,23 @@
                 </p>
             </div>
             <div>
-            <h3>Plumbing Service</h3>
-            <p class="servicedetails">kncdvkjbc jcb vhdfvbfd vbdfkjv fjkv kd vkdfv  nk dnfvjkdf vncd  kvdfmvk df vkdn df vdfn kdf kfdn vkf jkfn dfv
-                    v fvkdf kvkn dknmkdn vcnknnmvckndf nvc vkjdnv ckkj cjdkvn jlvndfm vjnjflkdv nkvd,f kvn kj jkvdnfkjv jkvndfv ckcv fk
-                </p>
+            <h3>Gardening Service</h3>
+            <p class="servicedetails">Gardening is the act of tending and cultivating a garden. It invloves monitoring the health of all plants and greenscapes, watering and feeding plants, trimming trees and shrubs, fertilizing and mowing lawns,
+            weeding gardens and keeping green spaces and walkways clear of debris and litter.
+            </p>
             </div>
             <div>
             <h3>Electronic Service</h3>
-            <p class="servicedetails">kncdvkjbc jcb vhdfvbfd vbdfkjv fjkv kd vkdfv  nk dnfvjkdf vncd  kvdfmvk df vkdn df vdfn kdf kfdn vkf jkfn dfv
-                    v fvkdf kvkn dknmkdn vcnknnmvckndf nvc vkjdnv ckkj cjdkvn jlvndfm vjnjflkdv nkvd,f kvn kj jkvdnfkjv jkvndfv ckcv fk
-                </p>
+            <p class="servicedetails">
+            
+            </p>
             </div>
 
           
         </div>
-        <div class="col-md-3">
-            <img src="images/banner.jpg">
+        <div class="col-md-5 ">
+            <img src="images/imagetwo.jpg" class= "imageservices"width:"100%"><br/>
+            <img src="images/imagetweleve.jpg" class= "imageservices"width:"100%"><br/>
         </div>
     </div>
       

@@ -15,6 +15,40 @@ if (isset($_POST['Deleteuser'])) {
 }
 
 ?>
+<?php
+if (isset($_POST['terminateoffer'])) {
+    $public_id = trim(htmlspecialchars($_POST['public_id']));
+    try
+    {
+        $stmt = $auth_user->runQuery("DELETE FROM `offers` WHERE `public_id`= '$public_id' ");
+        $stmt->execute();
+        $alert = "Offer deleted";
+        return $stmt;
+    }
+    catch(PDOException $e)
+    {
+        echo $e->getMessage();
+    }
+}
+
+?>
+<?php
+if (isset($_POST['deletejob'])) {
+    $job_id = trim(htmlspecialchars($_POST['job_id']));
+    try
+    {
+        $stmt = $auth_user->runQuery("DELETE FROM `jobs` WHERE `job_id`= '$job_id' ");
+        $stmt->execute();
+        $alert = "Job deleted";
+        return $stmt;
+    }
+    catch(PDOException $e)
+    {
+        echo $e->getMessage();
+    }
+}
+
+?>
 
 
 <?php

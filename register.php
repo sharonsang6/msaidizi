@@ -12,7 +12,8 @@ if($auth_user->is_loggedin()!="")
 <main>
 <div class="logincontainer">
 <div class="row justify-content-center loginrow">
-<div class="col-md-8">
+    <div class="col-md-3"></div>
+<div class="col-md-6">
 <div class="card regcard">
 <div class="card-header loginheader">Register</div>
 <div class="card-body">
@@ -56,6 +57,7 @@ if($auth_user->is_loggedin()!="")
 </div>
 </div>
 </div>
+<div class="col-md-3"></div>
 </div>
 </div>
 <?php require_once 'navigation/bottom.php'; ?>

@@ -39,7 +39,7 @@
 			</div>
 			<div class="form-group findworkergroup">
 				<label>ID No/Passport No</label>
-				<input id="inputState" name="id" placeholder="id/passport" type="text" class="form-control" value="<?php echo $user_profile['last_name']; ?>" />
+				<input id="inputState" name="national_id" placeholder="" type="number" class="form-control" value="<?php echo $user_profile['last_name']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Country</label>

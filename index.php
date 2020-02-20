@@ -31,7 +31,7 @@
 					
 					<div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
 						<div class="sl-slide-inner">
-							<div class="bg-img bg-img-4"></div>
+							<div class="bg-img bg-img-3"></div>
 							<h2>Welcome to Msaidizi</h2>
 							<blockquote><p>Join thousands of Kenyans looking for workers and employment.Make finding a job or work easy with minimum effort.</blockquote>
 								<center><button class="btn slider-btn btn-danger"><a class="sliderbutton" href="ourservices.php">Learn more</a></button></center>
@@ -77,8 +77,8 @@
 	
 </div><div class="call-wrapper" style="height: 250px">
 	<div class="inner-wrapper" style="margin-top: 20px">
-   	<h3 class="call-action-title">Get your dream job today </h3>
-   	<p>Make your profile look appealing to attract employers. Edit your profile after successfully logging in to the portal.Post a services to get employment offers.</p>
+   	<h3 class="call-action-title">Get your dream job/worker today </h3>
+   	<p>Create an account as a worker or employer or both and enjoy the services we offer.</p>
    	<center><a href="login.php" class="btn call-btn">Click here</a></center>
    </div>
 
@@ -94,7 +94,9 @@
             <div>
                     <h3 class="page_title">About Us</h3>
                 </div>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            <p>Msaidizi East Africa was started in 2019 by a student in Kenyatta university with the aim of expanding
+                       market opportunities for domestic workers in Kenya and in East Africa. The company also aims at making it easy for people to acquire domestic workers
+                       anywhere, anytime and everyhere with minimal effort and at lower cost.
                          </p>  
     </div>
  

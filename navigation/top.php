@@ -10,7 +10,7 @@
     <ul class="navbar-nav mr-auto">
     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
       <li class="nav-item"><a class="nav-link" href="contact.php">Contact us</a></li>
-      <li class="nav-item"><a class="nav-link" href="#aboutus">About us</a></li>
+      <li class="nav-item"><a class="nav-link" href="aboutus.php">About us</a></li>
       <li class="nav-item"><a class="nav-link" href="ourservices.php">Our Services</a></li>
       <li class="nav-item"><a class="nav-link" href="#footer">Domestic Agencies</a></li>
       </ul>
@@ -73,7 +73,7 @@
           <?php if($user->is_loggedin()!="") { ?>
           <a class="dropdown-item"  href="profile.php">PROFILE</a>
           <?php if ($userRow['user_account'] == "employer") { ?>
-            <a class="dropdown-item"  href="myservices.php">Hired workers</a>
+            <a class="dropdown-item"  href="hiredworkers.php">Hired workers</a>
             <a class="dropdown-item"  href="myjobs.php">My jobs</a>
           <?php } ?>
           <?php if ($userRow['user_account'] == "worker") { ?>

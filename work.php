@@ -27,12 +27,10 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-<th>typeofworker</th>
 <th>job</th>
-<th>experiance</th>
 <th>town</th>
 <th>cost</th>
-<th>worker_id</th>
+<!-- <th>worker_id</th> -->
 <th>start_date</th>
 <th>duration</th>
 <th>rating</th>
@@ -50,12 +48,10 @@
     $services=$stmt->fetchAll(PDO::FETCH_OBJ);
     foreach ($services as $service) { ?>
 	  <tr>
-<td><?php echo $service->typeofworker; ?></td>
 <td><?php echo $service->job; ?></td>
-<td><?php echo $service->experiance; ?></td>
 <td><?php echo $service->town; ?></td>
 <td><?php echo $service->cost; ?></td>
-<td><?php echo $service->worker_id; ?></td>
+<!-- <td><?php echo $service->worker_id; ?></td> -->
 <td><?php echo $service->start_date; ?></td>
 <td><?php echo $service->duration; ?></td>
 <td><?php echo $service->rating; ?> stars</td>

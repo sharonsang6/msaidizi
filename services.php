@@ -72,7 +72,7 @@ if ($userRow['user_account'] == "worker") {
 
 <?php
 
-if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+95656) { ?>
+if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+669585) { ?>
 	<div class="btn-group btn-group-lg" role="group" aria-label="Basic example" style="width: 100%;">
 		<form action="mpesa/pesapal-iframe.php" method="post"  style="width: 100%;">
 		<input hidden type="text" name="amount" value="350" />
