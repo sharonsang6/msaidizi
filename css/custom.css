@@ -1692,6 +1692,13 @@ margin: 0 5px 0;
 	margin-left: 20px;
 	background-color: #e2f4ff
 }
+.field-icon {
+  float: right;
+  margin-left: -25px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
+}
 .findworkergroup{
 	width:60%;
 	margin-bottom:10px !important;

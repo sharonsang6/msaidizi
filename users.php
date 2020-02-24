@@ -56,7 +56,7 @@
 
 <td>
   <form method="post">
-    <input type="text" hidden name="public_id" value="<?php echo $userRow['public_id']; ?>">
+    <input type="text"  name="user_id" hidden value="<?php echo $user->user_id; ?>">
     <button type="submit" name="Deleteuser" class="btn btn-success btn-sm" style="width: inherit;">Delete user</button>
   </form>
 </td>

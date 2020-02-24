@@ -43,6 +43,7 @@ if($auth_user->is_loggedin()!="")
             <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
             <div class="col-md-6">
             <input id="password" type="password" class="form-control " name="user_password" />
+            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
             </div>
         </div>
 
@@ -60,4 +61,5 @@ if($auth_user->is_loggedin()!="")
 <div class="col-md-3"></div>
 </div>
 </div>
+
 <?php require_once 'navigation/bottom.php'; ?>

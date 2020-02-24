@@ -193,6 +193,7 @@ if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+669585) { ?>
             $stmt->execute(array());
             $services=$stmt->fetchAll(PDO::FETCH_OBJ);
             foreach ($services as $service) { ?>
+            
             <div class="card" style="width: 48%;float:left;margin: 0.5%;">
               <div class="modal-dialog" style="margin: 5px;max-width: fit-content;">
                   <div class="sunken">

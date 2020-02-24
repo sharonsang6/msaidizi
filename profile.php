@@ -356,7 +356,12 @@ foreach ($services as $service) { ?>
 		</div>
 		<div class="btn-group btn-group-sm " role="group" aria-label="Basic example" style="width: 100%;">
 			  <a href="work.php?servics=<?php echo $service->services_id; ?>"><button type="button" class="btn btn-primery createservice" style="width: inherit;">View</button></a>
-		  </div>
+		 
+		  <form method="POST">  
+                          <input type="text"  name="services_id" hidden value="<?php echo $service->services_id; ?>">
+                          <button class="btn createservice" type="submit" name="deleteservice" >Delete</button>
+                        </form>
+						</div>
 	</div>    	
 <?php } ?>
 

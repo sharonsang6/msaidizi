@@ -49,7 +49,6 @@ if (isset($_GET['id'])) {
             <label>Enter job experiance ( years ) </label>
             <textarea rows="3" id="inputState" name="comment" placeholder="Comment" type="text" class="form-control"></textarea>
           </div>
-
           <button type="submit" name="ratework" class="btn btn-primary btn-block findworkergroup">Complete and rate</button>
         </form>
     <?php }
@@ -82,7 +81,7 @@ if (isset($_GET['id'])) {
               ON `profile`.`public_id`=`users`.`public_id`
               LEFT JOIN offers 
               ON `offers`.`public_id`=`users`.`public_id`
-              WHERE status=0 AND `profile`.`public_id`='$public_id'
+              WHERE `profile`.`public_id`='$public_id'
                ");
             $stmt->execute(array());
             $services=$stmt->fetchAll(PDO::FETCH_OBJ);

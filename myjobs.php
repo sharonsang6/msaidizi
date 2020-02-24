@@ -45,7 +45,7 @@ if ($userRow['user_account'] != "employer") {
                         <?php echo $job->language; ?><br />
                           <?php echo $job->job_description; ?><br /> 
                           <form method="POST">  
-              
+                          <input type="text"  name="job_id" hidden value="<?php echo $job->job_id; ?>">
                           <button class="btn createservice" type="submit" name="deletejob" >Delete</button>
                         </form>
                     </center>

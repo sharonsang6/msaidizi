@@ -1,9 +1,9 @@
 <?php
 if (isset($_POST['Deleteuser'])) {
-    $public_id = trim(htmlspecialchars($_POST['public_id']));
+    $user_id = trim(htmlspecialchars($_POST['user_id']));
     try
     {
-        $stmt = $auth_user->runQuery("DELETE FROM `users` WHERE `public_id`= '$public_id' ");
+        $stmt = $auth_user->runQuery("DELETE FROM `users` WHERE `user_id`= '$user_id' ");
         $stmt->execute();
         $alert = "User deleted";
         return $stmt;
@@ -17,10 +17,10 @@ if (isset($_POST['Deleteuser'])) {
 ?>
 <?php
 if (isset($_POST['terminateoffer'])) {
-    $public_id = trim(htmlspecialchars($_POST['public_id']));
+    $offers_id = trim(htmlspecialchars($_POST['offers_id']));
     try
     {
-        $stmt = $auth_user->runQuery("DELETE FROM `offers` WHERE `public_id`= '$public_id' ");
+        $stmt = $auth_user->runQuery("DELETE FROM `offers` WHERE `offers_id`= '$offers_id' ");
         $stmt->execute();
         $alert = "Offer deleted";
         return $stmt;
@@ -40,6 +40,23 @@ if (isset($_POST['deletejob'])) {
         $stmt = $auth_user->runQuery("DELETE FROM `jobs` WHERE `job_id`= '$job_id' ");
         $stmt->execute();
         $alert = "Job deleted";
+        return $stmt;
+    }
+    catch(PDOException $e)
+    {
+        echo $e->getMessage();
+    }
+}
+
+?>
+<?php
+if (isset($_POST['deleteservice'])) {
+    $services_id = trim(htmlspecialchars($_POST['services_id']));
+    try
+    {
+        $stmt = $auth_user->runQuery("DELETE FROM `services` WHERE `services_id`= '$services_id' ");
+        $stmt->execute();
+        $alert = "Service deleted";
         return $stmt;
     }
     catch(PDOException $e)

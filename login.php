@@ -46,7 +46,7 @@ if($auth_user->is_loggedin()!="")
                         <button type="submit" name="loginbutton" class="btn btn-primary">
                         Login
                         </button>
-                        <a class="btn btn-link" href="password/reset.php">
+                        <a class="btn btn-link" href="resetpass.php">
                         Forgot Your Password?
                         </a>
                         </div>

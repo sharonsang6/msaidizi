@@ -99,7 +99,7 @@ if (isset($_GET['id'])) {
                         Type of Job:   <?php echo $service->job; ?><br /> 
                         <a href="https://api.whatsapp.com/send?phone=<?php echo $service->phonenumber; ?>" style="color:green;font-size: 25px;text-decoration: none;"  class="fa fa-whatsapp"></a> 
                         <form method="post">
-                            <!-- <input type="text" hidden name="public_id" value="<?php echo $userRow['public_id']; ?>"> -->
+                            <input type="text"  name="offers_id" hidden value="<?php echo $service->offers_id; ?>">
                             <button type="submit" name="terminateoffer" class="btn createservice btn-sm" style="width: inherit;">Terminate Offer</button>
                           </form>
                     </center>
