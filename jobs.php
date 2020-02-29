@@ -17,7 +17,7 @@ if ($userRow['user_account'] !== "worker") {
   }
   </style>            
   <div class="col-md-3 card">
-  <p style="margin-top:20px">Filter your search by specifying the type of job you need</p>
+  <p style="margin-top:20px"><strong>Filter your search by specifying the type of job you need</strong></p>
           <form method="get" enctype="multipart/form-data" >
           <div class="form-group findworkergroup">
             <label>Select type of job</label>
@@ -49,7 +49,50 @@ if ($userRow['user_account'] !== "worker") {
           <div class="form-group findworkergroup">
             <label>Tribe</label>
             <select id="inputState" name="tribe" placeholder="Town" type="text" class="form-control">
-              <?php require_once 'list.php'; ?>
+               <option>Ameru</option>
+            <option>Embu</option>
+            <option>Kalenjin</option>
+            <option>Kamba</option>
+            <option>Kikuyu</option>
+            <option>Kisii</option>
+            <option>Kuria</option>
+            <option>Luhya</option>
+            <option>Luo</option>
+            <option>Maasai</option>
+            <option>Mijikenda</option>
+            <option>Orma</option>
+            <option>Rendile</option>
+            <option>Samburu</option>
+            <option>Somali</option>
+            <option>Suba</option>
+            <option>Swahili</option>
+            <option>Taita</option>
+            <option>Taveta</option>
+            <option>Turkana</option>
+            <option>Gabra</option>
+            <option>Mbeere</option>
+            <option>Nubia</option>
+            <option>Tharaka</option>
+            <option>IIchamus</option>
+            <option>Njemps</option>
+            <option>Borana</option>
+            <option>Galla</option>
+            <option>Gosha</option>
+            <option>Konso</option>
+            <option>Sakuye</option>
+            <option>Waat</option>
+            <option>Isaak</option>
+            <option>Walwana</option>
+            <option>Dasenach</option>
+            <option>Galjeel</option>
+            <option>Leysan</option>
+            <option>Bulji</option>
+            <option>Teso</option>
+            <option>Arab</option>
+            <option>Asian</option>
+            <option>European</option>
+            <option>American</option>
+            <option>Other</option>
             </select>
           </div>
           <div class="form-group findworkergroup">
@@ -85,7 +128,6 @@ if ($userRow['user_account'] !== "worker") {
             $salary = $_GET['salary'];
             $worker_experience = $_GET['worker_experience'];
             $tribe = $_GET['tribe'];
-            $language = $_GET['language'];
             $job_description = $_GET['job_description'];
            
 
@@ -94,7 +136,7 @@ if ($userRow['user_account'] !== "worker") {
               LEFT JOIN users 
               ON `users`.`public_id`=`jobs`.`public_id`
               LEFT JOIN profile 
-              ON `profile`.`public_id`=`users`.`public_id` WHERE `jobs`.`type_of_worker`='$type_of_worker' AND `jobs`.`job_type`='$job_type'AND `jobs`.`your_location`='$your_location' AND `jobs`.`salary`>'$salary' AND `jobs`.`worker_experience`>'$worker_experience'  AND `jobs`.`tribe`='$tribe' AND `jobs`.`language`='$language' AND `jobs`.`job_description`='$job_description' ");
+              ON `profile`.`public_id`=`users`.`public_id` WHERE `jobs`.`type_of_worker`='$type_of_worker' AND `jobs`.`job_type`='$job_type'AND `jobs`.`your_location`='$your_location' AND `jobs`.`salary`>'$salary' AND `jobs`.`worker_experience`>'$worker_experience'  AND `jobs`.`tribe`='$tribe' AND `jobs`.`job_description`='$job_description' ");
               $stmt->execute(array());
               $jobs=$stmt->rowCount();
               if ($jobs > 0) { ?>
@@ -103,7 +145,7 @@ if ($userRow['user_account'] !== "worker") {
               LEFT JOIN users 
               ON `users`.`public_id`=`jobs`.`public_id`
               LEFT JOIN profile 
-              ON `profile`.`public_id`=`users`.`public_id` WHERE `jobs`.`type_of_worker`='$type_of_worker' AND `jobs`.`job_type`='$job_type' AND `jobs`.`your_location`='$your_location' AND `jobs`.`salary`>'$salary' AND `jobs`.`worker_experience`>'$worker_experience'  AND `jobs`.`tribe`='$tribe'AND `jobs`.`language`='$language' AND `jobs`.`job_description`='$job_description'  ");
+              ON `profile`.`public_id`=`users`.`public_id` WHERE `jobs`.`type_of_worker`='$type_of_worker' AND `jobs`.`job_type`='$job_type' AND `jobs`.`your_location`='$your_location' AND `jobs`.`salary`>'$salary' AND `jobs`.`worker_experience`>'$worker_experience'  AND `jobs`.`tribe`='$tribe'AND  `jobs`.`job_description`='$job_description'  ");
               $stmt->execute(array());
               $jobs=$stmt->fetchAll(PDO::FETCH_OBJ);
               foreach ($jobs as $job) { ?>
@@ -177,7 +219,7 @@ if ($userRow['user_account'] !== "worker") {
                     <?php } ?>
 
 
-                    <button type="button" class="btn btn-secondary" style="width: inherit;"  data-toggle="modal" data-target="#<?php echo $job->user_name; ?>">View worker</button>
+                    <button type="button" class="btn btn-secondary" style="width: inherit;"  data-toggle="modal" data-target="#<?php echo $job->user_name; ?>">View employer</button>
                   </div>  
                   
 

@@ -298,12 +298,12 @@ class USER
 	// 		//echo $e->getMessage();
 	// 	}
 	// }
-	public function postjob($public_id, $job_type, $type_of_worker, $your_location, $salary, $worker_experience, $tribe, $language, $job_description, $your_file)
+	public function postjob($public_id, $job_type, $type_of_worker, $your_location, $salary, $worker_experience, $tribe,$job_description, $your_file)
 	{
 		try
 		{
-			$stmt = $this->conn->prepare("INSERT INTO jobs(public_id, job_type, type_of_worker, your_location, salary,  worker_experience, tribe, language, job_description, your_file)
-			 VALUES(:public_id, :job_type, :type_of_worker, :your_location, :salary, :worker_experience, :tribe, :language,:job_description,  :your_file)");
+			$stmt = $this->conn->prepare("INSERT INTO jobs(public_id, job_type, type_of_worker, your_location, salary,  worker_experience, tribe, job_description, your_file)
+			 VALUES(:public_id, :job_type, :type_of_worker, :your_location, :salary, :worker_experience, :tribe,:job_description,  :your_file)");
 
 			$stmt->bindparam(":public_id", $public_id);
 			$stmt->bindparam(":job_type", $job_type);
@@ -312,7 +312,6 @@ class USER
 			$stmt->bindparam(":salary", $salary);
 			$stmt->bindparam(":worker_experience", $worker_experience);
 			$stmt->bindparam(":tribe", $tribe);
-			$stmt->bindparam(":language", $language);
 			$stmt->bindparam(":job_description", $job_description);
 			$stmt->bindparam(":your_file", $your_file);
 
@@ -325,18 +324,39 @@ class USER
 			echo $e->getMessage();
 		}
 	}
-
-	public function post_user_profile($public_id, $first_name, $middle_name, $last_name, $country, $town, $phonenumber, $profileimage)
+	public function sendmessage($name, $email, $subject, $message)
 	{
 
 		try
 		{
-			$stmt = $this->conn->prepare("INSERT INTO profile(public_id, first_name, middle_name, last_name, country, town, phonenumber, profileimage) VALUES(:public_id, :first_name, :middle_name, :last_name, :country, :town, :phonenumber, :profileimage)");
+			$stmt = $this->conn->prepare("INSERT INTO messages(name, email, subject, message) VALUES(:name, :email, :subject, :message)");
+
+			$stmt->bindparam(":name", $name);
+			$stmt->bindparam(":email", $email);
+			$stmt->bindparam(":subject", $subject);
+			$stmt->bindparam(":message", $message);
+			
+			$stmt->execute();
+
+			return $stmt;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
+		}
+	}
+	public function post_user_profile($public_id, $first_name, $middle_name, $last_name,$national_id, $country, $town, $phonenumber, $profileimage)
+	{
+
+		try
+		{
+			$stmt = $this->conn->prepare("INSERT INTO profile(public_id, first_name, middle_name, last_name,national_id, country, town, phonenumber, profileimage) VALUES(:public_id, :first_name, :middle_name, :last_name,:national_id, :country, :town, :phonenumber, :profileimage)");
 
 			$stmt->bindparam(":public_id", $public_id);
 			$stmt->bindparam(":first_name", $first_name);
 			$stmt->bindparam(":middle_name", $middle_name);
 			$stmt->bindparam(":last_name", $last_name);
+			$stmt->bindparam(":national_id", $national_id);
 			$stmt->bindparam(":country", $country);
 			$stmt->bindparam(":town", $town);
 			$stmt->bindparam(":phonenumber", $phonenumber);

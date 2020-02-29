@@ -41,10 +41,13 @@ else{ ?>
             <option>Gardener</option>
             <option>Other</option>
             <option>Plumber</option>
+            <option>Childcare</option>
+            <option>Laundry</option>
+            <option>Electrician</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="exampleFormControlSelect1">Leavein</label>
+          <label for="exampleFormControlSelect1">Type of Worker</label>
           <select class="form-control postformselect" name="type_of_worker"id="exampleFormControlSelect1">
             <option>Indoor</option>
             <option>Outdoor</option>
@@ -58,6 +61,69 @@ else{ ?>
             <option>Nairobi</option>
             <option>Kisumu</option>
             <option>Narok</option>
+            <option>Mombasa</option>
+            <option>Eldoret</option>
+            <option>Kericho</option>
+            <option>Nakuru</option>
+            <option>Lamu</option>
+            <option>Kisii</option>
+            <option>Malindi</option>
+            <option>Bungoma</option>
+            <option>Baragoi</option>
+            <option>Butere</option>
+            <option>Dadaab</option>
+            <option>Diani Beach</option>
+            <option>Emali</option>
+            <option>Embu</option>
+            <option>Garissa</option>
+            <option>Gede</option>
+            <option>Hola</option>
+            <option>Homa Bay</option>
+            <option>Isiolo</option>
+            <option>Kitui</option>
+            <option>Kibwez</option>
+            <option>Kajiado</option>
+            <option>Kakamega</option>
+            <option>Kakuma</option>
+            <option>Kapenguria</option>
+            <option>Keroka</option>
+            <option>Kiambu            </option>
+            <option>Kilifi</option>
+            <option>Langata</option>
+            <option>Litein</option>
+            <option>Lodwar</option>
+            <option>Lokichoggio</option>
+            <option>Londiani</option>
+            <option>Loyangalani</option>
+            <option>Machakos</option>
+            <option>Makindu</option>
+            <option>Mandera</option>
+            <option>Marlal</option>
+            <option>Marsabit</option>
+            <option>Meru</option>
+            <option>Moyale</option>
+            <option>Mumias</option>
+            <option>Muranga</option>
+            <option>Mutomo</option>
+            <option>Naivasha</option>
+            <option>Namanga</option>
+            <option>Nanyuki</option>
+            <option>Naro Moru</option>
+            <option>Nyahururu</option>
+            <option>Nyeri</option>
+            <option>Ruiru</option>
+            <option>Shimoni</option>
+            <option>Takaungu</option>
+            <option>Thika</option>
+            <option>Vihiga</option>
+            <option>Voi</option>
+            <option>Wajir</option>
+            <option>Watamu</option>
+            <option>Webuye</option>
+            <option>Wote</option>
+            <option>Wundanyi</option>
+            <option>Other</option>
+
          
           </select>
         </div>
@@ -78,36 +144,54 @@ else{ ?>
         <div class="form-group">
           <label for="exampleFormControlSelect1">Tribe</label>
           <select class="form-control postformselect" name="tribe" id="exampleFormControlSelect1">
-            <option>Kikuyu</option>
+            <option>Ameru</option>
+            <option>Embu</option>
             <option>Kalenjin</option>
-            <option>Maasai</option>
             <option>Kamba</option>
+            <option>Kikuyu</option>
+            <option>Kisii</option>
+            <option>Kuria</option>
+            <option>Luhya</option>
+            <option>Luo</option>
+            <option>Maasai</option>
+            <option>Mijikenda</option>
+            <option>Orma</option>
+            <option>Rendile</option>
+            <option>Samburu</option>
+            <option>Somali</option>
+            <option>Suba</option>
+            <option>Swahili</option>
             <option>Taita</option>
+            <option>Taveta</option>
+            <option>Turkana</option>
+            <option>Gabra</option>
+            <option>Mbeere</option>
+            <option>Nubia</option>
+            <option>Tharaka</option>
+            <option>IIchamus</option>
+            <option>Njemps</option>
+            <option>Borana</option>
+            <option>Galla</option>
+            <option>Gosha</option>
+            <option>Konso</option>
+            <option>Sakuye</option>
+            <option>Waat</option>
+            <option>Isaak</option>
+            <option>Walwana</option>
+            <option>Dasenach</option>
+            <option>Galjeel</option>
+            <option>Leysan</option>
+            <option>Bulji</option>
+            <option>Teso</option>
+            <option>Arab</option>
+            <option>Asian</option>
+            <option>European</option>
+            <option>American</option>
+            <option>Other</option>
+
           </select>
         </div>
         <!-- Default unchecked -->
-        <div class="form-group">
-          <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" value="English" id="english" name="language[]">
-              <label class="custom-control-label" for="english">English </label>
-          </div>
-          <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="Swahilli" value="Swahilli" name="language[]">
-              <label class="custom-control-label" for="Swahilli">Swahilli </label>
-          </div>
-          <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="French" value="French" name="language[]">
-              <label class="custom-control-label" for="French">French </label>
-          </div>
-          <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="Spanish" value="Spanish" name="language[]">
-              <label class="custom-control-label" for="Spanish">Spanish </label>
-          </div>
-          <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="Chinese" value="Chinese"  name="language[]">
-              <label class="custom-control-label" for="Chinese">Chinese</label>
-          </div>
-        </div>
         
         <div class="form-group">
               <label for="exampleFormControlTextarea1">Example textarea</label>

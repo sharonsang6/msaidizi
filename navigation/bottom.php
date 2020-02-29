@@ -18,8 +18,8 @@
        
       <div class="col-lg-3">
           <h4 class="subscribe">Subscribe to our newslater</h4><br />
-          <input class="subemail rounded-pill" type="email" placeholder="email" >
-          <button class="btn subbtn">GO</button>
+          <input class="subemail rounded-pill" name="e_mail" type="email" placeholder="email" >
+          <button class="btn subbtn" type="submit" name="subscribetonewsletter">GO</button>
         </div>
 
         <div class="col-lg-3">
@@ -86,42 +86,14 @@
       $('#snack-wrap').fadeOut("slow");
   }, 4000); // <-- time in milliseconds
 </script>
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+
     <script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
     <script type="text/javascript" src="js/jquery.slitslider.js"></script>
     <script type="text/javascript" src="js/my_custom.js"></script>
     <script type="text/javascript" src="js/slick.min.js"></script>
-    <script>
-    
-$(document).ready(function() {
-  $(".testimonial-carousel").slick({
-    infinite: true,
-    slidesToShow: 1,
-    speed: 500,
-    slidesToScroll: 1,
-    centerMode: 1,
-    autoplaySpeed: 3e3,
-    autoplay: true,
-    arrows: true,
-    prevArrow: $(".testimonial-carousel-controls .prev"),
-    nextArrow: $(".testimonial-carousel-controls .next")
-  });
-});
 
-window.onscroll = function() {myFunction()};
-
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
-}
-    </script>
 
 </body>
 

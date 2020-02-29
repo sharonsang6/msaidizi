@@ -2,9 +2,9 @@
     if (isset($_POST['mailsend'])) {
         $name = trim(strip_tags($_POST['name']));
         $email = trim(strip_tags($_POST['email']));
-        $Subject = trim(strip_tags($_POST['Subject']));
+        $Subject = trim(strip_tags($_POST['subject']));
         $message = trim(strip_tags($_POST['message']));
-        $company = "jayisaac0@gmail.com";
+        $company = "sharonsang6@gmail.com";
 
 
         ini_set('SMTP', 'smtp.mailgun.org');

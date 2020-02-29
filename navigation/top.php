@@ -51,6 +51,7 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="users.php">Users</a>
               <a class="dropdown-item" href="payments.php">Payments</a>
+              <a class="dropdown-item" href="messages.php">Messages</a>
             </div>
           </li>
         <?php }

@@ -52,6 +52,8 @@ if($auth_user->is_loggedin()!="")
             <button type="submit" name="registrationbutton" class="btn btn-primary">
             Register
             </button>
+            <a href="login.php" class="btn">Login</a>
+          
             </div>
         </div>
     </form>

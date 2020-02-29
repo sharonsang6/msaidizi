@@ -1,49 +1,65 @@
-<option value="Nairobi City">Nairobi City</option>
-<option value="Baringo">Baringo</option>
-<option value="Bomet">Bomet</option>
-<option value="Bungoma">Bungoma</option>
-<!-- Busia
-Elgeyo/Marakwet
-Embu
-Garissa
-Homa Bay
-Isiolo
-Kajiado
-Kakamega
-Kericho
-Kiambu
-Kilifi
-Kirinyaga
-Kisii
-Kisumu
-Kitui
-Kwale
-Laikipia
-Lamu
-Machakos
-Makueni
-Mandera
-Marsabit
-Meru
-Migori
-Mombasa
-Murang'a
-Nakuru
-Nandi
-Narok
-Nyamira
-Nyandarua
-Nyeri
-Samburu
-Siaya
-Taita/Taveta
-Tana River
-Tharaka-Nithi
-Trans Nzoia
-Turkana
-Uasin Gishu
-Vihiga
-Wajir
-West Pokot
-
- -->
+<option>Nairobi</option>
+            <option>Kisumu</option>
+            <option>Narok</option>
+            <option>Mombasa</option>
+            <option>Eldoret</option>
+            <option>Kericho</option>
+            <option>Nakuru</option>
+            <option>Lamu</option>
+            <option>Kisii</option>
+            <option>Malindi</option>
+            <option>Bungoma</option>
+            <option>Baragoi</option>
+            <option>Butere</option>
+            <option>Dadaab</option>
+            <option>Diani Beach</option>
+            <option>Emali</option>
+            <option>Embu</option>
+            <option>Garissa</option>
+            <option>Gede</option>
+            <option>Hola</option>
+            <option>Homa Bay</option>
+            <option>Isiolo</option>
+            <option>Kitui</option>
+            <option>Kibwez</option>
+            <option>Kajiado</option>
+            <option>Kakamega</option>
+            <option>Kakuma</option>
+            <option>Kapenguria</option>
+            <option>Keroka</option>
+            <option>Kiambu            </option>
+            <option>Kilifi</option>
+            <option>Langata</option>
+            <option>Litein</option>
+            <option>Lodwar</option>
+            <option>Lokichoggio</option>
+            <option>Londiani</option>
+            <option>Loyangalani</option>
+            <option>Machakos</option>
+            <option>Makindu</option>
+            <option>Mandera</option>
+            <option>Marlal</option>
+            <option>Marsabit</option>
+            <option>Meru</option>
+            <option>Moyale</option>
+            <option>Mumias</option>
+            <option>Muranga</option>
+            <option>Mutomo</option>
+            <option>Naivasha</option>
+            <option>Namanga</option>
+            <option>Nanyuki</option>
+            <option>Naro Moru</option>
+            <option>Nyahururu</option>
+            <option>Nyeri</option>
+            <option>Ruiru</option>
+            <option>Shimoni</option>
+            <option>Takaungu</option>
+            <option>Thika</option>
+            <option>Vihiga</option>
+            <option>Voi</option>
+            <option>Wajir</option>
+            <option>Watamu</option>
+            <option>Webuye</option>
+            <option>Wote</option>
+            <option>Wundanyi</option>
+            <option>Other</option>

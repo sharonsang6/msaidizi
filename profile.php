@@ -27,51 +27,19 @@
 		<p><strong>Please edit your profile by filling the form below</strong></p>
 			<div class="form-group findworkergroup">
 				<label>First name</label>
-				<input id="inputState" name="first_name" placeholder="first name" type="text" class="form-control" value="<?php echo $user_profile['first_name']; ?>" />
+				<input id="inputState" name="first_name" placeholder="first name" required type="text" class="form-control" value="<?php echo $user_profile['first_name']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Middle name</label>
-				<input id="inputState" name="middle_name" placeholder="middle name" type="text" class="form-control" value="<?php echo $user_profile['middle_name']; ?>" />
+				<input id="inputState" name="middle_name" placeholder="middle name"  type="text" class="form-control" value="<?php echo $user_profile['middle_name']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Last name</label>
-				<input id="inputState" name="last_name" placeholder="last name" type="text" class="form-control" value="<?php echo $user_profile['last_name']; ?>" />
+				<input id="inputState" name="last_name" placeholder="last name" required type="text" class="form-control" value="<?php echo $user_profile['last_name']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>ID No/Passport No</label>
-				<input id="inputState" name="national_id" placeholder="" type="number" class="form-control" value="<?php echo $user_profile['last_name']; ?>" />
-			</div>
-			<div class="form-group findworkergroup">
-				<label>Country</label>
-				<input id="inputState" name="country" placeholder="Country" type="text" class="form-control" value="<?php echo $user_profile['country']; ?>" />
-			</div>
-			<div class="form-group findworkergroup">
-				<label>Town</label>
-				<input id="inputState" name="town" placeholder="town" type="text" class="form-control" value="<?php echo $user_profile['town']; ?>" />
-			</div>
-			<div class="form-group findworkergroup">
-				<label>Phone number</label>
-				<input id="inputState" name="phonenumber" placeholder="Phone number" type="number" class="form-control" value="<?php echo $user_profile['phonenumber']; ?>" />
-			</div>
-			<div class="form-group findworkergroup">
-				<label>Profile image</label>
-				<input id="inputState" name="profileimage" type="file" placeholder="Profile image"  class="form-control" />
-			</div>
-			<button type="submit" name="submitprofile" class="btn btn-primary btn-block findworkergroup createservice">Update profile</button>
-		</form>
-	<?php }else{ ?>
-		<form method="post" enctype="multipart/form-data" >
-			<div class="form-group findworkergroup">
-				<label>First name</label>
-				<input id="inputState" name="first_name" placeholder="first name" type="text" class="form-control" />
-			</div>
-			<div class="form-group findworkergroup">
-				<label>Middle name</label>
-				<input id="inputState" name="middle_name" placeholder="middle name" type="text" class="form-control" />
-			</div>
-			<div class="form-group findworkergroup">
-				<label>Last name</label>
-				<input id="inputState" name="last_name" placeholder="last name" type="text" class="form-control" />
+				<input id="inputState" name="national_id" placeholder="" type="number" required class="form-control" value="<?php echo $user_profile['national_id']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Country</label>
@@ -93,11 +61,58 @@
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Phone number</label>
-				<input id="inputState" name="phonenumber" placeholder="Phone number" type="number" class="form-control" />
+				<input id="inputState" name="phonenumber" placeholder="Phone number"  min=10 required type="number" class="form-control" value="<?php echo $user_profile['phonenumber']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Profile image</label>
-				<input id="inputState" name="profileimage" type="file" placeholder="Profile image"  class="form-control" />
+				<input id="inputState" name="profileimage" type="file" required placeholder="Profile image"  class="form-control" />
+			</div>
+			<button type="submit" name="submitprofile" class="btn btn-primary btn-block findworkergroup createservice">Update profile</button>
+		</form>
+	<?php }else{ ?>
+		<form method="post" enctype="multipart/form-data" >
+		<p><strong>Please edit your profile by filling the form below</strong></p>
+			<div class="form-group findworkergroup">
+				<label>First name</label>
+				<input id="inputState" name="first_name" placeholder="first name" required type="text" class="form-control" />
+			</div>
+			<div class="form-group findworkergroup">
+				<label>Middle name</label>
+				<input id="inputState" name="middle_name" placeholder="middle name" type="text" class="form-control" />
+			</div>
+			<div class="form-group findworkergroup">
+				<label>Last name</label>
+				<input id="inputState" name="last_name" placeholder="last name" required type="text" class="form-control" />
+			</div>
+			<div class="form-group findworkergroup">
+				<label>ID No/Passport No</label>
+				<input id="inputState" name="national_id" placeholder="" type="number" required class="form-control" value="<?php echo $user_profile['national_id']; ?>" />
+			</div>
+			<div class="form-group findworkergroup">
+				<label>Country</label>
+				<select id="inputState" name="country" placeholder="Country" type="text" class="form-control" >
+							<option value="Kenya">Kenya</option>
+							<option value="Uganda">Uganda</option>
+							<option value="Tanzania">Tanzania</option>
+						</select>
+				<!-- <input id="inputState" name="country" placeholder="Country" type="text" class="form-control" /> -->
+			</div>
+			<div class="form-group findworkergroup">
+				<label>Town</label>
+				<select id="inputState" name="town" placeholder="town" type="text" class="form-control" >
+							<option value="Nairobi">Nairobi</option>
+							<option value="Kisumu">Kisumu</option>
+							<option value="Nakuru">Nakuru</option>
+						</select>
+				<!-- <input id="inputState" name="town" placeholder="town" type="text" class="form-control" /> -->
+			</div>
+			<div class="form-group findworkergroup">
+				<label>Phone number</label>
+				<input id="inputState" name="phonenumber" placeholder="Phone number" required   min=10 type="number" class="form-control" />
+			</div>
+			<div class="form-group findworkergroup">
+				<label>Profile image</label>
+				<input id="inputState" name="profileimage" type="file" required placeholder="Profile image"  class="form-control" />
 			</div>
 			<button type="submit" name="submitprofile" class="btn btn-primary btn-block findworkergroup createservice">Update profile</button>
 		</form>
@@ -108,7 +123,73 @@
 <?php
 if (isset($_GET['pesapal_transaction_tracking_id'])) {
 	$pesapal_transaction_tracking_id = $_GET['pesapal_transaction_tracking_id'];
-	$pesapal_merchant_reference = $_GET['pesapal_merchant_reference'];
+	$pesapal_merchant_reference = $_GET['pesapal_merchant_reference']; 
+	?>
+
+<head>
+    <script language="javascript">
+        function printdiv(printpage) {
+            var headstr = "<html><head><title></title></head><body>";
+            var footstr = "</body>";
+            var newstr = document.all.item(printpage).innerHTML;
+            var oldstr = document.body.innerHTML;
+            document.body.innerHTML = headstr + newstr + footstr;
+            window.print();
+            document.body.innerHTML = oldstr;
+            return false;
+        }
+    </script>
+    <title>div print</title>
+</head>
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<div class="container " id="mainC">
+  <div class="modal show" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+
+<body>
+<div id="div_print">
+        <h1 style="Color:Red">The Div content which you want to print</h1>
+		<div class="myDiv">
+			<?php echo $userRow['user_name']; ?><br />
+			<?php echo $userRow['user_name']; ?><br />
+			Tracking ID: <?php echo $pesapal_transaction_tracking_id; ?><br />
+			Payment ref: <?php echo $pesapal_merchant_reference; ?>
+		</div>
+    </div>
+</body>
+
+        </div>
+        <div class="modal-footer">
+        	<script type="text/javascript">
+        		function myFunction() {
+  var x = document.getElementById("mainC");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+        	</script>
+<button onclick="myFunction()">Click Me</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" onClick="printdiv('div_print');">PRINT</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+
+	<?php
                 
     $stmt = $auth_user->runQuery("UPDATE `users` SET `premium`='1', `pesapal_transaction_tracking_id`='$pesapal_transaction_tracking_id', `pesapal_merchant_reference`='$pesapal_merchant_reference' WHERE `public_id`='$public_id' ");
     $stmt->bindparam("1", $premium); 
@@ -173,51 +254,19 @@ if (isset($_GET['pesapal_transaction_tracking_id'])) {
 		<p><strong>Please edit your profile by filling the form below</strong></p>
 			<div class="form-group findworkergroup">
 				<label>First name</label>
-				<input id="inputState" name="first_name" placeholder="first name" type="text" class="form-control" value="<?php echo $user_profile['first_name']; ?>" />
+				<input id="inputState" name="first_name" placeholder="first name" required type="text" class="form-control" value="<?php echo $user_profile['first_name']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Middle name</label>
-				<input id="inputState" name="middle_name" placeholder="middle name" type="text" class="form-control" value="<?php echo $user_profile['middle_name']; ?>" />
+				<input id="inputState" name="middle_name" placeholder="middle name"  type="text" class="form-control" value="<?php echo $user_profile['middle_name']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Last name</label>
-				<input id="inputState" name="last_name" placeholder="last name" type="text" class="form-control" value="<?php echo $user_profile['last_name']; ?>" />
+				<input id="inputState" name="last_name" placeholder="last name" type="text" required class="form-control" value="<?php echo $user_profile['last_name']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>ID No/Passport No</label>
-				<input id="inputState" name="id" placeholder="id/passport" type="text" class="form-control" value="<?php echo $user_profile['last_name']; ?>" />
-			</div>
-			<div class="form-group findworkergroup">
-				<label>Country</label>
-				<input id="inputState" name="country" placeholder="Country" type="text" class="form-control" value="<?php echo $user_profile['country']; ?>" />
-			</div>
-			<div class="form-group findworkergroup">
-				<label>Town</label>
-				<input id="inputState" name="town" placeholder="town" type="text" class="form-control" value="<?php echo $user_profile['town']; ?>" />
-			</div>
-			<div class="form-group findworkergroup">
-				<label>Phone number</label>
-				<input id="inputState" name="phonenumber" placeholder="Phone number" type="number" class="form-control" value="<?php echo $user_profile['phonenumber']; ?>" />
-			</div>
-			<div class="form-group findworkergroup">
-				<label>Profile image</label>
-				<input id="inputState" name="profileimage" type="file" placeholder="Profile image"  class="form-control" />
-			</div>
-			<button type="submit" name="submitprofile" class="btn btn-primary btn-block findworkergroup createservice">Update profile</button>
-		</form>
-	<?php }else{ ?>
-		<form method="post" enctype="multipart/form-data" >
-			<div class="form-group findworkergroup">
-				<label>First name</label>
-				<input id="inputState" name="first_name" placeholder="first name" type="text" class="form-control" />
-			</div>
-			<div class="form-group findworkergroup">
-				<label>Middle name</label>
-				<input id="inputState" name="middle_name" placeholder="middle name" type="text" class="form-control" />
-			</div>
-			<div class="form-group findworkergroup">
-				<label>Last name</label>
-				<input id="inputState" name="last_name" placeholder="last name" type="text" class="form-control" />
+				<input id="inputState" name="id" placeholder="id/passport" type="text" required class="form-control" value="<?php echo $user_profile['last_name']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Country</label>
@@ -239,11 +288,57 @@ if (isset($_GET['pesapal_transaction_tracking_id'])) {
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Phone number</label>
-				<input id="inputState" name="phonenumber" placeholder="Phone number" type="number" class="form-control" />
+				<input id="inputState" name="phonenumber" placeholder="Phone number" required  min=10 type="number" class="form-control" value="<?php echo $user_profile['phonenumber']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Profile image</label>
-				<input id="inputState" name="profileimage" type="file" placeholder="Profile image"  class="form-control" />
+				<input id="inputState" name="profileimage" type="file" required placeholder="Profile image"  class="form-control" />
+			</div>
+			<button type="submit" name="submitprofile" class="btn btn-primary btn-block findworkergroup createservice">Update profile</button>
+		</form>
+	<?php }else{ ?>
+		<form method="post" enctype="multipart/form-data" >
+			<div class="form-group findworkergroup">
+				<label>First name</label>
+				<input id="inputState" name="first_name" placeholder="first name" required type="text" class="form-control" />
+			</div>
+			<div class="form-group findworkergroup">
+				<label>Middle name</label>
+				<input id="inputState" name="middle_name" placeholder="middle name" type="text" class="form-control" />
+			</div>
+			<div class="form-group findworkergroup">
+				<label>Last name</label>
+				<input id="inputState" name="last_name" placeholder="last name" required type="text" class="form-control" />
+			</div>
+			<div class="form-group findworkergroup">
+				<label>ID No/Passport No</label>
+				<input id="inputState" name="national_id" placeholder="" type="number" required class="form-control" value="<?php echo $user_profile['national_id']; ?>" />
+			</div>
+			<div class="form-group findworkergroup">
+				<label>Country</label>
+				<select id="inputState" name="country" placeholder="Country" type="text" class="form-control" >
+							<option value="Kenya">Kenya</option>
+							<option value="Uganda">Uganda</option>
+							<option value="Tanzania">Tanzania</option>
+						</select>
+				<!-- <input id="inputState" name="country" placeholder="Country" type="text" class="form-control" /> -->
+			</div>
+			<div class="form-group findworkergroup">
+				<label>Town</label>
+				<select id="inputState" name="town" placeholder="town" type="text" class="form-control" >
+							<option value="Nairobi">Nairobi</option>
+							<option value="Kisumu">Kisumu</option>
+							<option value="Nakuru">Nakuru</option>
+						</select>
+				<!-- <input id="inputState" name="town" placeholder="town" type="text" class="form-control" /> -->
+			</div>
+			<div class="form-group findworkergroup">
+				<label>Phone number</label>
+				<input id="inputState" name="phonenumber" placeholder="Phone number" required  min=10 type="number" class="form-control" />
+			</div>
+			<div class="form-group findworkergroup">
+				<label>Profile image</label>
+				<input id="inputState" name="profileimage" type="file" required placeholder="Profile image"  class="form-control" />
 			</div>
 			<button type="submit" name="submitprofile" class="btn btn-primary btn-block findworkergroup createservice">Update profile</button>
 		</form>
@@ -306,6 +401,7 @@ if (isset($_GET['pesapal_transaction_tracking_id'])) {
 					<label>Enter job experiance ( years ) </label>
 					<input id="inputState" min="0" name="experiance" placeholder="Experiance" type="number" class="form-control" />
 				</div>
+				
 				<div class="form-group findworkergroup">
 					<label>Select town</label>
 					<select id="inputState" name="town" placeholder="Town" type="text" class="form-control">
@@ -379,7 +475,8 @@ foreach ($services as $service) { ?>
 				<?php echo $userprofile->first_name; ?> <?php echo $userprofile->middle_name; ?> <?php echo $userprofile->last_name; ?><br />
 				<?php echo $userprofile->country; ?><br />
 				<?php echo $userprofile->town; ?><br />
-				<?php echo $userprofile->phonenumber; ?><br />    			
+				<?php echo $userprofile->phonenumber; ?><br />  
+				  			
     		</b>
     	</h3>    		
     	</center>
@@ -389,7 +486,7 @@ foreach ($services as $service) { ?>
     		<form method="post" enctype="multipart/form-data" >
 				<div class="form-group findworkergroup">
 					<label>First name</label>
-					<input id="inputState" name="user_password" placeholder="Password" type="password" class="form-control" />
+					<input id="inputState" name="user_password" required placeholder="Password" type="password" class="form-control" />
 				</div>
 				<button type="submit" name="btn_reset_password" class="btn btn-primary btn-block findworkergroup createservice">Change password</button>
 			</form>

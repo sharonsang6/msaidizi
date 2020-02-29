@@ -16,6 +16,23 @@ if (isset($_POST['Deleteuser'])) {
 
 ?>
 <?php
+if (isset($_POST['deletemessage'])) {
+    $message_id = trim(htmlspecialchars($_POST['message_id']));
+    try
+    {
+        $stmt = $auth_user->runQuery("DELETE FROM `messages` WHERE `message_id`='$message_id' ");
+        $stmt->execute();
+        $alert = "Message deleted";
+        return $stmt;
+    }
+    catch(PDOException $e)
+    {
+        echo $e->getMessage();
+    }
+}
+
+?>
+<?php
 if (isset($_POST['terminateoffer'])) {
     $offers_id = trim(htmlspecialchars($_POST['offers_id']));
     try

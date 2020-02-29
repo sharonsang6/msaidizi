@@ -52,7 +52,7 @@
             
                       <div class="md-form">
                         <!-- <i class="fa fa-tag  fa-2x"></i> -->
-                        <input type="text" id="form-Subject" name="Subject" class="form-control">
+                        <input type="text" id="form-Subject" name="subject" class="form-control">
                         <label for="form-Subject">Subject</label>
                       </div>
             

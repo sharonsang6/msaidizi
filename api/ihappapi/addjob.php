@@ -8,8 +8,7 @@
 		$salary = trim(htmlspecialchars($_POST['salary']));
 		$worker_experience = trim(htmlspecialchars($_POST['worker_experience']));
 		$tribe = trim(htmlspecialchars($_POST['tribe']));
-		$language = trim(htmlspecialchars($_POST['language']));
-		$job_description = trim(htmlspecialchars($_POST['job_description']));
+	    $job_description = trim(htmlspecialchars($_POST['job_description']));
         $your_file = $_POST['your_file'];
 
 
@@ -26,7 +25,7 @@
                                
                 try
 		{
-		if($user->postjob($public_id, $job_type, $type_of_worker, $your_location, $salary, $worker_experience, $tribe, $language, $job_description, $file_path)){  
+		if($user->postjob($public_id, $job_type, $type_of_worker, $your_location, $salary, $worker_experience, $tribe, $job_description, $file_path)){  
 		    $alert = "job posted";
 		  }
 		}

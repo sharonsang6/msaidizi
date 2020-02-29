@@ -71,51 +71,60 @@ if (isset($_GET['id'])) {
 }*/
 </style>
   <div class="col-md-9 sunken">
-    <div class="rows flexbox-container">
+    <div class="rows flexbox-container row">
+<?php
+$stmt = $auth_user->runQuery("SELECT *  FROM  offers
+  LEFT JOIN services 
+  ON `services`.`public_id`=`offers`.`public_id`
+  WHERE `offers`.`public_id`='$public_id'
+");
+$stmt->execute(array());
+$offers=$stmt->fetchAll(PDO::FETCH_OBJ);
+foreach ($offers as $offer) { ?>
 
-            <?php
-            $stmt = $auth_user->runQuery("SELECT * FROM services 
-              LEFT JOIN users 
-              ON `users`.`public_id`=`services`.`public_id`
+
+    <?php
+    $stmt = $auth_user->runQuery("SELECT *  FROM  users 
               LEFT JOIN profile 
-              ON `profile`.`public_id`=`users`.`public_id`
-              LEFT JOIN offers 
-              ON `offers`.`public_id`=`users`.`public_id`
-              WHERE `profile`.`public_id`='$public_id'
-               ");
-            $stmt->execute(array());
-            $services=$stmt->fetchAll(PDO::FETCH_OBJ);
-            foreach ($services as $service) { ?>
-            <div class="card" style="width: 100%;float:left;margin: 0.5%;">
+              ON `users`.`public_id`=`profile`.`public_id`
+              WHERE `profile`.`public_id`='".$offer->worker_id."'
+    ");
+    $stmt->execute(array());
+    $users=$stmt->fetchAll(PDO::FETCH_OBJ);
+    foreach ($users as $user) { ?>
+            <div class="card col-md-3" style="width: 100%;float:left;margin: 0.5%;">
               <div class="modal-dialog" style="margin: 5px;max-width: fit-content;">
                   <div class="sunken">
                     <center>
-                              <img src="<?php echo $service->profileimage; ?>" alt="image" style="width:100px;height: 100px;border-radius: 50%;border: 10px solid #f0f6f9;" /><br /><br />
-        <?php echo $service->first_name; ?> <?php echo $service->middle_name; ?> <?php echo $service->last_name; ?><br />
-        <?php echo $service->country; ?> - <?php echo $service->town; ?><br />
-        <?php echo $service->phonenumber; ?><br />    
+                              <img src="<?php echo $user->profileimage; ?>" alt="image" style="width:100px;height: 100px;border-radius: 50%;border: 10px solid #f0f6f9;" /><br /><br />
+        <?php echo $user->first_name; ?> <?php echo $user->middle_name; ?> <?php echo $user->last_name; ?><br />
+        <?php echo $user->country; ?> - <?php echo $user->town; ?><br />
+        <?php echo $user->phonenumber; ?><br />    
                     </center>
                     <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1"><?php echo $service->typeofworker; ?></h5>
-                      <small class="text-muted"><?php echo $service->job; ?></small>
+                      <h5 class="mb-1"><?php echo $offer->typeofworker; ?></h5>
+                      <small class="text-muted"><?php echo $offer->job; ?></small>
                     </div>
-                    Work experiance: <?php echo $service->experiance; ?> year(s)
-                    <?php echo $service->description; ?><br />
+                    Work experiance: <?php echo $offer->experiance; ?> year(s)
+                    <?php echo $offer->description; ?><br />
                     <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1" style="color: gold;font-weight: bold;margin-left: 20px;"><?php echo $service->user_name; ?> - <?php echo $service->allrating; ?></h5>
-                      <small class="text-muted">Ksh <?php echo $service->cost; ?> per day</small>
+                      <h5 class="mb-1" style="color: gold;font-weight: bold;margin-left: 20px;"><?php echo $user->user_name; ?> - <?php echo $user->allrating; ?></h5>
+                      <small class="text-muted">Ksh <?php echo $offer->cost; ?> per day</small>
                     </div>
                   </div>         
                 </div>
                   <div class="btn-group btn-group-sm" role="group" aria-label="Basic example" style="width: 100%;">
-                    <a href="myservices.php?id=<?php echo $service->offers_id; ?>">
+                    <a href="hiredworkers.php?id=<?php echo $offer->offers_id; ?>">
                       <button type="button" class="btn btn-secondary" style="width: inherit;" >Click to rate and make payment</button>
                     </a>
                   </div>  
 
             </div>   
 
-            <?php } ?>        
+    <?php } ?> 
+
+
+<?php } ?>        
 
     </div>
   </div>

@@ -23,11 +23,27 @@
 <div class="col-md-12 sunken">
 
     <div class="card row  table-responsive" style="margin:10px;">
-  <center>My user reports</center>
+  <center><strong>My payements reports</strong></center>
       <div style="margin: 5px;max-width: 100%;">
           <div class="sunken " id="mytable">
 
-<table class="table table-bordered" style="width: 100%;">
+<link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css
+" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.colVis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.0.0/highcharts.min.js" integrity="sha256-r4cOuAPNm8D8kkaCdUJe58iLHTzuQzTwPYvcMn1inxc=" crossorigin="anonymous"></script>
+<script src="customjs.js"></script>                                                     
+<table id="example" class="display" style="width:100%">
   <thead>
     <tr>
 <th>Image</th>
@@ -40,6 +56,7 @@
 <th>reference</th>
 <th>reg_date</th>
 <th>Premium</th>
+<th>Null</th>
     </tr>
   </thead>
   <tbody>
@@ -58,15 +75,15 @@
 <td><?php echo $user->user_email; ?></td>
 <td><?php echo $user->pesapal_transaction_tracking_id; ?></td>
 <td><?php echo $user->pesapal_merchant_reference; ?></td>
-<td><?php echo $user->reg_date; ?></td>
+<td><?php echo $user->reg_date; ?></td>a
 
 
 <td>
   <?php 
 if ($user->premium ==0) { ?>
-  <button type="button" class="btn btn-success btn-sm" style="width: inherit;">Not prmium</button>
+  <button type="button" class="btn btn-secondary btn-sm" style="width: inherit;">Not prmium</button>
 <?php }else{ ?>
-<button type="button" class="btn btn-success btn-sm createservice" style="width: inherit;">Premium account</button>
+<button type="button" class="btn btn-success btn-sm createservice" style="width: inherit; border:none !important;">Premium account</button>
 <?php }
  ?>
 </td>
@@ -74,7 +91,7 @@ if ($user->premium ==0) { ?>
 <td>
 </td>
 
-    <td></td>
+   
     </tr>
     <?php } ?>    
 
@@ -85,21 +102,6 @@ if ($user->premium ==0) { ?>
           </div>
         </div>
 
-    <button id="button-a">Create Excel report</button>
-<script>
-        var wb = XLSX.utils.table_to_book(document.getElementById('mytable'), {sheet:"Sheet JS"});
-        var wbout = XLSX.write(wb, {bookType:'xlsx', bookSST:true, type: 'binary'});
-        function s2ab(s) {
-                        var buf = new ArrayBuffer(s.length);
-                        var view = new Uint8Array(buf);
-                        for (var i=0; i<s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
-                        return buf;
-        }
-        $("#button-a").click(function(){
-        saveAs(new Blob([s2ab(wbout)],{type:"application/octet-stream"}), 'report.xlsx');
-        });
-</script>
-
     </div>      
 
 
@@ -109,4 +111,4 @@ if ($user->premium ==0) { ?>
 
 
 
-<?php require_once 'navigation/bottom.php'; ?>
+<?php //require_once 'navigation/bottom.php'; ?>
