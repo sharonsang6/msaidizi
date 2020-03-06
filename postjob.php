@@ -9,7 +9,7 @@
 <div class="row postrow">
 <?php
 
-if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+669585) { ?>
+if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+100) { ?>
 	<div class="btn-group btn-group-lg" role="group" aria-label="Basic example" style="width: 100%;">
 		<form action="mpesa/pesapal-iframe.php" method="post"  style="width: 100%;">
 		<input hidden type="text" name="amount" value="350" />
@@ -132,12 +132,12 @@ else{ ?>
                               
            <div class="form-group">
           <label for="exampleFormControlInput1">Salary</label>
-          <input type="text" class="form-control postjobinput" name="salary"id="exampleFormControlInput1" >
+          <input type="number" class="form-control postjobinput" pattern="d{1+}"  required name="salary"id="exampleFormControlInput1" >
         </div>
         
         <div class="form-group">
-          <label for="exampleFormControlInput1">Experience</label>
-          <input type="text" class="form-control postjobinput" name="worker_experience" id="exampleFormControlInput1" >
+          <label for="exampleFormControlInput1">Experience(years)</label>
+          <input type="number" class="form-control postjobinput" required pattern="d{0+}" name="worker_experience" id="exampleFormControlInput1" >
         </div>
       
        
@@ -194,8 +194,8 @@ else{ ?>
         <!-- Default unchecked -->
         
         <div class="form-group">
-              <label for="exampleFormControlTextarea1">Example textarea</label>
-              <textarea class="form-control postformselect" name="job_description" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <label for="exampleFormControlTextarea1">Description</label>
+              <textarea class="form-control postformselect" required name="job_description" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
        
         <div class="form-group">

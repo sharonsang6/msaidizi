@@ -28,7 +28,7 @@
           <li class="nav-item"><a class="nav-link" href="offers.php">My offers</a></li>
      <?php }
      ?>
-  
+   
       <?php if($user->is_loggedin()!="") { ?>
       <li class="nav-item dropdown">
       <?php if ($userRow['user_account'] == "employer") { ?>
@@ -52,6 +52,7 @@
               <a class="dropdown-item" href="users.php">Users</a>
               <a class="dropdown-item" href="payments.php">Payments</a>
               <a class="dropdown-item" href="messages.php">Messages</a>
+              <a class="dropdown-item" href="summary.php">Summary Reports</a>
             </div>
           </li>
         <?php }

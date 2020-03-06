@@ -10,6 +10,18 @@ if (isset($_POST['registrationbutton'])) {
     if($user_name == "") {$alert = "Provide user name"; }
     elseif(!filter_var($user_email, FILTER_VALIDATE_EMAIL)) { $alert = "enter valid email"; }
     elseif($user_password == "") {$alert = "Provide user_password"; }
+    elseif (strlen($user_password) <= '8') {
+        $alert = "Your Password Must Contain At Least 8 Characters!";
+    }
+      elseif(!preg_match("#[0-9]+#",$user_password)) {
+        $alert = "Your Password Must Contain At Least 1 Number!";
+    }
+     elseif(!preg_match("#[A-Z]+#",$user_password)) {
+        $alert = "Your Password Must Contain At Least 1 Capital Letter!";
+    }
+    elseif(!preg_match("#[a-z]+#",$user_password)) {
+        $alert = "Your Password Must Contain At Least 1 Lowercase Letter!";
+    }
     else
     {
       try

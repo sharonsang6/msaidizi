@@ -40,25 +40,25 @@
                 <form method="post">
                       <div class="md-form">
                         <!-- <i class="fa fa-user fa-2x "></i> -->
-                        <input type="text" id="form-name" name="name" class="form-control">
+                        <input type="text" id="form-name" required pattern="\D+" name="name" class="form-control">
                         <label for="form-name">Your name</label>
                       </div>
             
                       <div class="md-form">
                         <!-- <i class="fa fa-envelope fa-2x  "></i> -->
-                        <input type="text" id="form-email" name="email" class="form-control">
+                        <input type="email" id="form-email" required name="email" class="form-control">
                         <label for="form-email">Your email</label>
                       </div>
             
                       <div class="md-form">
                         <!-- <i class="fa fa-tag  fa-2x"></i> -->
-                        <input type="text" id="form-Subject" name="subject" class="form-control">
+                        <input type="text" id="form-Subject" required pattern="\D+" name="subject" class="form-control">
                         <label for="form-Subject">Subject</label>
                       </div>
             
                       <div class="md-form">
                         <!-- <i class="fa fa-pencil-alt fa-2x"></i> -->
-                        <textarea id="form-text" name="message" class="form-control md-textarea" rows="3"></textarea>
+                        <textarea id="form-text" name="message" required class="form-control md-textarea" rows="3"></textarea>
                         <label for="form-text">Message</label>
                       </div>
             

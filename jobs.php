@@ -28,7 +28,7 @@ if ($userRow['user_account'] !== "worker") {
           </div>
           <div class="form-group findworkergroup">
             <label>Enter job title</label>
-            <select id="inputState" name="job_type" placeholder="Job" type="text" class="form-control">
+            <select id="inputState" name="job_type" pattern="\D+" placeholder="Job" type="text" class="form-control">
               <?php
               $stmt = $auth_user->runQuery("SELECT job_type FROM jobs ");
               $stmt->execute(array());

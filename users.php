@@ -22,6 +22,34 @@
 
     <div class="card row  table-responsive" style="margin:10px;">
   <center><strong>My user reports</strong></center>
+  <div class="card col-md-2" style="float:left; margin:25px">
+            
+                           <center>
+                                   <p>Users</p>
+                             <script type="text/javascript">
+                            add_action( 'template_redirect', 'my_post_table_row_count' );
+                            function my_post_table_row_count() {
+                                global $post, $table_rows_total;
+                                if ( is_single() && is_object( $post ) ) {
+                                    // Count "<tr" instead of "<tr>" in case there are attributes
+                                    $table_rows_total = substr_count( $post->post_content, '<tr' );
+                                } else {
+                                    $table_rows_total = false;
+                                }
+                            }
+
+                            function display_table_row_count() {
+                                global $table_rows_total;
+                                return ( $table_rows_total ) ? $table_rows_total : '0';
+                            }
+                          </script>
+                      
+                        
+
+                                               
+                          </center>
+                         
+                  </div> 
       <div style="margin: 5px;max-width: 100%;">
           <div class="sunken ">
 
@@ -89,4 +117,3 @@
 
           </div>
         </div>
-
