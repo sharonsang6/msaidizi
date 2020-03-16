@@ -21,7 +21,7 @@
 
 		<div class="card row  table-responsive" style="margin:10px;">
 	<center>My service reports</center>
-		  <div class="modal-dialog" style="margin: 5px;max-width: fit-content;">
+		  <div class="modal-dialog" style="margin: 5px;max-width: 98%;">
 		    	<div class="sunken " id="mytable">
 
 
@@ -58,7 +58,6 @@
     <tr>
 <th>job</th>
 <th>town</th>
-<th>cost</th>
 <!-- <th>worker_id</th> -->
 <th>start_date</th>
 <th>duration</th>
@@ -72,15 +71,15 @@
   <tbody>
     <?php
     $stmt = $auth_user->runQuery("SELECT * FROM offers 
-    	LEFT JOIN services ON `services`.`public_id`=`offers`.`public_id`
-    	WHERE worker_id='$public_id' ");
+      LEFT JOIN services ON `services`.`services_id`=`offers`.`services_id`
+      LEFT JOIN users ON `users`.`public_id`=`offers`.`public_id`
+      WHERE `offers`.`worker_id`='$public_id' ORDER BY `offers_reg_date`");
     $stmt->execute(array());
     $services=$stmt->fetchAll(PDO::FETCH_OBJ);
     foreach ($services as $service) { ?>
 	  <tr>
 <td><?php echo $service->job; ?></td>
 <td><?php echo $service->town; ?></td>
-<td><?php echo $service->cost; ?></td>
 <!-- <td><?php echo $service->worker_id; ?></td> -->
 <td><?php echo $service->start_date; ?></td>
 <td><?php echo $service->duration; ?></td>

@@ -1,3 +1,8 @@
+<?php 
+$title = "Messages report";
+// $description = "this is a user description";
+
+ ?>
 <?php require_once 'header/header.php'; ?>
 <?php //require_once 'app/sessionconfig/loginsession.php'; ?>
 <?php require_once 'configurations/config.php'; ?>
@@ -31,7 +36,7 @@
 </style>
 <?php
 $connect=mysqli_connect("localhost","root", "","msaidizi");
-$query="SELECT * FROM messages";
+$query="SELECT * FROM messages ORDER BY `sent_date` DESC";
 $result=mysqli_query($connect, $query);
 ?>
                             
@@ -42,7 +47,18 @@ $result=mysqli_query($connect, $query);
   <div style="margin: 5px;max-width: 100%;">
       <div class="sunken ">
       
-      
+       <div class="card col-md-2" style="float:left; margin:25px">            
+            <p><strong>All Messages</strong></p>
+            <center>
+             <?php
+                  $stmt = $auth_user->runQuery("SELECT * FROM messages");
+                  $stmt->execute(array());
+                  $number_of_rows = $stmt->rowCount(); 
+                 echo $number_of_rows;
+   ?>
+ </center>
+</div>
+</div>
 
      <div id="content">
 
@@ -85,6 +101,7 @@ $result=mysqli_query($connect, $query);
 <th>Name</th>
 <th>Email</th>
 <th>Subject</th>
+<th>Sent Date</th>
 <th>Message</th>
 <th>Null</th>
 </tr>
@@ -105,7 +122,7 @@ while ($users= mysqli_fetch_array($result)) { ?>
                   </div>
                   <div class="modal-body">
                     <?php
-                    $stmt = $auth_user->runQuery("SELECT * FROM  messages WHERE `message_id`='".$users['message_id']."' ");
+                    $stmt = $auth_user->runQuery("SELECT * FROM  messages WHERE `message_id`='".$users['message_id']."'");
                     $stmt->execute(array());
                     $messagedescr=$stmt->fetchAll(PDO::FETCH_OBJ);
                     foreach ($messagedescr as $onemessage) { ?>
@@ -128,6 +145,7 @@ while ($users= mysqli_fetch_array($result)) { ?>
 <td>'.$users["name"].'</td>
 <td>'.$users["email"].'</td>
 <td>'.$users["subject"].'</td>
+<td>'.$users["sent_date"].'</td>
 <td>
 <form method="post">
 <input type="text"  name="message_id" hidden value='.$users["message_id"].'>

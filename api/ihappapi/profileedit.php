@@ -5,8 +5,8 @@
 		$middle_name = trim(htmlspecialchars($_POST['middle_name']));
         $last_name = trim(htmlspecialchars($_POST['last_name']));
         $national_id = trim(htmlspecialchars($_POST['national_id']));
-         $gender = trim(htmlspecialchars($_POST['gender']));
-          $tribe = trim(htmlspecialchars($_POST['tribe']));
+        $gender = trim(htmlspecialchars($_POST['gender']));
+        $tribe = trim(htmlspecialchars($_POST['tribe']));
 		$country = trim(htmlspecialchars($_POST['country']));
 		$town = trim(htmlspecialchars($_POST['town']));
 		$phonenumber = trim(htmlspecialchars($_POST['phonenumber']));
@@ -29,7 +29,7 @@
                 $user_profile=$stmt->fetch(PDO::FETCH_ASSOC);
                 if($stmt->rowCount() == 1){
                     echo "FOUND";
-                    if($auth_user->update_user_profile($public_id, $first_name, $middle_name, $last_name,$national_id,$gender, $tribe, $country, $town, $phonenumber, $file_path))
+                    if($auth_user->update_user_profile($public_id, $first_name, $middle_name, $last_name,$national_id,$gender,$tribe, $country, $town, $phonenumber, $file_path))
                     {
                         $alert = "Profile updated";
                     }
@@ -38,7 +38,7 @@
                 else
                 {
                     echo "NOTHING FOUND";
-                    if($auth_user->post_user_profile($public_id, $first_name, $middle_name, $last_name,$national_id, $gender,$tribe, $country, $town, $phonenumber, $file_path))
+                    if($auth_user->post_user_profile($public_id, $first_name, $middle_name, $last_name,$national_id,$gender,$tribe, $country, $town, $phonenumber, $file_path))
                     {
                         $alert = "Profile created";
                     }

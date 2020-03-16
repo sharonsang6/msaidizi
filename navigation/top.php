@@ -26,6 +26,7 @@
      <li class="nav-item"><a class="nav-link" href="jobs.php">Jobs</a></li>
           <li class="nav-item"><a class="nav-link" href="profile.php">My services</a></li>
           <li class="nav-item"><a class="nav-link" href="offers.php">My offers</a></li>
+          <li class="nav-item"><a class="nav-link" href="work.php">Services reports</a></li>
      <?php }
      ?>
    
@@ -52,8 +53,9 @@
               <a class="dropdown-item" href="users.php">Users</a>
               <a class="dropdown-item" href="payments.php">Payments</a>
               <a class="dropdown-item" href="messages.php">Messages</a>
-              <a class="dropdown-item" href="summary.php">Summary Reports</a>
-            </div>
+              <a class="dropdown-item" href="archived_users.php">Archived Users</a>
+              <a class="dropdown-item" href="subscriptions.php">Subscriptions</a>
+              </div>
           </li>
         <?php }
         ?>

@@ -54,23 +54,32 @@
   display: -ms-flex;
 }
 
-
-/*.flexbox-container > div {
-  padding: 10px;
-}
-
-.flexbox-container > div:first-child {
-  margin-right: 20px;
-}*/
 </style>
   <div class="col-md-9 sunken">
+    <?php
+
+if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+55550) { ?>
+  <div class="btn-group btn-group-lg" role="group" aria-label="Basic example" style="width: 100%;">
+    <form action="mpesa/pesapal-iframe.php" method="post"  style="width: 100%;">
+    <input hidden type="text" name="amount" value="350" />
+    <input hidden type="text" name="type" value="MERCHANT" readonly="readonly" />
+    <input hidden type="text" name="description" value="Subscription" />
+    <input hidden type="text" name="reference" value="<?php echo $userRow['public_id']; ?>" />
+    <input hidden type="text" name="first_name" value="<?php echo $userRow['user_name']; ?>" />
+    <input hidden type="text" name="last_name" value="null" />
+    <input hidden type="text" name="email" value="<?php echo $userRow['user_email']; ?>" />
+    <button type="submit" class="btn btn-secondary" style="width: inherit;">Make payment to enjoy services</button>
+    </form>
+  </div>  
+
+<?php die(); }  ?>
     <div class="rows flexbox-container">
 
         <?php
           if (isset($_GET['typeofworker'])) {
             $typeofworker = $_GET['typeofworker'];
             $job = $_GET['job'];
-            $experiance = $_GET['experiance'];
+            $experience = $_GET['experience'];
             $town = $_GET['town'];
             $cost = $_GET['cost'];
             ?>
@@ -79,25 +88,25 @@
               LEFT JOIN users 
               ON `users`.`public_id`=`services`.`public_id`
               LEFT JOIN profile 
-              ON `profile`.`public_id`=`users`.`public_id` WHERE `services`.`typeofworker`='$typeofworker' AND `services`.`job`='$job' AND `services`.`experiance`>'$experiance' AND `services`.`town`='$town' AND `services`.`cost`>'$cost' ");
+              ON `profile`.`public_id`=`users`.`public_id` WHERE `services`.`typeofworker`='$typeofworker' AND `services`.`job`='$job' AND `services`.`experience`>'$experience' AND `services`.`town`='$town' AND `services`.`cost`>'$cost' ORDER BY `services_reg_date` DESC");
               $stmt->execute(array());
               $services=$stmt->fetchAll(PDO::FETCH_OBJ);
               foreach ($services as $service) { ?>
     <?php
     $stmt = $auth_user->runQuery("SELECT * FROM offers
-      WHERE `services_id`='".$service->services_id."' ");
+      WHERE `services_id`='".$service->services_id."' AND `status`=0 ");
     $stmt->execute(array(':services_id'=>$service->services_id));
     $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
     if($stmt->rowCount() != 1){ ?>
               <div class="card" style="width: 48%;float:left;margin: 0.5%;">
-                <div class="modal-dialog" style="margin: 5px;max-width: fit-content;">
+                <div class="modal-dialog" style="margin: 5px;max-width: 98%;">
                     <div class="sunken">
                       <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1"><?php echo $service->typeofworker; ?></h5>
                         <small class="text-muted"><?php echo $service->job; ?></small>
                       </div>
-                      Work experiance: <?php echo $service->experiance; ?> year(s)
-                      <?php echo $service->description; ?><br />
+                      <strong>Work experience:</strong> <?php echo $service->experience; ?> year(s)
+                     <strong>Description:</strong> <?php echo $service->description; ?><br />
                       <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1" style="color: gold;font-weight: bold;margin-left: 20px;"><?php echo $service->user_name; ?> - <?php echo $service->allrating; ?></h5>
                         <small class="text-muted">Ksh <?php echo $service->cost; ?> per day</small>
@@ -116,7 +125,7 @@
                         </div>
                         <div class="form-group findworkergroup">
                           <label>Select start date</label>
-                          <input id="inputState" name="start_date" placeholder="Start date" type="date" class="form-control" />
+                          <input id="inputState" name="start_date"min="<?php echo date("Y-m-d"); ?>" placeholder="Start date" type="date" class="form-control" />
                         </div>
                         <div class="form-group findworkergroup">
                           <label>Job duration in days</label>
@@ -157,27 +166,27 @@
               LEFT JOIN users 
               ON `users`.`public_id`=`services`.`public_id`
               LEFT JOIN profile 
-              ON `profile`.`public_id`=`users`.`public_id` ");
+              ON `profile`.`public_id`=`users`.`public_id` ORDER BY `services_reg_date` DESC");
             $stmt->execute(array());
             $services=$stmt->fetchAll(PDO::FETCH_OBJ);
             foreach ($services as $service) { ?>
 
     <?php
     $stmt = $auth_user->runQuery("SELECT * FROM offers
-      WHERE `services_id`='".$service->services_id."' ");
+      WHERE `services_id`='".$service->services_id."'AND `status`=0 ");
     $stmt->execute(array(':services_id'=>$service->services_id));
     $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
     if($stmt->rowCount() != 1){ ?>
 
             <div class="card" style="width: 48%;float:left;margin: 0.5%;">
-              <div class="modal-dialog" style="margin: 5px;max-width: fit-content;">
+              <div class="modal-dialog" style="margin: 5px;max-width: 98%;">
                   <div class="sunken">
                     <div class="d-flex w-100 justify-content-between">
                       <h5 class="mb-1"><?php echo $service->typeofworker; ?></h5>
                       <small class="text-muted"><?php echo $service->job; ?></small>
                     </div>
-                    Work experiance: <?php echo $service->experiance; ?> year(s)
-                    <?php echo $service->description; ?><br />
+                    <strong>Work experience:</strong> <?php echo $service->experience; ?> year(s)<br/>
+                    <strong>Description: </strong><?php echo $service->description; ?><br />
                     <div class="d-flex w-100 justify-content-between">
                       <h5 class="mb-1" style="color: gold;font-weight: bold;margin-left: 20px;"><?php echo $service->user_name; ?> - <?php echo $service->allrating; ?></h5>
                       <small class="text-muted">Ksh <?php echo $service->cost; ?> per day</small>
@@ -205,7 +214,7 @@
                         </div>
                         <div class="form-group findworkergroup">
                           <label>Select start date</label>
-                          <input id="inputState" name="start_date" placeholder="Start date" type="date" class="form-control" />
+                          <input id="inputState" name="start_date" min="<?php echo date("Y-m-d"); ?>" placeholder="Start date" type="date" class="form-control" />
                         </div>
                         <div class="form-group findworkergroup">
                           <label>Job duration in days</label>
@@ -243,6 +252,7 @@
                         Location: <?php echo $profile->country; ?> - <?php echo $profile->town; ?><br />
                         Email: <a href="mailto:<?php echo $profile->user_email; ?>"><?php echo $profile->user_email; ?></a><br />
                         Phone number: <a href="tel:<?php echo $profile->phonenumber; ?>"><?php echo $profile->phonenumber; ?></a><br />
+                        National ID: <a><?php echo $profile->national_id; ?></a><br />
                         <div style="display: flex;flex-direction: row;">
                             <img style="width: 50%;" src="<?php echo $profile->profileimage; ?>" />
                             <img style="width: 50%;" src="<?php echo $profile->idimage; ?>" />
@@ -265,7 +275,7 @@
 
     </div>
   </div>
- 
+
 
 </div>
 

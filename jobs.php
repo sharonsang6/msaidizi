@@ -18,87 +18,115 @@ if ($userRow['user_account'] !== "worker") {
   </style>            
   <div class="col-md-3 card">
   <p style="margin-top:20px"><strong>Filter your search by specifying the type of job you need</strong></p>
-          <form method="get" enctype="multipart/form-data" >
-          <div class="form-group findworkergroup">
-            <label>Select type of job</label>
-            <select id="inputState" name="type_of_worker" placeholder="Type of worker" type="text" class="form-control" >
-              <option value="Indoor">Indoor</option>
-              <option value="Outdoor">Outdoor</option>
-            </select>
-          </div>
-          <div class="form-group findworkergroup">
-            <label>Enter job title</label>
-            <select id="inputState" name="job_type" pattern="\D+" placeholder="Job" type="text" class="form-control">
-              <?php
-              $stmt = $auth_user->runQuery("SELECT job_type FROM jobs ");
-              $stmt->execute(array());
-              $jobs=$stmt->fetchAll(PDO::FETCH_OBJ);
-              foreach ($jobs as $j) { ?><option value="<?php echo $j->job_type; ?>"><?php echo $j->job_type; ?></option><?php } ?>
-            </select>
-          </div>
-          <div class="form-group findworkergroup">
-            <label>Enter job experiance ( years ) </label>
-            <input id="inputState" min="0" name="worker_experience" placeholder="Experiance" type="number" class="form-control" />
-          </div>
-          <div class="form-group findworkergroup">
-            <label>Select town</label>
-            <select id="inputState" name="your_location" placeholder="Town" type="text" class="form-control">
-              <?php require_once 'list.php'; ?>
-            </select>
-          </div>
-          <div class="form-group findworkergroup">
-            <label>Tribe</label>
-            <select id="inputState" name="tribe" placeholder="Town" type="text" class="form-control">
-               <option>Ameru</option>
-            <option>Embu</option>
-            <option>Kalenjin</option>
-            <option>Kamba</option>
-            <option>Kikuyu</option>
-            <option>Kisii</option>
-            <option>Kuria</option>
-            <option>Luhya</option>
-            <option>Luo</option>
-            <option>Maasai</option>
-            <option>Mijikenda</option>
-            <option>Orma</option>
-            <option>Rendile</option>
-            <option>Samburu</option>
-            <option>Somali</option>
-            <option>Suba</option>
-            <option>Swahili</option>
-            <option>Taita</option>
-            <option>Taveta</option>
-            <option>Turkana</option>
-            <option>Gabra</option>
-            <option>Mbeere</option>
-            <option>Nubia</option>
-            <option>Tharaka</option>
-            <option>IIchamus</option>
-            <option>Njemps</option>
-            <option>Borana</option>
-            <option>Galla</option>
-            <option>Gosha</option>
-            <option>Konso</option>
-            <option>Sakuye</option>
-            <option>Waat</option>
-            <option>Isaak</option>
-            <option>Walwana</option>
-            <option>Dasenach</option>
-            <option>Galjeel</option>
-            <option>Leysan</option>
-            <option>Bulji</option>
-            <option>Teso</option>
-            <option>Arab</option>
-            <option>Asian</option>
-            <option>European</option>
-            <option>American</option>
+          <form method="GET"  >
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Job type</label>
+          <select class="form-control postjobinput" name="job_type" id="exampleFormControlSelect1">
+            <option>Nanny</option>
+            <option>Caregiver</option>
+            <option>Gardener</option>
             <option>Other</option>
-            </select>
-          </div>
-          <div class="form-group findworkergroup">
-            <label>Cost per day ( Ksh ) </label>
-            <input id="inputState" min="0" name="salary" placeholder="Enter job cost" type="number" class="form-control" />
-          </div>
+            <option>Plumber</option>
+            <option>Childcare</option>
+            <option>Laundry</option>
+            <option>Electrician</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Type of Worker</label>
+          <select class="form-control postformselect" name="type_of_worker"id="exampleFormControlSelect1">
+            <option>Indoor</option>
+            <option>Outdoor</option>
+           
+         
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Location</label>
+          <select class="form-control postformselect" name="your_location"id="exampleFormControlSelect1">
+            <option>Nairobi</option>
+            <option>Kisumu</option>
+            <option>Narok</option>
+            <option>Mombasa</option>
+            <option>Eldoret</option>
+            <option>Kericho</option>
+            <option>Nakuru</option>
+            <option>Lamu</option>
+            <option>Kisii</option>
+            <option>Malindi</option>
+            <option>Bungoma</option>
+            <option>Baragoi</option>
+            <option>Butere</option>
+            <option>Dadaab</option>
+            <option>Diani Beach</option>
+            <option>Emali</option>
+            <option>Embu</option>
+            <option>Garissa</option>
+            <option>Gede</option>
+            <option>Hola</option>
+            <option>Homa Bay</option>
+            <option>Isiolo</option>
+            <option>Kitui</option>
+            <option>Kibwez</option>
+            <option>Kajiado</option>
+            <option>Kakamega</option>
+            <option>Kakuma</option>
+            <option>Kapenguria</option>
+            <option>Keroka</option>
+            <option>Kiambu            </option>
+            <option>Kilifi</option>
+            <option>Langata</option>
+            <option>Litein</option>
+            <option>Lodwar</option>
+            <option>Lokichoggio</option>
+            <option>Londiani</option>
+            <option>Loyangalani</option>
+            <option>Machakos</option>
+            <option>Makindu</option>
+            <option>Mandera</option>
+            <option>Marlal</option>
+            <option>Marsabit</option>
+            <option>Meru</option>
+            <option>Moyale</option>
+            <option>Mumias</option>
+            <option>Muranga</option>
+            <option>Mutomo</option>
+            <option>Naivasha</option>
+            <option>Namanga</option>
+            <option>Nanyuki</option>
+            <option>Naro Moru</option>
+            <option>Nyahururu</option>
+            <option>Nyeri</option>
+            <option>Ruiru</option>
+            <option>Shimoni</option>
+            <option>Takaungu</option>
+            <option>Thika</option>
+            <option>Vihiga</option>
+            <option>Voi</option>
+            <option>Wajir</option>
+            <option>Watamu</option>
+            <option>Webuye</option>
+            <option>Wote</option>
+            <option>Wundanyi</option>
+            <option>Other</option>
+
+         
+          </select>
+        </div>
+          
+            
+                              
+           <div class="form-group">
+          <label for="exampleFormControlInput1">Salary (per day)</label>
+          <input type="number" class="form-control postjobinput" pattern="d{1+}"  required name="salary"id="exampleFormControlInput1" >
+        </div>
+        
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Experience(years)</label>
+          <input type="number" max="3"class="form-control postjobinput" required pattern="d{0+}" name="worker_experience" id="exampleFormControlInput1" >
+        </div>
+      
+       
           <button type="submit" name="filterjobs" class="btn btn-primary btn-block findworkergroup createjob">Filter</button>
         </form>
   </div>
@@ -121,43 +149,52 @@ if ($userRow['user_account'] !== "worker") {
  
 
         <?php
-          if (isset($_POST['type_of_worker'])) {
-            $type_of_worker = $_GET['type_of_worker'];
-            $job_type = $_GET['job_type'];
-            $your_location = $_GET['your_location'];
-            $salary = $_GET['salary'];
-            $worker_experience = $_GET['worker_experience'];
-            $tribe = $_GET['tribe'];
-            $job_description = $_GET['job_description'];
-           
-
+          if (isset($_GET['filterjobs'])) {
+			$job_type = $_GET['job_type'];	
+			$type_of_worker = $_GET['type_of_worker'];	
+			$your_location = $_GET['your_location'];	
+			$salary = $_GET['salary'];	
+			$worker_experience = $_GET['worker_experience'];	
+			           
 
             $stmt = $auth_user->runQuery("SELECT * FROM jobs 
               LEFT JOIN users 
               ON `users`.`public_id`=`jobs`.`public_id`
               LEFT JOIN profile 
-              ON `profile`.`public_id`=`users`.`public_id` WHERE `jobs`.`type_of_worker`='$type_of_worker' AND `jobs`.`job_type`='$job_type'AND `jobs`.`your_location`='$your_location' AND `jobs`.`salary`>'$salary' AND `jobs`.`worker_experience`>'$worker_experience'  AND `jobs`.`tribe`='$tribe' AND `jobs`.`job_description`='$job_description' ");
+              ON `profile`.`public_id`=`users`.`public_id` WHERE 
+`jobs`.`job_type`='$job_type' AND
+`jobs`.`type_of_worker`='$type_of_worker' AND
+`jobs`.`your_location`='$your_location' AND
+`jobs`.`salary`>='$salary' AND
+`jobs`.`worker_experience`>='$worker_experience'
+               ORDER BY `date_created` DESC ");
               $stmt->execute(array());
               $jobs=$stmt->rowCount();
-              if ($jobs > 0) { ?>
+              if ($jobs > 0) { echo "FOUND"; ?>
               <?php
               $stmt = $auth_user->runQuery("SELECT * FROM jobs 
               LEFT JOIN users 
               ON `users`.`public_id`=`jobs`.`public_id`
               LEFT JOIN profile 
-              ON `profile`.`public_id`=`users`.`public_id` WHERE `jobs`.`type_of_worker`='$type_of_worker' AND `jobs`.`job_type`='$job_type' AND `jobs`.`your_location`='$your_location' AND `jobs`.`salary`>'$salary' AND `jobs`.`worker_experience`>'$worker_experience'  AND `jobs`.`tribe`='$tribe'AND  `jobs`.`job_description`='$job_description'  ");
+              ON `profile`.`public_id`=`users`.`public_id` WHERE
+`jobs`.`job_type`='$job_type' AND
+`jobs`.`type_of_worker`='$type_of_worker' AND
+`jobs`.`your_location`='$your_location' AND
+`jobs`.`salary`>='$salary' AND
+`jobs`.`worker_experience`>='$worker_experience'
+                ORDER BY `date_created` DESC   ");
               $stmt->execute(array());
               $jobs=$stmt->fetchAll(PDO::FETCH_OBJ);
               foreach ($jobs as $job) { ?>
               <div class="card" style="width: 48%;float:left;margin: 0.5%;">
-                <div class="modal-dialog" style="margin: 5px;max-width: 80%;">
+                <div class="modal-dialog" style="margin: 5px;max-width: 98%;">
                     <div class="sunken">
                       <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1"><?php echo $job->type_of_worker; ?></h5>
                         <small class="text-muted"><?php echo $job->job_type; ?></small>
                       </div>
-                      Work experiance: <?php echo $job->worker_experience; ?> year(s)
-                      <?php echo $job->job_description; ?><br />
+                     <strong>Work experiance:</strong>  <?php echo $job->worker_experience; ?> year(s)<br />
+                     <strong>Description: </strong>  <?php echo $job->job_description; ?><br />
                       <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1" style="color: gold;font-weight: bold;margin-left: 20px;"><?php echo $job->user_name; ?> - <?php echo $job->allrating; ?></h5>
                         <small class="text-muted"><?php echo $job->tribe; ?></small>
@@ -169,9 +206,15 @@ if ($userRow['user_account'] !== "worker") {
                       </div>
                     </div>                             
                   </div>
+                  <?php } ?>
+                    <?php if ($job->your_file == "") { ?>
+                     <?php }else{ ?>
+                  	<a href="<?php echo $job->your_file; ?>" readonly target="_newTab">View document</a>  
+                     <?php } ?>
+
                  <div class="btn-group btn-group-sm" role="group" aria-label="Basic example" style="width: 100%;">
                 <button type="button" class="btn btn-secondary" style="width: inherit;"  data-toggle="modal" data-target="#<?php echo $job->user_name; ?>">View employer</button>
-                  </div>  
+                  </div>
                  
               </div> 
            
@@ -190,19 +233,19 @@ if ($userRow['user_account'] !== "worker") {
               LEFT JOIN users 
               ON `users`.`public_id`=`jobs`.`public_id`
               LEFT JOIN profile 
-              ON `profile`.`public_id`=`users`.`public_id` ");
+              ON `profile`.`public_id`=`users`.`public_id` ORDER BY `date_created` DESC");
             $stmt->execute(array());
             $jobs=$stmt->fetchAll(PDO::FETCH_OBJ);
             foreach ($jobs as $job) { ?>
             <div class="card" style="width: 48%;float:left;margin: 0.5%;">
-              <div class="modal-dialog" style="margin: 5px;max-width: fit-content;">
+              <div class="modal-dialog" style="margin: 5px;max-width: 98%;">
                   <div class="sunken">
                     <div class="d-flex w-100 justify-content-between">
                       <h5 class="mb-1"><?php echo $job->type_of_worker; ?></h5>
                       <small class="text-muted"><?php echo $job->job_type; ?></small>
                     </div>
-                    Work experiance: <?php echo $job->worker_experience; ?> year(s)
-                    <?php echo $job->job_description; ?><br />
+                    <strong>Work experiance:</strong>  <?php echo $job->worker_experience; ?> year(s)<br />
+                   <strong>Description: </strong>  <?php echo $job->job_description; ?><br />
                     <div class="d-flex w-100 justify-content-between">
                       <h5 class="mb-1" style="color: gold;font-weight: bold;margin-left: 20px;"><?php echo $job->user_name; ?> - <?php echo $job->allrating; ?></h5>
                       <small class="text-muted">Ksh <?php echo $job->salary; ?> per day</small>
@@ -217,7 +260,10 @@ if ($userRow['user_account'] !== "worker") {
                     <?php }else{ ?>
                     
                     <?php } ?>
-
+                    <?php if ($job->your_file == "") { ?>
+                     <?php }else{ ?>
+                  	<a href="<?php echo $job->your_file; ?>" readonly target="_newTab">View document</a>  
+                     <?php } ?>
 
                     <button type="button" class="btn btn-secondary" style="width: inherit;"  data-toggle="modal" data-target="#<?php echo $job->user_name; ?>">View employer</button>
                   </div>  

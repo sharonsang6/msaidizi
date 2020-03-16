@@ -1,3 +1,8 @@
+<?php 
+$title = "User payements";
+// $description = "this is a user description";
+
+ ?>
 <?php require_once 'header/header.php'; ?>
 <?php require_once 'app/sessionconfig/loginsession.php'; ?>
 <?php require_once 'configurations/config.php'; ?>
@@ -26,6 +31,33 @@
   <center><strong>My payements reports</strong></center>
       <div style="margin: 5px;max-width: 100%;">
           <div class="sunken " id="mytable">
+             <div class="row" style="height:130px !important">
+        <div class="card col-md-2" style="float:left; margin:25px">            
+            <p><strong>Premium Users</strong></p>
+            <center>
+             <?php
+                  $stmt = $auth_user->runQuery("SELECT * FROM users 
+                 LEFT JOIN profile ON `profile`.`public_id`=`users`.`public_id` WHERE premium=1");
+                  $stmt->execute(array());
+                  $number_of_rows = $stmt->rowCount(); 
+                 echo $number_of_rows;
+   ?>
+ </center>
+</div>
+ <div class="card col-md-2" style="float:left; margin:25px">            
+            <p><strong>Non Premium Users</strong></p>
+            <center>
+             <?php
+                  $stmt = $auth_user->runQuery("SELECT * FROM users 
+                 LEFT JOIN profile ON `profile`.`public_id`=`users`.`public_id` WHERE premium=0");
+                  $stmt->execute(array());
+                  $number_of_rows = $stmt->rowCount(); 
+                 echo $number_of_rows;
+   ?>
+ </center>
+</div>
+                 
+   </div> 
 
 <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
 <link href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css
@@ -75,7 +107,7 @@
 <td><?php echo $user->user_email; ?></td>
 <td><?php echo $user->pesapal_transaction_tracking_id; ?></td>
 <td><?php echo $user->pesapal_merchant_reference; ?></td>
-<td><?php echo $user->reg_date; ?></td>a
+<td><?php echo $user->reg_date; ?></td>
 
 
 <td>

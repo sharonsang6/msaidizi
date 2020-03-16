@@ -27,33 +27,34 @@
 		<p><strong>Please edit your profile by filling the form below</strong></p>
 			<div class="form-group findworkergroup">
 				<label>First name</label>
-				<input id="inputState" name="first_name" pattern="\D+" placeholder="first name" required type="text" class="form-control" value="<?php echo $user_profile['first_name']; ?>" />
+				<input id="inputState" name="first_name" placeholder="first name" required type="text" class="form-control" value="<?php echo $user_profile['first_name']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Middle name</label>
-				<input id="inputState" name="middle_name" pattern="\D+" placeholder="middle name"  type="text" class="form-control" value="<?php echo $user_profile['middle_name']; ?>" />
+				<input id="inputState" name="middle_name" placeholder="middle name" type="text" class="form-control" value="<?php echo $user_profile['middle_name']; ?>"/>
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Last name</label>
-				<input id="inputState" name="last_name" pattern="\D+" placeholder="last name" required type="text" class="form-control" value="<?php echo $user_profile['last_name']; ?>" />
+				<input id="inputState" name="last_name" placeholder="last name" required type="text" class="form-control" value="<?php echo $user_profile['last_name']; ?>"/>
 			</div>
 			<div class="form-group findworkergroup">
 				<label>ID No/Passport No</label>
-				<input id="inputState" name="national_id" pattern="d{6+}" placeholder="" type="number" required class="form-control" value="<?php echo $user_profile['national_id']; ?>" />
+				<input id="inputState" name="national_id" min="5"  max="20" placeholder="" type="number" required class="form-control" value="<?php echo $user_profile['national_id']; ?>"/>
 			</div>
+
 			<div class="form-group findworkergroup">
 				<label>Gender</label>
-				<select id="inputState" name="gender" placeholder="Country" type="text" class="form-control" >
-							<option value="Kenya">Male</option>
-							<option value="Uganda">Female</option>
-						
+				<select id="inputState" name="gender" placeholder="" type="text" class="form-control" >
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+							
 						</select>
 				<!-- <input id="inputState" name="country" placeholder="Country" type="text" class="form-control" /> -->
 			</div>
-				<div class="form-group findworkergroup">
+			<div class="form-group findworkergroup">
 				<label>Tribe</label>
-				<select id="inputState" name="tribe" placeholder="Country" type="text" class="form-control" >
-						  <option>Ameru</option>
+				<select id="inputState" name="tribe" placeholder="" type="text" class="form-control" >
+						    <option>Ameru</option>
             <option>Embu</option>
             <option>Kalenjin</option>
             <option>Kamba</option>
@@ -97,7 +98,7 @@
             <option>European</option>
             <option>American</option>
             <option>Other</option>
-
+							
 						</select>
 				<!-- <input id="inputState" name="country" placeholder="Country" type="text" class="form-control" /> -->
 			</div>
@@ -113,15 +114,13 @@
 			<div class="form-group findworkergroup">
 				<label>Town</label>
 				<select id="inputState" name="town" placeholder="town" type="text" class="form-control" >
-							<option value="Nairobi">Nairobi</option>
-							<option value="Kisumu">Kisumu</option>
-							<option value="Nakuru">Nakuru</option>
+				<?php require_once 'list.php'; ?>
 						</select>
 				<!-- <input id="inputState" name="town" placeholder="town" type="text" class="form-control" /> -->
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Phone number</label>
-				<input id="inputState" name="phonenumber" pattern="07/d{8}" placeholder="format 07xxxxxx"  min=10 required type="number" class="form-control" value="<?php echo $user_profile['phonenumber']; ?>" />
+				<input id="inputState" name="phonenumber" placeholder="Phone number" required   min="10" type="number" class="form-control" value="<?php echo $user_profile['phonenumber']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Profile image</label>
@@ -134,33 +133,34 @@
 		<p><strong>Please edit your profile by filling the form below</strong></p>
 			<div class="form-group findworkergroup">
 				<label>First name</label>
-				<input id="inputState" name="first_name" pattern="\D+" placeholder="first name" required type="text" class="form-control" />
+				<input id="inputState" name="first_name" placeholder="first name" required type="text" class="form-control" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Middle name</label>
-				<input id="inputState" name="middle_name" pattern="\D+" placeholder="middle name" type="text" class="form-control" />
+				<input id="inputState" name="middle_name" placeholder="middle name" type="text" class="form-control" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Last name</label>
-				<input id="inputState" name="last_name" pattern="\D+" placeholder="last name" required type="text" class="form-control" />
+				<input id="inputState" name="last_name" placeholder="last name" required type="text" class="form-control" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>ID No/Passport No</label>
-				<input id="inputState" name="national_id" pattern="d{6+}" placeholder="" type="number" required class="form-control" value="<?php echo $user_profile['national_id']; ?>" />
+				<input id="inputState" name="national_id" min="5" max="20"  placeholder="" type="number" required class="form-control" />
 			</div>
+
 			<div class="form-group findworkergroup">
 				<label>Gender</label>
-				<select id="inputState" name="gender" placeholder="Country" type="text" class="form-control" >
-							<option value="Kenya">Male</option>
-							<option value="Uganda">Female</option>
-						
+				<select id="inputState" name="gender" placeholder="" type="text" class="form-control" >
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+							
 						</select>
 				<!-- <input id="inputState" name="country" placeholder="Country" type="text" class="form-control" /> -->
 			</div>
-				<div class="form-group findworkergroup">
+			<div class="form-group findworkergroup">
 				<label>Tribe</label>
-				<select id="inputState" name="tribe" placeholder="Country" type="text" class="form-control" >
-						  <option>Ameru</option>
+				<select id="inputState" name="tribe" placeholder="" type="text" class="form-control" >
+						    <option>Ameru</option>
             <option>Embu</option>
             <option>Kalenjin</option>
             <option>Kamba</option>
@@ -204,7 +204,7 @@
             <option>European</option>
             <option>American</option>
             <option>Other</option>
-
+							
 						</select>
 				<!-- <input id="inputState" name="country" placeholder="Country" type="text" class="form-control" /> -->
 			</div>
@@ -220,19 +220,17 @@
 			<div class="form-group findworkergroup">
 				<label>Town</label>
 				<select id="inputState" name="town" placeholder="town" type="text" class="form-control" >
-							<option value="Nairobi">Nairobi</option>
-							<option value="Kisumu">Kisumu</option>
-							<option value="Nakuru">Nakuru</option>
+				<?php require_once 'list.php'; ?>
 						</select>
 				<!-- <input id="inputState" name="town" placeholder="town" type="text" class="form-control" /> -->
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Phone number</label>
-				<input id="inputState" name="phonenumber" placeholder="Phone number" required   min=10 type="number" class="form-control" />
+				<input id="inputState" name="phonenumber" placeholder="Phone number" required   min="10" type="number" class="form-control" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Profile image</label>
-				<input id="inputState" name="profileimage" type="file" required pattern="07/d{8}" placeholder="format 07xxxxxx"  class="form-control" />
+				<input id="inputState" name="profileimage" type="file" required placeholder="Profile image"  class="form-control" />
 			</div>
 			<button type="submit" name="submitprofile" class="btn btn-primary btn-block findworkergroup createservice">Update profile</button>
 		</form>
@@ -244,87 +242,80 @@
 if (isset($_GET['pesapal_transaction_tracking_id'])) {
 	$pesapal_transaction_tracking_id = $_GET['pesapal_transaction_tracking_id'];
 	$pesapal_merchant_reference = $_GET['pesapal_merchant_reference']; 
+	?>
 
-    $stmt = $auth_user->runQuery("UPDATE `users` SET `premium`='1', `pesapal_transaction_tracking_id`='$pesapal_transaction_tracking_id', `pesapal_merchant_reference`='$pesapal_merchant_reference' WHERE `public_id`='$public_id' ");
-    $stmt->bindparam("1", $premium); 
-    $stmt->bindparam(":pesapal_transaction_tracking_id", $pesapal_transaction_tracking_id); 
-    $stmt->bindparam(":pesapal_merchant_reference", $pesapal_merchant_reference); 
-    $stmt->execute();
-    $alert = "Premium activated";
-
-    ?>
 <head>
-<script language="javascript">
-function printdiv(printpage) {
-var headstr<?php
-if (isset($_GET['pesapal_transaction_tracking_id'])) {
-	$pesapal_transaction_tracking_id = $_GET['pesapal_transaction_tracking_id'];
-	$pesapal_merchant_reference = $_GET['pesapal_merchant_reference']; 
-
-    $stmt = $auth_user->runQuery("UPDATE `users` SET `premium`='1', `pesapal_transaction_tracking_id`='$pesapal_transaction_tracking_id', `pesapal_merchant_reference`='$pesapal_merchant_reference' WHERE `public_id`='$public_id' ");
-    $stmt->bindparam("1", $premium); 
-    $stmt->bindparam(":pesapal_transaction_tracking_id", $pesapal_transaction_tracking_id); 
-    $stmt->bindparam(":pesapal_merchant_reference", $pesapal_merchant_reference); 
-    $stmt->execute();
-	$alert = "Premium activated";
-}
-
-    ?>
-	
-<head>
-<script language="javascript">
-function printdiv(pri = "<html><head><title></title></head><body>";
-var footstr = "</body>";
-var newstr = document.all.item(printpage).innerHTML;
-var oldstr = document.body.innerHTML;
-document.body.innerHTML = headstr + newstr + footstr;
-window.print();
-document.body.innerHTML = oldstr;
-return false;
-}
-</script>
-
-<title>div print</title>
+    <script language="javascript">
+        function printdiv(printpage) {
+            var headstr = "<html><head><title></title></head><body>";
+            var footstr = "</body>";
+            var newstr = document.all.item(printpage).innerHTML;
+            var oldstr = document.body.innerHTML;
+            document.body.innerHTML = headstr + newstr + footstr;
+            window.print();
+            document.body.innerHTML = oldstr;
+            return false;
+        }
+    </script>
+    <title>div print</title>
 </head>
+
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 <div class="container " id="mainC">
-<div class="modal show" id="myModal" role="dialog">
-<div class="modal-dialog">
-<div class="modal-content">
-<div class="modal-body">
+  <div class="modal show" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+
 <body>
 <div id="div_print">
-<h1 style="Color:Red">The Div content which you want to print</h1>
-<div class="myDiv">
-<?php echo $userRow['user_name']; ?><br />
-<?php echo $userRow['user_name']; ?><br />
-Tracking ID: <?php echo $pesapal_transaction_tracking_id; ?><br />
-Payment ref: <?php echo $pesapal_merchant_reference; ?>
-</div>
-</div>
+        <h1 style="Color:Red">The Div content which you want to print</h1>
+		<div class="myDiv">
+			<?php echo $userRow['user_name']; ?><br />
+			<?php echo $userRow['user_name']; ?><br />
+			Tracking ID: <?php echo $pesapal_transaction_tracking_id; ?><br />
+			Payment ref: <?php echo $pesapal_merchant_reference; ?>
+		</div>
+    </div>
 </body>
-</div>
-<div class="modal-footer">
-<script type="text/javascript">
-function myFunction() {
-var x = document.getElementById("mainC");
-if (x.style.display === "none") {
-x.style.display = "block";
-} else {
-x.style.display = "none";
+
+        </div>
+        <div class="modal-footer">
+        	<script type="text/javascript">
+        		function myFunction() {
+  var x = document.getElementById("mainC");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
 }
-}
-</script>
+        	</script>
 <button onclick="myFunction()">Click Me</button>
-<button type="button" class="btn btn-default" data-dismiss="modal" onClick="printdiv('div_print');">PRINT</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" onClick="printdiv('div_print');">PRINT</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
 </div>
-</div>
-</div>
-</div>
-</div>
-    <?php
+
+
+	<?php
+                $amount = 3500;
+    $stmt = $auth_user->runQuery("UPDATE `users` SET `premium`='1', `pesapal_transaction_tracking_id`='$pesapal_transaction_tracking_id', `pesapal_merchant_reference`='$pesapal_merchant_reference', 	`amount`='$amount' WHERE `public_id`='$public_id' ");
+    $stmt->bindparam("1", $premium); 
+    $stmt->bindparam(":pesapal_transaction_tracking_id", $pesapal_transaction_tracking_id); 
+    $stmt->bindparam(":pesapal_merchant_reference", $pesapal_merchant_reference); 
+    $stmt->bindparam(":amount", $amount); 
+    $stmt->execute();
+    $alert = "Premium activated";
 }
 
 ?>   
@@ -349,10 +340,12 @@ x.style.display = "none";
     	<hr />
     	<center>
     		<h4>PASSWORD RESET</h4>
-    		<form method="post" enctype="multipart/form-data" >
+			<form method="post" enctype="multipart/form-data" >
 				<div class="form-group findworkergroup">
-					<label>First name</label>
-					<input id="inputState" pattern="\D+" name="user_password" placeholder="Password" type="password" class="form-control" />
+					<input id="inputState" name="user_password" required placeholder="Password" type="password" class="form-control" />
+				</div>
+				<div class="form-group findworkergroup">
+					<input id="inputState" name="cfuser_password" required placeholder="Confirm Password" type="password" class="form-control" />
 				</div>
 				<button type="submit" name="btn_reset_password" class="btn btn-primary btn-block findworkergroup createservice">Change password</button>
 			</form>
@@ -382,33 +375,35 @@ x.style.display = "none";
 		<p><strong>Please edit your profile by filling the form below</strong></p>
 			<div class="form-group findworkergroup">
 				<label>First name</label>
-				<input id="inputState" name="first_name" pattern="\D+" placeholder="first name" required type="text" class="form-control" value="<?php echo $user_profile['first_name']; ?>" />
+				<input id="inputState" name="first_name" placeholder="first name" required type="text" class="form-control" value="<?php echo $user_profile['first_name']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Middle name</label>
-				<input id="inputState" name="middle_name" pattern="\D+" placeholder="middle name"  type="text" class="form-control" value="<?php echo $user_profile['middle_name']; ?>" />
+				<input id="inputState" name="middle_name" placeholder="middle name"  type="text" class="form-control" value="<?php echo $user_profile['middle_name']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Last name</label>
-				<input id="inputState" name="last_name" pattern="\D+" placeholder="last name" type="text" required class="form-control" value="<?php echo $user_profile['last_name']; ?>" />
+				<input id="inputState" name="last_name" placeholder="last name" type="text" required class="form-control" value="<?php echo $user_profile['last_name']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>ID No/Passport No</label>
-				<input id="inputState" name="id" pattern="d{6+}" placeholder="id/passport" type="text" required class="form-control" value="<?php echo $user_profile['last_name']; ?>" />
+				<input id="inputState" name="national_id" min={5} max="20" placeholder="id/passport" type="text" required class="form-control" value="<?php echo $user_profile['national_id']; ?>" />
 			</div>
+
 			<div class="form-group findworkergroup">
 				<label>Gender</label>
-				<select id="inputState" name="gender" placeholder="Country" type="text" class="form-control" >
-							<option value="Kenya">Male</option>
-							<option value="Uganda">Female</option>
-						
+				<select id="inputState" name="gender" placeholder="" type="text" class="form-control" >
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+							
 						</select>
-				<!-- <input id="inputState" name="country" placeholder="Country" type="text" class="form-control" /> -->
+				<!--
+				 <input id="inputState" name="country" placeholder="Country" type="text" class="form-control" /> -->
 			</div>
-				<div class="form-group findworkergroup">
+			<div class="form-group findworkergroup">
 				<label>Tribe</label>
-				<select id="inputState" name="tribe" placeholder="Country" type="text" class="form-control" >
-							  <option>Ameru</option>
+				<select id="inputState" name="tribe" placeholder="" type="text" class="form-control" >
+							    <option>Ameru</option>
             <option>Embu</option>
             <option>Kalenjin</option>
             <option>Kamba</option>
@@ -452,7 +447,7 @@ x.style.display = "none";
             <option>European</option>
             <option>American</option>
             <option>Other</option>
-
+							
 						</select>
 				<!-- <input id="inputState" name="country" placeholder="Country" type="text" class="form-control" /> -->
 			</div>
@@ -468,15 +463,13 @@ x.style.display = "none";
 			<div class="form-group findworkergroup">
 				<label>Town</label>
 				<select id="inputState" name="town" placeholder="town" type="text" class="form-control" >
-							<option value="Nairobi">Nairobi</option>
-							<option value="Kisumu">Kisumu</option>
-							<option value="Nakuru">Nakuru</option>
+				<?php require_once 'list.php'; ?>
 						</select>
 				<!-- <input id="inputState" name="town" placeholder="town" type="text" class="form-control" /> -->
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Phone number</label>
-				<input id="inputState" name="phonenumber" pattern="07/d{8}" placeholder="format 07xxxxxx" required  min=10 type="number" class="form-control" value="<?php echo $user_profile['phonenumber']; ?>" />
+				<input id="inputState" name="phonenumber" placeholder="Phone number" required  min="10" type="number" class="form-control" value="<?php echo $user_profile['phonenumber']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Profile image</label>
@@ -486,35 +479,37 @@ x.style.display = "none";
 		</form>
 	<?php }else{ ?>
 		<form method="post" enctype="multipart/form-data" >
+		<p><strong>Please edit your profile by filling the form below</strong></p>
 			<div class="form-group findworkergroup">
 				<label>First name</label>
-				<input id="inputState" name="first_name" pattern="\D+" placeholder="first name" required type="text" class="form-control" />
+				<input id="inputState" name="first_name" placeholder="first name" required type="text" class="form-control" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Middle name</label>
-				<input id="inputState" name="middle_name" pattern="\D+" placeholder="middle name" type="text" class="form-control" />
+				<input id="inputState" name="middle_name" placeholder="middle name" type="text" class="form-control" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Last name</label>
-				<input id="inputState" name="last_name" pattern="\D+" placeholder="last name" required type="text" class="form-control" />
+				<input id="inputState" name="last_name" placeholder="last name" required type="text" class="form-control" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>ID No/Passport No</label>
-				<input id="inputState" name="national_id" pattern="d{6+}" placeholder="" type="number" required class="form-control" value="<?php echo $user_profile['national_id']; ?>" />
-			</div>
-				<div class="form-group findworkergroup">
+				<input id="inputState" name="national_id" min="5" max="20" placeholder="" type="number" required class="form-control" />
+				</div>
+
+			<div class="form-group findworkergroup">
 				<label>Gender</label>
-				<select id="inputState" name="gender" placeholder="Country" type="text" class="form-control" >
-							<option value="Kenya">Male</option>
-							<option value="Uganda">Female</option>
-						
+				<select id="inputState" name="gender" placeholder="" type="text" class="form-control" >
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
+							
 						</select>
 				<!-- <input id="inputState" name="country" placeholder="Country" type="text" class="form-control" /> -->
 			</div>
-				<div class="form-group findworkergroup">
+			<div class="form-group findworkergroup">
 				<label>Tribe</label>
-				<select id="inputState" name="tribe" placeholder="Country" type="text" class="form-control" >
-							  <option>Ameru</option>
+				<select id="inputState" name="tribe" placeholder="" type="text" class="form-control" >
+						    <option>Ameru</option>
             <option>Embu</option>
             <option>Kalenjin</option>
             <option>Kamba</option>
@@ -558,14 +553,14 @@ x.style.display = "none";
             <option>European</option>
             <option>American</option>
             <option>Other</option>
-
+							
 						</select>
 				<!-- <input id="inputState" name="country" placeholder="Country" type="text" class="form-control" /> -->
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Country</label>
 				<select id="inputState" name="country" placeholder="Country" type="text" class="form-control" >
-							<option value="Kenya">Kenya</option>
+				<option value="Kenya">Kenya</option>
 							<option value="Uganda">Uganda</option>
 							<option value="Tanzania">Tanzania</option>
 						</select>
@@ -574,15 +569,13 @@ x.style.display = "none";
 			<div class="form-group findworkergroup">
 				<label>Town</label>
 				<select id="inputState" name="town" placeholder="town" type="text" class="form-control" >
-							<option value="Nairobi">Nairobi</option>
-							<option value="Kisumu">Kisumu</option>
-							<option value="Nakuru">Nakuru</option>
+				<?php require_once 'list.php'; ?>
 						</select>
 				<!-- <input id="inputState" name="town" placeholder="town" type="text" class="form-control" /> -->
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Phone number</label>
-				<input id="inputState" name="phonenumber" pattern="07/d{8}" placeholder="format 07xxxxxx" required  min=10 type="number" class="form-control" />
+				<input id="inputState" name="phonenumber" placeholder="Phone number" required  min="10" type="number" class="form-control" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Profile image</label>
@@ -625,7 +618,7 @@ x.style.display = "none";
 			<form method="post" enctype="multipart/form-data" >
 				<div class="form-group findworkergroup">
 					<label>First name ( Provided profile name should match with national ID )</label>
-					<input id="inputState" name="idimage" pattern="\D+" placeholder="National ID" type="file" class="form-control" />
+					<input id="inputState" name="idimage" placeholder="National ID" type="file" class="form-control" />
 				</div>
 				<button type="submit" name="update_image" class="btn btn-primary btn-block findworkergroup">Upload ID image</button>
 			</form>
@@ -643,26 +636,109 @@ x.style.display = "none";
 				</div>
 				<div class="form-group findworkergroup">
 					<label>Enter job title</label>
-					<input id="inputState" name="job" pattern="\D+" placeholder="Job" type="text" class="form-control" />
+					<input id="inputState" name="job" placeholder="Job" type="text" class="form-control" />
 				</div>
 				<div class="form-group findworkergroup">
-					<label>Enter job experiance ( years ) </label>
-					<input id="inputState" min="0" name="experiance" pattern="d{0+}"placeholder="Experiance" type="number" class="form-control" />
+					<label>Enter job experience ( years ) </label>
+					<input id="inputState" min="0" name="experience" placeholder="Experience" type="number" class="form-control" />
 				</div>
 				
 				<div class="form-group findworkergroup">
-					<label>Select town</label>
-					<select id="inputState" name="town" placeholder="Town" type="text" class="form-control">
-						<?php require_once 'list.php'; ?>
-					</select>
-				</div>
+				<label>Town</label>
+				<select id="inputState" name="town" placeholder="town" type="text" class="form-control" >
+				<option>Nairobi</option>
+            <option>Kisumu</option>
+            <option>Narok</option>
+            <option>Mombasa</option>
+            <option>Eldoret</option>
+            <option>Kericho</option>
+            <option>Nakuru</option>
+            <option>Lamu</option>
+            <option>Kisii</option>
+            <option>Malindi</option>
+            <option>Bungoma</option>
+            <option>Baragoi</option>
+            <option>Butere</option>
+            <option>Dadaab</option>
+            <option>Diani Beach</option>
+            <option>Emali</option>
+            <option>Embu</option>
+            <option>Garissa</option>
+            <option>Gede</option>
+            <option>Hola</option>
+            <option>Homa Bay</option>
+            <option>Isiolo</option>
+            <option>Kitui</option>
+            <option>Kibwez</option>
+            <option>Kajiado</option>
+            <option>Kakamega</option>
+            <option>Kakuma</option>
+            <option>Kapenguria</option>
+            <option>Keroka</option>
+            <option>Kiambu            </option>
+            <option>Kilifi</option>
+            <option>Langata</option>
+            <option>Litein</option>
+            <option>Lodwar</option>
+            <option>Lokichoggio</option>
+            <option>Londiani</option>
+            <option>Loyangalani</option>
+            <option>Machakos</option>
+            <option>Makindu</option>
+            <option>Mandera</option>
+            <option>Marlal</option>
+            <option>Marsabit</option>
+            <option>Meru</option>
+            <option>Moyale</option>
+            <option>Mumias</option>
+            <option>Muranga</option>
+            <option>Mutomo</option>
+            <option>Naivasha</option>
+            <option>Namanga</option>
+            <option>Nanyuki</option>
+            <option>Naro Moru</option>
+            <option>Nyahururu</option>
+            <option>Nyeri</option>
+            <option>Ruiru</option>
+            <option>Shimoni</option>
+            <option>Takaungu</option>
+            <option>Thika</option>
+            <option>Vihiga</option>
+            <option>Voi</option>
+            <option>Wajir</option>
+            <option>Watamu</option>
+            <option>Webuye</option>
+            <option>Wote</option>
+            <option>Wundanyi</option>
+            <option>Other</option>
+						</select>
+				<!-- <input id="inputState" name="town" placeholder="town" type="text" class="form-control" /> -->
+			</div>
 				<div class="form-group findworkergroup">
-					<label>Enter service description </label>
-					<textarea rows="3" id="inputState" min="0" name="description" placeholder="Service description" type="text" class="form-control"></textarea>
+					<label>Enter service description <i>Maximum of 30 words</i> </label>
+					<textarea rows="3" id="inputState " min="0" name="description" placeholder="Service description" type="text" class="form-control postserve"></textarea>
+					<script>
+								$(document).ready(function() {
+						$(".postserve").on('keyup', function() {
+							var words = this.value.match(/\S+/g).length;
+
+							if (words > 30) {
+							// Split the string on first 200 words and rejoin on spaces
+							var trimmed = $(this).val().split(/\s+/, 30).join(" ");
+							// Add a space at the end to make sure more typing creates new words
+							$(this).val(trimmed + " ");
+							}
+							else {
+							$('#display_count').text(words);
+							$('#word_left').text(30-words);
+							}
+						});
+						});           
+       </script>
 				</div>
 				<div class="form-group findworkergroup">
 					<label>Cost per day ( Ksh ) </label>
-					<input id="inputState" min="0" name="cost" pattern="d{0+}"placeholder="Enter service cost" type="number" class="form-control" />
+					<input id="inputState" min="0" name="cost" placeholder="Enter service cost" type="number" class="form-control" />
 				</div>
 				<button type="submit" name="service_post" class="btn btn-primary btn-block findworkergroup">Post service</button>
 			</form>
@@ -679,7 +755,7 @@ x.style.display = "none";
 
 <center>My services</center>
 <?php
-$stmt = $auth_user->runQuery("SELECT * FROM services WHERE public_id='$public_id' ");
+$stmt = $auth_user->runQuery("SELECT * FROM services WHERE public_id='$public_id' ORDER BY `services_reg_date` DESC ");
 $stmt->execute(array());
 $services=$stmt->fetchAll(PDO::FETCH_OBJ);
 foreach ($services as $service) { ?>
@@ -690,7 +766,7 @@ foreach ($services as $service) { ?>
 				  <h5 class="mb-1"><?php echo $service->typeofworker; ?></h5>
 				  <small class="text-muted"><?php echo $service->job; ?></small>
 				</div>
-				Work experiance: <?php echo $service->experiance; ?> year(s)
+				Work experience: <?php echo $service->experience; ?> year(s)
 				<?php echo $service->description; ?><br />
 				<div class="d-flex w-100 justify-content-between">
 				  <h5 class="mb-1"><?php echo $service->town; ?><br /></h5>
@@ -733,8 +809,10 @@ foreach ($services as $service) { ?>
     		<h4>PASSWORD RESET</h4>
     		<form method="post" enctype="multipart/form-data" >
 				<div class="form-group findworkergroup">
-					<label>First name</label>
-					<input id="inputState" pattern="\D+" name="user_password" required placeholder="Password" type="password" class="form-control" />
+					<input id="inputState" name="user_password" required placeholder="Password" type="password" class="form-control" />
+				</div>
+				<div class="form-group findworkergroup">
+					<input id="inputState" name="cfuser_password" required placeholder="Confirm Password" type="password" class="form-control" />
 				</div>
 				<button type="submit" name="btn_reset_password" class="btn btn-primary btn-block findworkergroup createservice">Change password</button>
 			</form>

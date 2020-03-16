@@ -22,13 +22,13 @@ if($auth_user->is_loggedin()!="")
         <div class="form-group row">
             <label for="name" class="col-md-4 col-form-label text-md-right">Username</label>
             <div class="col-md-6">
-            <input id="user_name" type="text" required class="form-control " name="user_name" />
+            <input id="user_name" type="text" required class="form-control "  value="<?php echo isset($_POST["user_name"]) ? $_POST["user_name"] : ''; ?>" name="user_name" />
             </div>
         </div>
         <div class="form-group row">
             <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
             <div class="col-md-6">
-            <input id="email" type="email" required class="form-control " name="user_email" />
+            <input id="email" type="email" required class="form-control " value="<?php echo isset($_POST["user_email"]) ? $_POST["user_email"] : ''; ?>" name="user_email" />
             </div>
         </div>
         <div class="form-group row">
@@ -43,8 +43,15 @@ if($auth_user->is_loggedin()!="")
         <div class="form-group row">
             <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
             <div class="col-md-6">
-            <input id="password" type="password"    class="form-control " placeholder="" name="user_password" />
-            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+            <input id="password" type="password"  required  class="form-control " placeholder="" name="user_password" />
+         
+            </div>
+        </div>
+            <div class="form-group row">
+            <label for="password" class="col-md-4 col-form-label text-md-right">Confirm assword</label>
+            <div class="col-md-6">
+            <input id="cfpassword" type="password" required   class="form-control " placeholder="" name="cfuser_password" />
+         
             </div>
         </div>
 

@@ -1,3 +1,8 @@
+<?php 
+$title = "Registered users";
+$description = "this is a user description";
+
+ ?>
 <?php require_once 'header/header.php'; ?>
 <?php require_once 'app/sessionconfig/loginsession.php'; ?>
 <?php require_once 'configurations/config.php'; ?>
@@ -17,39 +22,66 @@
 </style>
 
 
-                             
-<div class="col-md-12 sunken">
+<div class="col-md-12 sunken" id="printit">
 
     <div class="card row  table-responsive" style="margin:10px;">
-  <center><strong>My user reports</strong></center>
-  <div class="card col-md-2" style="float:left; margin:25px">
-            
-                           <center>
-                                   <p>Users</p>
-                             <script type="text/javascript">
-                            add_action( 'template_redirect', 'my_post_table_row_count' );
-                            function my_post_table_row_count() {
-                                global $post, $table_rows_total;
-                                if ( is_single() && is_object( $post ) ) {
-                                    // Count "<tr" instead of "<tr>" in case there are attributes
-                                    $table_rows_total = substr_count( $post->post_content, '<tr' );
-                                } else {
-                                    $table_rows_total = false;
-                                }
-                            }
+         <center><strong>My user reports</strong></center>
+         <div class="row" style="height:130px !important">
+        <div class="card col-md-2" style="float:left; margin:25px">            
+            <p><strong>All Users</strong></p>
+            <center>
+             <?php
+                  $stmt = $auth_user->runQuery("SELECT * FROM users 
+                  LEFT JOIN profile ON `profile`.`public_id`=`users`.`public_id` ");
+                  $stmt->execute(array());
+                  $number_of_rows = $stmt->rowCount(); 
+                 echo $number_of_rows;
+   ?>
+ </center>
 
-                            function display_table_row_count() {
-                                global $table_rows_total;
-                                return ( $table_rows_total ) ? $table_rows_total : '0';
-                            }
-                          </script>
-                      
-                        
 
-                                               
-                          </center>
-                         
-                  </div> 
+                 
+   </div> 
+   <div class="card col-md-2" style="float:left; margin:25px">            
+        <p><strong>Employers</strong></p>
+        <center>
+            <?php
+                 $stmt = $auth_user->runQuery("SELECT * FROM users 
+                 LEFT JOIN profile ON `profile`.`public_id`=`users`.`public_id` WHERE `user_account`='employer'");
+                 $stmt->execute(array());
+                 $number_of_rows = $stmt->rowCount(); 
+                 echo $number_of_rows;
+   ?>
+</center>
+                
+   </div> 
+     <div class="card col-md-2" style="float:left; margin:25px">            
+        <p><strong>Workers</strong></p>
+        <center>
+            <?php
+                 $stmt = $auth_user->runQuery("SELECT * FROM users 
+                 LEFT JOIN profile ON `profile`.`public_id`=`users`.`public_id` WHERE `user_account`='worker'");
+                 $stmt->execute(array());
+                 $number_of_rows = $stmt->rowCount(); 
+                 echo $number_of_rows;
+   ?>
+ </center>
+
+    </div>
+    <div class="card col-md-2" style="float:left; margin:25px">            
+        <p><strong>Archived Users</strong></p>
+        <center>
+            <?php
+                 $stmt = $auth_user->runQuery("SELECT * FROM users 
+                 LEFT JOIN profile ON `profile`.`public_id`=`users`.`public_id` WHERE `userStatus`=0");
+                 $stmt->execute(array());
+                 $number_of_rows = $stmt->rowCount(); 
+                 echo $number_of_rows;
+   ?>
+ </center>
+
+    </div>            
+   </div> 
       <div style="margin: 5px;max-width: 100%;">
           <div class="sunken ">
 
@@ -57,6 +89,7 @@
 <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
 <link href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css
 " rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
@@ -99,14 +132,16 @@
 <td><?php echo $user->user_account; ?></td>
 <var><td><?php echo $user->reg_date; ?></td></var>
 <td><img src="<?php echo $user->profileimage; ?>" style="height:50px;"></td>
-
 <td>
-  <form method="post">
-    <input type="text" hidden name="public_id" value="<?php echo $userRow['public_id']; ?>">
-    <button type="submit" name="Deleteuser" class="btn  btn-sm"  style="width: inherit; background-color: #ff4700 !important;">Delete user</button>
-  </form>
-</td>
-
+<form method="post">
+<?php if ($user->userStatus == "1") { ?>
+  <input type="text" hidden name="user_id" value="<?php echo $user->user_id; ?>">
+        <button type="submit" name="archiveuser"  class="btn  btn-sm"  style="width: inherit; background-color: #ff4700 !important; "><strong>ARCHIVE</strong></button>
+<?php }else{ ?>
+  <input type="text" hidden name="user_id" value="<?php echo $user->user_id; ?>">
+        <button type="submit" name="unarchiveuser" class="btn  btn-sm"  style="width: inherit; background-color: #ff4700 !important;"><strong>UNARCHIVE</strong></button>
+<?php }; ?>
+</form></td>
     <td></td>
     </tr>
     <?php } ?>    

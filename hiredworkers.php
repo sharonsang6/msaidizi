@@ -24,7 +24,7 @@ if ($userRow['user_account'] != "employer") {
 if (isset($_GET['id'])) {
   $id = $_GET['id'];
    $stmt = $auth_user->runQuery("SELECT * FROM offers 
-    LEFT JOIN services ON `services`.`public_id`=`offers`.`public_id`
+    LEFT JOIN services ON `services`.`services_id`=`offers`.`services_id`
     WHERE offers_id='$id' ");
     $stmt->execute(array());
     $offers=$stmt->fetchAll(PDO::FETCH_OBJ);
@@ -43,10 +43,10 @@ if (isset($_GET['id'])) {
           </div>
           <div class="form-group findworkergroup">
             <label>Ammount to be paid </label>
-            <input id="inputState" name="totalpay" value="<?php echo ($offer->cost * $offer->duration); ?>" placeholder="Experiance" type="text" class="form-control" />
+            <input id="inputState" name="totalpay" value="<?php echo ($offer->cost * $offer->duration); ?>" placeholder="Experiance" type="number" class="form-control" />
           </div>
           <div class="form-group findworkergroup">
-            <label>Enter job experiance ( years ) </label>
+            <label>Enter job experiance  </label>
             <textarea rows="3" id="inputState" name="comment" placeholder="Comment" type="text" class="form-control"></textarea>
           </div>
           <button type="submit" name="ratework" class="btn btn-primary btn-block findworkergroup">Complete and rate</button>
@@ -76,7 +76,7 @@ if (isset($_GET['id'])) {
 $stmt = $auth_user->runQuery("SELECT *  FROM  offers
   LEFT JOIN services 
   ON `services`.`public_id`=`offers`.`public_id`
-  WHERE `offers`.`public_id`='$public_id'
+  WHERE `offers`.`public_id`='$public_id' AND `status`=0 ORDER BY `offers_reg_date` DESC
 ");
 $stmt->execute(array());
 $offers=$stmt->fetchAll(PDO::FETCH_OBJ);
@@ -97,15 +97,15 @@ foreach ($offers as $offer) { ?>
                   <div class="sunken">
                     <center>
                               <img src="<?php echo $user->profileimage; ?>" alt="image" style="width:100px;height: 100px;border-radius: 50%;border: 10px solid #f0f6f9;" /><br /><br />
-        <?php echo $user->first_name; ?> <?php echo $user->middle_name; ?> <?php echo $user->last_name; ?><br />
-        <?php echo $user->country; ?> - <?php echo $user->town; ?><br />
-        <?php echo $user->phonenumber; ?><br />    
+                            <?php echo $user->first_name; ?> <?php echo $user->middle_name; ?> <?php echo $user->last_name; ?><br />
+                            <?php echo $user->country; ?> - <?php echo $user->town; ?><br />
+                            <?php echo $user->phonenumber; ?><br />    
                     </center>
                     <div class="d-flex w-100 justify-content-between">
                       <h5 class="mb-1"><?php echo $offer->typeofworker; ?></h5>
                       <small class="text-muted"><?php echo $offer->job; ?></small>
                     </div>
-                    Work experiance: <?php echo $offer->experiance; ?> year(s)
+                    Work experience: <?php echo $offer->experience; ?> year(s)
                     <?php echo $offer->description; ?><br />
                     <div class="d-flex w-100 justify-content-between">
                       <h5 class="mb-1" style="color: gold;font-weight: bold;margin-left: 20px;"><?php echo $user->user_name; ?> - <?php echo $user->allrating; ?></h5>
@@ -115,7 +115,7 @@ foreach ($offers as $offer) { ?>
                 </div>
                   <div class="btn-group btn-group-sm" role="group" aria-label="Basic example" style="width: 100%;">
                     <a href="hiredworkers.php?id=<?php echo $offer->offers_id; ?>">
-                      <button type="button" class="btn btn-secondary" style="width: inherit;" >Click to rate and make payment</button>
+                      <button type="button" class="btn " style="width: inherit; background-color:#ff4700" >Click to rate and make payment</button>
                     </a>
                   </div>  
 

@@ -17,25 +17,20 @@
         $file_name = $_FILES['your_file']['name'];
         @$file_extn = strtolower(end(explode('.', $file_name)));
         $file_tmp = $_FILES['your_file']['tmp_name'];
-        if (in_array($file_extn, $allowed) === true)
-        {
-            $file_path = 'uploads/documents' . md5(time()) . '.' . $file_extn;
+        if (in_array($file_extn, $allowed) === true){
+			$file_path = 'uploads/documents' . md5(time()) . '.' . $file_extn;
             move_uploaded_file($file_tmp, $file_path);
-
-                               
-                try
-		{
-		if($user->postjob($public_id, $job_type, $type_of_worker, $your_location, $salary, $worker_experience, $tribe, $job_description, $file_path)){  
-		    $alert = "job posted";
-		  }
+		} 
+		
+		try {
+			if($user->postjob($public_id, $job_type, $type_of_worker, $your_location, $salary, $worker_experience, $tribe, $job_description, $file_path)){  
+				$alert = "job posted";
+			}
 		}
-		catch(PDOException $e)
-		{
-		$alert = $e->getMessage();
+		catch(PDOException $e){
+			$alert = $e->getMessage();
 		}
-	} 
-
-
+		
 		
 
 

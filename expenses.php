@@ -22,7 +22,7 @@ if ($userRow['user_account'] == "worker") {
 <div class="col-md-12 sunken">
 
     <div class="card row" style="margin:10px;">
-  <center>My service reports</center>
+  <center><strong>My service reports</strong></center>
       <div class="modal-dialog" style="margin: 5px;max-width: 100%;">
           <div>
 
@@ -61,13 +61,11 @@ if ($userRow['user_account'] == "worker") {
 <th>typeofworker</th>
 <th>job</th>
 <th>town</th>
-<th>cost</th>
 <th>worker_id</th>
 <th>start_date</th>
 <th>duration</th>
 <th>rating</th>
 <th>totalpay</th>
-<th>status</th>
 <th>offers_reg_date</th>
 <th>null</th>
             </tr>
@@ -75,9 +73,9 @@ if ($userRow['user_account'] == "worker") {
         <tbody>
     <?php
     $stmt = $auth_user->runQuery("SELECT * FROM offers 
-      LEFT JOIN services ON `services`.`public_id`=`offers`.`worker_id`
+      LEFT JOIN services ON `services`.`services_id`=`offers`.`services_id`
       LEFT JOIN users ON `users`.`public_id`=`offers`.`worker_id`
-      WHERE `offers`.`public_id`='$public_id' ");
+      WHERE `offers`.`public_id`='$public_id' AND `status`=1 ORDER BY `offers_reg_date` ");
     $stmt->execute(array());
     $services=$stmt->fetchAll(PDO::FETCH_OBJ);
     foreach ($services as $service) { ?>          
@@ -86,13 +84,11 @@ if ($userRow['user_account'] == "worker") {
 <td><?php echo $service->typeofworker; ?></td>
 <td><?php echo $service->job; ?></td>
 <td><?php echo $service->town; ?></td>
-<td><?php echo $service->cost; ?></td>
 <td><?php echo $service->worker_id; ?></td>
 <td><?php echo $service->start_date; ?></td>
 <td><?php echo $service->duration; ?></td>
 <td><?php echo $service->rating; ?> stars</td>
 <td><?php echo $service->totalpay; ?></td>
-<td><?php if ($service->status == "1") { ?><button type="button" class="btn btn-secondary btn-sm" style="width: inherit;">COMPLETED</button><?php }else{ ?><button type="button" class="btn  btn-sm" style="width: inherit; background-color: #ff4700">IN PROGRESS</button><?php }; ?></td>
 <td><?php echo $service->offers_reg_date; ?></td>
 <td></td>
             </tr>
@@ -105,13 +101,12 @@ if ($userRow['user_account'] == "worker") {
 <th>typeofworker</th>
 <th>job</th>
 <th>town</th>
-<th>cost</th>
 <th>worker_id</th>
 <th>start_date</th>
 <th>duration</th>
 <th>rating</th>
 <th>totalpay</th>
-<th>status</th>
+
 <th>offers_reg_date</th>
 <th>null</th>
             </tr>

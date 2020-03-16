@@ -10,7 +10,24 @@
 
 <meta name="csrf-token" content="7yt4cFmQJPrBk8FoD0JO29TnOtzr3b4BITqeSIM1">
 
-<title>Msaidizi</title>
+<title>
+  <center>
+  Msaidizi East Africa<br />
+  <image src=images/capture.png style="width:350px" /><br />
+   <?php echo @$title; ?><br />
+ <?php echo @$description; ?>
+ Designed by: <?php echo $userRow['user_name']; ?>
+</center>
+</title>
+
+<meta property="og:title" content="European Travel Destinations">
+<meta property="og:description" content="Offering tour packages for individuals or groups.">
+<meta property="og:image" content="noimage.png">
+<meta property="og:url" content="http://euro-travel-example.com/index.htm">
+<meta name="twitter:card" content="summary_large_image">
+
+
+<meta charset="utf-8" description="thias is a description" />
 <script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
 <link rel="dns-prefetch" href="http://fonts.gstatic.com/">
 <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -23,7 +40,7 @@
 
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <style type="text/css">
 	html{background: #fff;}
 	body{background: #fff;}

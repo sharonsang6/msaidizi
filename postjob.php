@@ -9,7 +9,7 @@
 <div class="row postrow">
 <?php
 
-if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+100) { ?>
+if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+5555550) { ?>
 	<div class="btn-group btn-group-lg" role="group" aria-label="Basic example" style="width: 100%;">
 		<form action="mpesa/pesapal-iframe.php" method="post"  style="width: 100%;">
 		<input hidden type="text" name="amount" value="350" />
@@ -137,7 +137,7 @@ else{ ?>
         
         <div class="form-group">
           <label for="exampleFormControlInput1">Experience(years)</label>
-          <input type="number" class="form-control postjobinput" required pattern="d{0+}" name="worker_experience" id="exampleFormControlInput1" >
+          <input type="number" max="3"class="form-control postjobinput" required pattern="d{0+}" name="worker_experience" id="exampleFormControlInput1" >
         </div>
       
        
@@ -194,12 +194,29 @@ else{ ?>
         <!-- Default unchecked -->
         
         <div class="form-group">
-              <label for="exampleFormControlTextarea1">Description</label>
-              <textarea class="form-control postformselect" required name="job_description" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <label for="exampleFormControlTextarea1">Description <i>Max of 30 words</i></label>
+              <textarea id="descrptionjob" class="form-control postformselect" max="100" required name="job_description" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
-       
+       <script>
+          $(document).ready(function() {
+  $("#descrptionjob").on('keyup', function() {
+    var words = this.value.match(/\S+/g).length;
+
+    if (words > 30) {
+      // Split the string on first 200 words and rejoin on spaces
+      var trimmed = $(this).val().split(/\s+/, 30).join(" ");
+      // Add a space at the end to make sure more typing creates new words
+      $(this).val(trimmed + " ");
+    }
+    else {
+      $('#display_count').text(words);
+      $('#word_left').text(30-words);
+    }
+  });
+});           
+       </script>
         <div class="form-group">
-                  <label for="exampleFormControlFile1">Example file input</label>
+                  <label for="exampleFormControlFile1">Upload file <i>Optional</i></label>
                   <input type="file" class="form-control-file" name="your_file" id="exampleFormControlFile1">
                 </div>
                 <div class="form-group">

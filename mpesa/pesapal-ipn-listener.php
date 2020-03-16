@@ -14,6 +14,7 @@ $statusrequestAPI = 'http://demo.pesapal.com/api/querypaymentstatus';//change to
 $pesapalNotification=$_GET['pesapal_notification_type'];
 $pesapalTrackingId=$_GET['pesapal_transaction_tracking_id'];
 $pesapal_merchant_reference=$_GET['pesapal_merchant_reference'];
+
 $signature_method = new OAuthSignatureMethod_HMAC_SHA1();
 
 if($pesapalNotification=="CHANGE" && $pesapalTrackingId!='')
@@ -25,6 +26,7 @@ if($pesapalNotification=="CHANGE" && $pesapalTrackingId!='')
    $request_status = OAuthRequest::from_consumer_and_token($consumer, $token, "GET", $statusrequestAPI, $params);
    $request_status->set_parameter("pesapal_merchant_reference", $pesapal_merchant_reference);
    $request_status->set_parameter("pesapal_transaction_tracking_id",$pesapalTrackingId);
+  
    $request_status->sign_request($signature_method, $consumer, $token);
 
    $ch = curl_init();

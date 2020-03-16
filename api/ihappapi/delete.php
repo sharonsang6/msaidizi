@@ -1,12 +1,29 @@
 <?php
-if (isset($_POST['Deleteuser'])) {
+if (isset($_POST['archiveuser'])) {
     $user_id = trim(htmlspecialchars($_POST['user_id']));
     try
     {
-        $stmt = $auth_user->runQuery("DELETE FROM `users` WHERE `user_id`= '$user_id' ");
+        $stmt = $auth_user->runQuery("UPDATE users set `userStatus`=0  WHERE `user_id`= '$user_id' ");
         $stmt->execute();
-        $alert = "User deleted";
-        return $stmt;
+        $alert = "User archived";
+               return $stmt;
+    }
+    catch(PDOException $e)
+    {
+        echo $e->getMessage();
+    }
+}
+
+?>
+<?php
+if (isset($_POST['unarchiveuser'])) {
+    $user_id = trim(htmlspecialchars($_POST['user_id']));
+    try
+    {
+        $stmt = $auth_user->runQuery("UPDATE users set `userStatus`=1  WHERE `user_id`= '$user_id' ");
+        $stmt->execute();
+        $alert = "User unarchived";
+          return $stmt;
     }
     catch(PDOException $e)
     {

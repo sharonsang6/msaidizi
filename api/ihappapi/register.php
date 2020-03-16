@@ -6,22 +6,12 @@ if (isset($_POST['registrationbutton'])) {
     $user_email = strip_tags($_POST['user_email']);
     $user_account = strip_tags($_POST['user_account']);
     $user_password = strip_tags($_POST['user_password']);
+     $cfuser_password = strip_tags($_POST['cfuser_password']);
 
     if($user_name == "") {$alert = "Provide user name"; }
+    elseif($user_password != $cfuser_password){$alert ="Password does not match";}
     elseif(!filter_var($user_email, FILTER_VALIDATE_EMAIL)) { $alert = "enter valid email"; }
     elseif($user_password == "") {$alert = "Provide user_password"; }
-    elseif (strlen($user_password) <= '8') {
-        $alert = "Your Password Must Contain At Least 8 Characters!";
-    }
-      elseif(!preg_match("#[0-9]+#",$user_password)) {
-        $alert = "Your Password Must Contain At Least 1 Number!";
-    }
-     elseif(!preg_match("#[A-Z]+#",$user_password)) {
-        $alert = "Your Password Must Contain At Least 1 Capital Letter!";
-    }
-    elseif(!preg_match("#[a-z]+#",$user_password)) {
-        $alert = "Your Password Must Contain At Least 1 Lowercase Letter!";
-    }
     else
     {
       try
@@ -37,6 +27,7 @@ if (isset($_POST['registrationbutton'])) {
         {
           if($user->register($public_id, $user_name, $user_email, $user_password, $user_account)){  
             $alert = 'Registration successful.';
+            header("Location: ../msaidizi/login.php");
           }
         }
       }

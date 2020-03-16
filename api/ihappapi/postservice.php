@@ -1,8 +1,9 @@
 <?php
 if (isset($_POST['service_post'])) {
+	
 	$typeofworker = strip_tags($_POST['typeofworker']);
 	$job = strip_tags($_POST['job']);
-	$experiance = strip_tags($_POST['experiance']);
+	$experience = strip_tags($_POST['experience']);
 	$town = strip_tags($_POST['town']);
 	$description = strip_tags($_POST['description']);
 	$cost = strip_tags($_POST['cost']);
@@ -10,7 +11,7 @@ if (isset($_POST['service_post'])) {
 
 	if ($typeofworker == "") { $alert = "Select type of worker"; }
 	elseif ($job == "") { $alert = "Enter job title"; }
-	elseif ($experiance == "") { $alert = "Select years of experiance"; }
+	elseif ($experience == "") { $alert = "Select years of experience"; }
 	elseif ($town == "") { $alert = "Select town"; }
 	elseif ($description == "") { $alert = "Provide description"; }
 	elseif ($cost == "") { $alert = "Provide cost per day"; }
@@ -18,7 +19,7 @@ if (isset($_POST['service_post'])) {
     {
     	try
 		{
-		if($user->postserviceproduct($public_id, $typeofworker, $job, $experiance, $town, $description, $cost)){  
+		if($user->postserviceproduct($public_id, $typeofworker, $job, $experience, $town, $description, $cost)){  
 		    $alert = "service posted";
 		  }
 		}

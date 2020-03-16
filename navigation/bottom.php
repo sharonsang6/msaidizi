@@ -18,8 +18,10 @@
        
       <div class="col-lg-3">
           <h4 class="subscribe">Subscribe to our newslater</h4><br />
-          <input class="subemail rounded-pill" name="e_mail" type="email" placeholder="email" >
-          <button class="btn subbtn" type="submit" name="subscribetonewsletter">GO</button>
+          <form method="post">
+          <input class="subemail rounded-pill" name="email" type="email" placeholder="email" >
+          <button class="btn subbtn" required type="submit" name="subscribetonewsletter">GO</button>
+          </form>
         </div>
 
         <div class="col-lg-3">
