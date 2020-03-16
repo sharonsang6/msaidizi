@@ -27,19 +27,19 @@
 		<p><strong>Please edit your profile by filling the form below</strong></p>
 			<div class="form-group findworkergroup">
 				<label>First name</label>
-				<input id="inputState" name="first_name" placeholder="first name" required type="text" class="form-control" value="<?php echo $user_profile['first_name']; ?>" />
+				<input id="inputState" name="first_name" pattern="\D+" placeholder="first name" required type="text" class="form-control" value="<?php echo $user_profile['first_name']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Middle name</label>
-				<input id="inputState" name="middle_name" placeholder="middle name" type="text" class="form-control" value="<?php echo $user_profile['middle_name']; ?>"/>
+				<input id="inputState" name="middle_name" pattern="\D+" placeholder="middle name" type="text" class="form-control" value="<?php echo $user_profile['middle_name']; ?>"/>
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Last name</label>
-				<input id="inputState" name="last_name" placeholder="last name" required type="text" class="form-control" value="<?php echo $user_profile['last_name']; ?>"/>
+				<input id="inputState" name="last_name" pattern="\D+" placeholder="last name" required type="text" class="form-control" value="<?php echo $user_profile['last_name']; ?>"/>
 			</div>
 			<div class="form-group findworkergroup">
 				<label>ID No/Passport No</label>
-				<input id="inputState" name="national_id" min="5"  max="20" placeholder="" type="number" required class="form-control" value="<?php echo $user_profile['national_id']; ?>"/>
+				<input id="inputState" name="national_id" pattern=""  placeholder="" type="number" required class="form-control" value="<?php echo $user_profile['national_id']; ?>"/>
 			</div>
 
 			<div class="form-group findworkergroup">
@@ -120,7 +120,7 @@
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Phone number</label>
-				<input id="inputState" name="phonenumber" placeholder="Phone number" required   min="10" type="number" class="form-control" value="<?php echo $user_profile['phonenumber']; ?>" />
+				<input id="inputState" name="phonenumber" pattern="07\d{8}" placeholder="07xxxxxxxx" required   min="10" type="number" class="form-control" value="<?php echo $user_profile['phonenumber']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Profile image</label>
@@ -133,19 +133,19 @@
 		<p><strong>Please edit your profile by filling the form below</strong></p>
 			<div class="form-group findworkergroup">
 				<label>First name</label>
-				<input id="inputState" name="first_name" placeholder="first name" required type="text" class="form-control" />
+				<input id="inputState" name="first_name" pattern="\D+" placeholder="first name" required type="text" class="form-control" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Middle name</label>
-				<input id="inputState" name="middle_name" placeholder="middle name" type="text" class="form-control" />
+				<input id="inputState" name="middle_name" pattern="\D+" placeholder="middle name" type="text" class="form-control" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Last name</label>
-				<input id="inputState" name="last_name" placeholder="last name" required type="text" class="form-control" />
+				<input id="inputState" name="last_name" pattern="\D+" placeholder="last name" required type="text" class="form-control" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>ID No/Passport No</label>
-				<input id="inputState" name="national_id" min="5" max="20"  placeholder="" type="number" required class="form-control" />
+				<input id="inputState" name="national_id" pattern=".{5,20}" required title="5 to 20 characters"   placeholder="" type="number" required class="form-control" />
 			</div>
 
 			<div class="form-group findworkergroup">
@@ -226,7 +226,7 @@
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Phone number</label>
-				<input id="inputState" name="phonenumber" placeholder="Phone number" required   min="10" type="number" class="form-control" />
+				<input id="inputState" name="phonenumber" pattern="07\d{8}" placeholder="07xxxxxxxx" required   min="10" type="number" class="form-control" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Profile image</label>
@@ -296,7 +296,7 @@ if (isset($_GET['pesapal_transaction_tracking_id'])) {
   }
 }
         	</script>
-<button onclick="myFunction()">Click Me</button>
+<button onclick="myFunction()">CLOSE</button>
           <button type="button" class="btn btn-default" data-dismiss="modal" onClick="printdiv('div_print');">PRINT</button>
         </div>
       </div>
@@ -308,12 +308,11 @@ if (isset($_GET['pesapal_transaction_tracking_id'])) {
 
 
 	<?php
-                $amount = 3500;
-    $stmt = $auth_user->runQuery("UPDATE `users` SET `premium`='1', `pesapal_transaction_tracking_id`='$pesapal_transaction_tracking_id', `pesapal_merchant_reference`='$pesapal_merchant_reference', 	`amount`='$amount' WHERE `public_id`='$public_id' ");
+                
+    $stmt = $auth_user->runQuery("UPDATE `users` SET `premium`='1', `pesapal_transaction_tracking_id`='$pesapal_transaction_tracking_id', `pesapal_merchant_reference`='$pesapal_merchant_reference' WHERE `public_id`='$public_id' ");
     $stmt->bindparam("1", $premium); 
     $stmt->bindparam(":pesapal_transaction_tracking_id", $pesapal_transaction_tracking_id); 
     $stmt->bindparam(":pesapal_merchant_reference", $pesapal_merchant_reference); 
-    $stmt->bindparam(":amount", $amount); 
     $stmt->execute();
     $alert = "Premium activated";
 }
@@ -375,19 +374,19 @@ if (isset($_GET['pesapal_transaction_tracking_id'])) {
 		<p><strong>Please edit your profile by filling the form below</strong></p>
 			<div class="form-group findworkergroup">
 				<label>First name</label>
-				<input id="inputState" name="first_name" placeholder="first name" required type="text" class="form-control" value="<?php echo $user_profile['first_name']; ?>" />
+				<input id="inputState" name="first_name" pattern="\D+" placeholder="first name" required type="text" class="form-control" value="<?php echo $user_profile['first_name']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Middle name</label>
-				<input id="inputState" name="middle_name" placeholder="middle name"  type="text" class="form-control" value="<?php echo $user_profile['middle_name']; ?>" />
+				<input id="inputState" name="middle_name" pattern="\D+" placeholder="middle name"  type="text" class="form-control" value="<?php echo $user_profile['middle_name']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Last name</label>
-				<input id="inputState" name="last_name" placeholder="last name" type="text" required class="form-control" value="<?php echo $user_profile['last_name']; ?>" />
+				<input id="inputState" name="last_name" pattern="\D+" placeholder="last name" type="text" required class="form-control" value="<?php echo $user_profile['last_name']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>ID No/Passport No</label>
-				<input id="inputState" name="national_id" min={5} max="20" placeholder="id/passport" type="text" required class="form-control" value="<?php echo $user_profile['national_id']; ?>" />
+				<input id="inputState" name="national_id" pattern=".{5,20}" required title="5 to 20 characters"  placeholder="id/passport" type="text" required class="form-control" value="<?php echo $user_profile['national_id']; ?>" />
 			</div>
 
 			<div class="form-group findworkergroup">
@@ -469,7 +468,7 @@ if (isset($_GET['pesapal_transaction_tracking_id'])) {
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Phone number</label>
-				<input id="inputState" name="phonenumber" placeholder="Phone number" required  min="10" type="number" class="form-control" value="<?php echo $user_profile['phonenumber']; ?>" />
+				<input id="inputState" name="phonenumber" pattern="07\d{8}" placeholder="07xxxxxxxx" required  min="10" type="number" class="form-control" value="<?php echo $user_profile['phonenumber']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Profile image</label>
@@ -482,19 +481,19 @@ if (isset($_GET['pesapal_transaction_tracking_id'])) {
 		<p><strong>Please edit your profile by filling the form below</strong></p>
 			<div class="form-group findworkergroup">
 				<label>First name</label>
-				<input id="inputState" name="first_name" placeholder="first name" required type="text" class="form-control" />
+				<input id="inputState" name="first_name" pattern="\D+" placeholder="first name" required type="text" class="form-control" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Middle name</label>
-				<input id="inputState" name="middle_name" placeholder="middle name" type="text" class="form-control" />
+				<input id="inputState" name="middle_name" pattern="\D+" placeholder="middle name" type="text" class="form-control" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Last name</label>
-				<input id="inputState" name="last_name" placeholder="last name" required type="text" class="form-control" />
+				<input id="inputState" name="last_name" pattern="\D+" placeholder="last name" required type="text" class="form-control" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>ID No/Passport No</label>
-				<input id="inputState" name="national_id" min="5" max="20" placeholder="" type="number" required class="form-control" />
+				<input id="inputState" name="national_id" pattern=".{5,20}" required title="5 to 20 characters" placeholder="" type="number" required class="form-control" />
 				</div>
 
 			<div class="form-group findworkergroup">
@@ -575,7 +574,7 @@ if (isset($_GET['pesapal_transaction_tracking_id'])) {
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Phone number</label>
-				<input id="inputState" name="phonenumber" placeholder="Phone number" required  min="10" type="number" class="form-control" />
+				<input id="inputState" name="phonenumber" pattern="07\d{8}" placeholder="07xxxxxxxx" required  min="10" type="number" class="form-control" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Profile image</label>
@@ -755,7 +754,7 @@ if (isset($_GET['pesapal_transaction_tracking_id'])) {
 
 <center>My services</center>
 <?php
-$stmt = $auth_user->runQuery("SELECT * FROM services WHERE public_id='$public_id' ORDER BY `services_reg_date` DESC ");
+$stmt = $auth_user->runQuery("SELECT * FROM services WHERE public_id='$public_id' AND `service_status`=1 ORDER BY `services_reg_date` DESC ");
 $stmt->execute(array());
 $services=$stmt->fetchAll(PDO::FETCH_OBJ);
 foreach ($services as $service) { ?>

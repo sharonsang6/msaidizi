@@ -71,7 +71,7 @@ if (isset($_POST['deletejob'])) {
     $job_id = trim(htmlspecialchars($_POST['job_id']));
     try
     {
-        $stmt = $auth_user->runQuery("DELETE FROM `jobs` WHERE `job_id`= '$job_id' ");
+        $stmt = $auth_user->runQuery("UPDATE `jobs` set `job_status`=0 WHERE `job_id`= '$job_id' ");
         $stmt->execute();
         $alert = "Job deleted";
         return $stmt;
@@ -88,7 +88,7 @@ if (isset($_POST['deleteservice'])) {
     $services_id = trim(htmlspecialchars($_POST['services_id']));
     try
     {
-        $stmt = $auth_user->runQuery("DELETE FROM `services` WHERE `services_id`= '$services_id' ");
+        $stmt = $auth_user->runQuery("UPDATE services set `service_status`=0  WHERE `services_id`= '$services_id'  ");
         $stmt->execute();
         $alert = "Service deleted";
         return $stmt;

@@ -53,6 +53,7 @@
               <a class="dropdown-item" href="users.php">Users</a>
               <a class="dropdown-item" href="payments.php">Payments</a>
               <a class="dropdown-item" href="messages.php">Messages</a>
+              <a class="dropdown-item" href="activeworkers.php">Active workers</a>
               <a class="dropdown-item" href="archived_users.php">Archived Users</a>
               <a class="dropdown-item" href="subscriptions.php">Subscriptions</a>
               </div>

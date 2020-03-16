@@ -27,7 +27,7 @@ if ($userRow['user_account'] != "employer") {
     <div class="row flexbox-container">
 
             <?php
-              $stmt = $auth_user->runQuery("SELECT * FROM jobs WHERE public_id='$public_id' ORDER BY `date_created` DESC");
+              $stmt = $auth_user->runQuery("SELECT * FROM jobs WHERE public_id='$public_id' AND `job_status`=1 ORDER BY `date_created` DESC");
                     $stmt->execute(array());
                     $jobs=$stmt->fetchAll(PDO::FETCH_OBJ);
                     foreach ($jobs as $job) { ?>

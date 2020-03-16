@@ -58,7 +58,7 @@
   <div class="col-md-9 sunken">
     <?php
 
-if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+55550) { ?>
+if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+550) { ?>
   <div class="btn-group btn-group-lg" role="group" aria-label="Basic example" style="width: 100%;">
     <form action="mpesa/pesapal-iframe.php" method="post"  style="width: 100%;">
     <input hidden type="text" name="amount" value="350" />
@@ -166,7 +166,7 @@ if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+55550) { ?>
               LEFT JOIN users 
               ON `users`.`public_id`=`services`.`public_id`
               LEFT JOIN profile 
-              ON `profile`.`public_id`=`users`.`public_id` ORDER BY `services_reg_date` DESC");
+              ON `profile`.`public_id`=`users`.`public_id` WHERE `services`.`service_status`=1 ORDER BY `services_reg_date` DESC");
             $stmt->execute(array());
             $services=$stmt->fetchAll(PDO::FETCH_OBJ);
             foreach ($services as $service) { ?>
@@ -258,7 +258,7 @@ if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+55550) { ?>
                             <img style="width: 50%;" src="<?php echo $profile->idimage; ?>" />
                         </div>
                         Ratting: <?php echo $profile->allrating; ?> stars<br />
-                        </center>
+456789765467                        </center>
                     <?php } ?>
                   </div>
                   <div class="modal-footer">

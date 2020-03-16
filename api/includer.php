@@ -8,7 +8,6 @@ require_once 'ihappapi/resetemail.php';
 require_once 'ihappapi/delete.php';
 require_once 'ihappapi/update.php';
 require_once 'ihappapi/postservice.php';
-require_once 'ihappapi/updateprofileimage.php';
 require_once 'ihappapi/sendmail.php';
 require_once 'ihappapi/makeoffer.php';
 require_once 'ihappapi/joboffer.php';
