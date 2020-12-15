@@ -31,8 +31,8 @@ $title = "User payements";
   <center><strong>My payements reports</strong></center>
       <div style="margin: 5px;max-width: 100%;">
           <div class="sunken " id="mytable">
-             <div class="row" style="height:130px !important">
-        <div class="card col-md-2" style="float:left; margin:25px">            
+             <div class="row" style="height:fit-content">
+        <div class="card col-md-2 summaryreport" style="float:left; margin:25px">            
             <p><strong>Premium Users</strong></p>
             <center>
              <?php
@@ -44,7 +44,7 @@ $title = "User payements";
    ?>
  </center>
 </div>
- <div class="card col-md-2" style="float:left; margin:25px">            
+ <div class="card col-md-2 summaryreport" style="float:left; margin:25px">            
             <p><strong>Non Premium Users</strong></p>
             <center>
              <?php
@@ -78,15 +78,15 @@ $title = "User payements";
 <table id="example" class="display" style="width:100%">
   <thead>
     <tr>
-<th>Image</th>
-<th>Username</th>
-<th>F name</th>
-<th>M name</th>
-<th>L name</th>
-<th>user_email</th>
+<th class="removablehead">Image</th>
+<th  class="removablehead">Username</th>
+<th class="removablehead">F name</th>
+<th class="removablehead">M name</th>
+<th class="removablehead">L name</th>
+<th >user_email</th>
 <th>transaction_tracking_id</th>
 <th>reference</th>
-<th>reg_date</th>
+<th  class="removablehead">reg_date</th>
 <th>Premium</th>
 <th>Null</th>
     </tr>
@@ -99,11 +99,11 @@ $title = "User payements";
     $users=$stmt->fetchAll(PDO::FETCH_OBJ);
     foreach ($users as $user) { ?>
     <tr>
-<td><img src="<?php echo $user->profileimage; ?>" style="height:50px;"></td>
-<td><?php echo $user->user_name; ?></td>
-<td><?php echo $user->first_name; ?></td>
-<td><?php echo $user->middle_name; ?></td>
-<td><?php echo $user->last_name; ?></td>
+<td  class="removablehead"><img src="<?php echo $user->profileimage; ?>" style="height:50px;"></td>
+<td  class="removablehead"><?php echo $user->user_name; ?></td>
+<td  class="removablehead"><?php echo $user->first_name; ?></td>
+<td  class="removablehead"><?php echo $user->middle_name; ?></td>
+<td  class="removablehead"><?php echo $user->last_name; ?></td>
 <td><?php echo $user->user_email; ?></td>
 <td><?php echo $user->pesapal_transaction_tracking_id; ?></td>
 <td><?php echo $user->pesapal_merchant_reference; ?></td>

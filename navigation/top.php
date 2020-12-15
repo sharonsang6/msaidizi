@@ -56,12 +56,15 @@
               <a class="dropdown-item" href="activeworkers.php">Active workers</a>
               <a class="dropdown-item" href="archived_users.php">Archived Users</a>
               <a class="dropdown-item" href="subscriptions.php">Subscriptions</a>
+              <a class="dropdown-item" href="accounts.php">Income</a>
               </div>
           </li>
         <?php }
         ?>
       <?php } ?>
-
+       </ul>
+       <div>
+        <ul>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <?php if($user->is_loggedin()!="") { ?>
@@ -89,5 +92,7 @@
         </div>
       </li>
     </ul>
+  </div>
+    
   </div>
 </nav>

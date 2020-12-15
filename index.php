@@ -51,11 +51,11 @@
 
 			
 
-<div class="container" style="text-align: center;height:400px;margin-top:10px">
+<div class="container servepage" style="text-align: center;margin-bottom:10px;margin-top:10px">
 			<div>
 			<h3 class="page_title">Our Services</h3>
 		</div>
-	<div class="row">
+	<div class="row serverow">
 
 
 		<div class="col-md-4">
@@ -83,7 +83,7 @@
    </div>
 
 </div>
-<div class="container" id="aboutus" style="text-align: center; height:400px">
+<div class="container" id="aboutus" style="text-align: center">
 <div class="">
  
 <div class="row" >
@@ -121,19 +121,14 @@
 
           <div class="testimonial-carousel">
              -->
-            <?php
-            $stmt = $auth_user->runQuery("SELECT * FROM  offers 
-            LEFT JOIN users ON `users`.`public_id`=`offers`.`public_id` ");
-            $stmt->execute(array());
-            $comment=$stmt->fetchAll(PDO::FETCH_OBJ);
-            foreach ($comment as $c) { ?>
+           
 	            <div class="h5 font-weight-normal one-slide ">
 	              <div class="testimonial w-100 px-3 text-center d-flex flex-direction-column justify-content-center flex-wrap align-items-center">
 	                <div class="message text-center blockquote w-100">"<?php echo $c->comment; ?>"This website has really helped me a lot"</div>
 	                <div class="blockquote-footer w-100 text-white"><?php echo $c->user_name; ?></div>
 	              </div>
 	            </div>
-            <?php } ?>
+
           </div>
         </div>
       </div>

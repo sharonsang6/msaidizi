@@ -10,6 +10,8 @@
 		elseif($cfuser_password != $user_password ){
 			$alert="Password does not match";
 		}
+		elseif(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/', $user_password)) {
+    $alert =  "the password does not meet the requirements!";}
 		else{
 			try
 	        {

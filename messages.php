@@ -44,11 +44,11 @@ $result=mysqli_query($connect, $query);
 
 <div class="card row  table-responsive" style="margin:10px;">
 <center><strong>Feedback from clients</strong></center>
-  <div style="margin: 5px;max-width: 100%;">
+         <div style="margin: 5px;max-width: 100%;">
       <div class="sunken ">
       
-       <div class="card col-md-2" style="float:left; margin:25px">            
-            <p><strong>All Messages</strong></p>
+       <div class="card col-md-2 summaryreport" style="float:left; margin:25px">         
+          <p><strong>All Messages</strong></p>
             <center>
              <?php
                   $stmt = $auth_user->runQuery("SELECT * FROM messages");
@@ -57,8 +57,11 @@ $result=mysqli_query($connect, $query);
                  echo $number_of_rows;
    ?>
  </center>
-</div>
-</div>
+
+                 
+   </div> 
+              
+   </div> 
 
      <div id="content">
 
@@ -98,7 +101,7 @@ $result=mysqli_query($connect, $query);
 <table id="example" class="display" style="width:100%">
 <thead>
 <tr>
-<th>Name</th>
+<th class="removablehead">Name</th>
 <th>Email</th>
 <th>Subject</th>
 <th>Sent Date</th>
@@ -142,7 +145,7 @@ while ($users= mysqli_fetch_array($result)) { ?>
 <?php echo'
 
 <tr>
-<td>'.$users["name"].'</td>
+<td class="removablehead">'.$users["name"].'</td>
 <td>'.$users["email"].'</td>
 <td>'.$users["subject"].'</td>
 <td>'.$users["sent_date"].'</td>

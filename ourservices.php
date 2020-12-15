@@ -56,13 +56,13 @@
             <div>
             <h3>Electronic Service</h3>
             <p class="servicedetails">
-            
+            This involves services like installing and maintaining electrical equipment.
             </p>
             </div>
 
           
         </div>
-        <div class="col-md-5 ">
+        <div class="col-md-5 serviceimg">
             <img src="images/imagetwo.jpg" class= "imageservices"width:"100%"><br/>
             <img src="images/imagetweleve.jpg" class= "imageservices"width:"100%"><br/>
         </div>

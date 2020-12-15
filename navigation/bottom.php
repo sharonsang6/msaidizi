@@ -2,8 +2,8 @@
     <div class="container">
       <div class="row">
       
-        <div class="col-lg-3">
-          <h4 class="footer-heading"><span>Our Services</span></h4><br />
+        <div class="col-lg-3 foot">
+          <h4 class="footer-heading subscribe">Our Services</h4>
           <ul class="list-unstyled">
             <?php
             $stmt = $auth_user->runQuery("SELECT * FROM  services LIMIT 4 ");
@@ -16,16 +16,16 @@
           </ul>
       </div>
        
-      <div class="col-lg-3">
-          <h4 class="subscribe">Subscribe to our newslater</h4><br />
+      <div class="col-lg-3 foot">
+          <h4 class="subscribe">Subscribe to our newsletter</h4>
           <form method="post">
           <input class="subemail rounded-pill" name="email" type="email" placeholder="email" >
           <button class="btn subbtn" required type="submit" name="subscribetonewsletter">GO</button>
-          </form>
+          </form></br>
         </div>
 
-        <div class="col-lg-3">
-            <h4 class="footer-heading"><span>Domestic Agencies</span></h4>
+        <div class="col-lg-3 foot">
+            <h4 class="footer-heading subscribe">Domestic Agencies</h4>
             <ul class="list-unstyled">
                 <li><a href="https://www.nairobinanny.com/">Nairobi Nanny Services</a></li>
                <li><a href="https://www.facebook.com/Angels-Domestic-Workers-Agency-181539105259365/">Angels domestic workers agency</a></li>
@@ -34,7 +34,8 @@
 
             </ul>
         </div>
-        <div class="col-lg-3 footersocialinks">
+        <div class="col-lg-3 footersocialinks foot">
+        <h4 class="subscribe">Follow Us</h4></br>
         <!-- Add font awesome icons -->
         <a href="https://www.facebook.com/sharon.chepkirui.7739" class="fa fa-facebook"></a>
         <a href="#" class="fa fa-twitter"></a>

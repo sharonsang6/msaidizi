@@ -8,12 +8,16 @@
     <div class="containerfluid">
         <div class="container">
            <div class="row" >
+           <div class="col-md-4">
+           <h3 class="page_title hid">About Us</h3>
+                   <img src="images/image5.jpg" width="100%" height:"300px" class="aboutimg">
+               </div>
                
                <div class="col-md-8">
                    <div>
-                       <h3 class="page_title">About Us</h3>
+                       <h3 class="page_title hidshow">About Us</h3>
                    </div>
-                   <div>
+                   <div class="aboutbody">
                        <p class="aboutparagraph">Msaidizi East Africa was started in 2019 by a student in Kenyatta university with the aim of expanding
                        market opportunities for domestic workers in Kenya and in East Africa. The company also aims at making it easy for people to acquire domestic workers
                        anywhere, anytime and everyhere with minimal effort and at lower cost.
@@ -38,9 +42,7 @@
                   
                     </div>      
                 </div>
-                <div class="col-md-4">
-                   <img src="images/image5.jpg" width="100%" height:"300px" class="aboutimg">
-               </div>
+               
            </div>
             <div class="row">
 

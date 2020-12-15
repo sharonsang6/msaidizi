@@ -1,0 +1,58 @@
+@media screen and (max-width: 800px) {
+  .navbar-nav {
+    width: 50%;
+    margin-left: 60%;
+    background-color: dimgrey;
+  }
+   .nav-item {
+    background-color: #fff;
+    margin-top:10px;
+  }
+.aboutimg{
+  width: 350px;
+  margin-left: 0
+}
+.foot{
+  margin-bottom:15px;
+
+}
+.hid{
+  display: block
+}
+.hidshow{
+  display: none
+}
+.aboutbody{
+  margin-top:10px
+}
+.serviceimg{
+  display: none
+}
+.servicecardpart{
+  width:100%;
+  margin-bottom:25px
+}
+.postjobinput{
+  width:100%;
+}
+.postjobform{
+	margin-left: 20px;
+}
+.postjobtitle{
+	margin-left: 20px
+}
+.summaryreport{
+	width: 30%
+}
+.removablehead{
+	display: none;
+}
+.hiredworkersmodal{
+	width: 100%;
+	
+}
+.hireddiv{
+margin-bottom: 25px	
+}
+}
+    

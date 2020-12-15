@@ -21,10 +21,10 @@ if ($userRow['user_account'] == "worker") {
                              
 <div class="col-md-12 sunken">
 
-    <div class="card row" style="margin:10px;">
+    <div class="card row table-responsive" style="margin:10px; height:fit-content">
   <center><strong>Workers who have been hired</strong></center>
-      <div class="modal-dialog" style="margin: 5px;max-width: 100%;">
-         <div class="card col-md-2" style="float:left; margin:25px">            
+      <div style="margin: 5px;max-width: 100%;">
+         <div class="card col-md-2 summaryreport" style="float:left; margin:25px">            
             <p><strong>Workers in progress</strong></p>
             <center>
              <?php
@@ -39,7 +39,7 @@ if ($userRow['user_account'] == "worker") {
 
                  
    </div> 
-    <div class="card col-md-2" style="float:left; margin:25px">            
+    <div class="card col-md-2 summaryreport" style="float:left; margin:25px">            
             <p><strong>Workers who've completed jobs</strong></p>
             <center>
              <?php
@@ -95,7 +95,7 @@ if ($userRow['user_account'] == "worker") {
     $stmt = $auth_user->runQuery("SELECT * FROM offers 
       LEFT JOIN services ON `services`.`services_id`=`offers`.`services_id`
       LEFT JOIN users ON `users`.`public_id`=`offers`.`worker_id`
-      WHERE `offers`.`public_id`='$public_id' ORDER BY `offers_reg_date`");
+       ORDER BY `offers_reg_date`");
     $stmt->execute(array());
     $services=$stmt->fetchAll(PDO::FETCH_OBJ);
     foreach ($services as $service) { ?>          

@@ -47,7 +47,7 @@ $result=mysqli_query($connect, $query);
   <div style="margin: 5px;max-width: 100%;">
       <div class="sunken ">
       
-       <div class="card col-md-2" style="float:left; margin:25px">            
+       <div class="card col-md-2 summaryreport" style="float:left; margin:25px">            
             <p><strong>All emails</strong></p>
             <center>
              <?php

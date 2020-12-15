@@ -26,8 +26,8 @@ $description = "this is a user description";
 
     <div class="card row  table-responsive" style="margin:10px;">
          <center><strong>My user reports</strong></center>
-         <div class="row" style="height:130px !important">
-        <div class="card col-md-2" style="float:left; margin:25px">            
+         <div class="row" style="height:fit-content">
+        <div class="card col-md-2 summaryreport" style="float:left; margin:25px">            
             <p><strong>All Users</strong></p>
             <center>
              <?php
@@ -42,7 +42,7 @@ $description = "this is a user description";
 
                  
    </div> 
-   <div class="card col-md-2" style="float:left; margin:25px">            
+   <div class="card col-md-2 summaryreport" style="float:left; margin:25px">            
         <p><strong>Employers</strong></p>
         <center>
             <?php
@@ -55,7 +55,7 @@ $description = "this is a user description";
 </center>
                 
    </div> 
-     <div class="card col-md-2" style="float:left; margin:25px">            
+     <div class="card col-md-2 summaryreport" style="float:left; margin:25px">            
         <p><strong>Workers</strong></p>
         <center>
             <?php
@@ -68,7 +68,7 @@ $description = "this is a user description";
  </center>
 
     </div>
-    <div class="card col-md-2" style="float:left; margin:25px">            
+    <div class="card col-md-2 summaryreport" style="float:left; margin:25px">            
         <p><strong>Archived Users</strong></p>
         <center>
             <?php
@@ -107,13 +107,13 @@ $description = "this is a user description";
   <thead>
     <tr>
 <th>Username</th>
-<th>F name</th>
-<th>M name</th>
-<th>L name</th>
+<th class="removablehead">F name</th>
+<th class="removablehead">M name</th>
+<th class="removablehead">L name</th>
 <th>Account</th>
 <th>reg_date</th>
-<th>Image</th>
-<th>worker_id</th>
+<th class="removablehead">Image</th>
+<th>Status</th>
 <th>null</th>
     </tr>
   </thead>
@@ -126,20 +126,20 @@ $description = "this is a user description";
     foreach ($users as $user) { ?>
     <tr>
 <td><?php echo $user->user_name; ?></td>
-<td><?php echo $user->first_name; ?></td>
-<td><?php echo $user->middle_name; ?></td>
-<td><?php echo $user->last_name; ?></td>
+<td class="removablehead"><?php echo $user->first_name; ?></td>
+<td class="removablehead"><?php echo $user->middle_name; ?></td>
+<td class="removablehead"><?php echo $user->last_name; ?></td>
 <td><?php echo $user->user_account; ?></td>
 <var><td><?php echo $user->reg_date; ?></td></var>
-<td><img src="<?php echo $user->profileimage; ?>" style="height:50px;"></td>
+<td class="removablehead"><img src="<?php echo $user->profileimage; ?>" style="height:50px;"></td>
 <td>
 <form method="post">
 <?php if ($user->userStatus == "1") { ?>
   <input type="text" hidden name="user_id" value="<?php echo $user->user_id; ?>">
-        <button type="submit" name="archiveuser"  class="btn  btn-sm"  style="width: inherit; background-color: #ff4700 !important; "><strong>ARCHIVE</strong></button>
+        <button type="submit" name="archiveuser"  class="btn  btn-sm"  style="width: inherit; background-color: #ff4700 !important; "><strong>ACTIVE</strong></button>
 <?php }else{ ?>
   <input type="text" hidden name="user_id" value="<?php echo $user->user_id; ?>">
-        <button type="submit" name="unarchiveuser" class="btn  btn-sm"  style="width: inherit; background-color: #ff4700 !important;"><strong>UNARCHIVE</strong></button>
+        <button type="submit" name="unarchiveuser" class="btn  btn-sm"  style="width: inherit; background-color: #ff4700 !important;"><strong>INACTIVE</strong></button>
 <?php }; ?>
 </form></td>
     <td></td>

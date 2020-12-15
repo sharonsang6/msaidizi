@@ -14,6 +14,7 @@ require_once 'ihappapi/joboffer.php';
 require_once 'ihappapi/addjob.php';
 require_once 'ihappapi/sendmessage.php';
 require_once 'ihappapi/subnews.php';
+require_once 'ihappapi/pay.php';
 
 
 

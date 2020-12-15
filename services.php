@@ -12,7 +12,7 @@
   width: 100%;
   }
   </style>            
-  <div class="col-md-3 card">
+  <div class="col-md-3 card ">
   <p style="margin-top:20px"><strong>Filter your search by specifying the type of worker you need</strong></p>
           <form method="get" enctype="multipart/form-data" >
           <div class="form-group findworkergroup">
@@ -33,8 +33,8 @@
             </select>
           </div>
           <div class="form-group findworkergroup">
-            <label>Enter job experiance ( years ) </label>
-            <input id="inputState" min="0" name="experiance" placeholder="Experiance" type="number" class="form-control" />
+            <label>Enter job experience ( years ) </label>
+            <input id="inputState" min="0" name="experiance" placeholder="Experience" type="number" class="form-control" />
           </div>
           <div class="form-group findworkergroup">
             <label>Select town</label>
@@ -58,7 +58,7 @@
   <div class="col-md-9 sunken">
     <?php
 
-if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+550) { ?>
+if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+55000000) { ?>
   <div class="btn-group btn-group-lg" role="group" aria-label="Basic example" style="width: 100%;">
     <form action="mpesa/pesapal-iframe.php" method="post"  style="width: 100%;">
     <input hidden type="text" name="amount" value="350" />
@@ -88,7 +88,7 @@ if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+550) { ?>
               LEFT JOIN users 
               ON `users`.`public_id`=`services`.`public_id`
               LEFT JOIN profile 
-              ON `profile`.`public_id`=`users`.`public_id` WHERE `services`.`typeofworker`='$typeofworker' AND `services`.`job`='$job' AND `services`.`experience`>'$experience' AND `services`.`town`='$town' AND `services`.`cost`>'$cost' ORDER BY `services_reg_date` DESC");
+              ON `profile`.`public_id`=`users`.`public_id` WHERE `services`.`typeofworker`='$typeofworker' AND `services`.`job`='$job' AND `services`.`experience`>='$experience'  AND `services`.`cost`>='$cost' ORDER BY `services_reg_date` DESC");
               $stmt->execute(array());
               $services=$stmt->fetchAll(PDO::FETCH_OBJ);
               foreach ($services as $service) { ?>
@@ -98,7 +98,7 @@ if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+550) { ?>
     $stmt->execute(array(':services_id'=>$service->services_id));
     $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
     if($stmt->rowCount() != 1){ ?>
-              <div class="card" style="width: 48%;float:left;margin: 0.5%;">
+              <div class="card servicecardpart" style="">
                 <div class="modal-dialog" style="margin: 5px;max-width: 98%;">
                     <div class="sunken">
                       <div class="d-flex w-100 justify-content-between">
@@ -109,6 +109,7 @@ if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+550) { ?>
                      <strong>Description:</strong> <?php echo $service->description; ?><br />
                       <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1" style="color: gold;font-weight: bold;margin-left: 20px;"><?php echo $service->user_name; ?> - <?php echo $service->allrating; ?></h5>
+                        <small class="text-muted"><?php echo $service->town; ?></small>
                         <small class="text-muted">Ksh <?php echo $service->cost; ?> per day</small>
                       </div>
                     </div>                             
@@ -178,7 +179,7 @@ if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+550) { ?>
     $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
     if($stmt->rowCount() != 1){ ?>
 
-            <div class="card" style="width: 48%;float:left;margin: 0.5%;">
+            <div class="card servicecardpart" >
               <div class="modal-dialog" style="margin: 5px;max-width: 98%;">
                   <div class="sunken">
                     <div class="d-flex w-100 justify-content-between">
@@ -189,6 +190,7 @@ if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+550) { ?>
                     <strong>Description: </strong><?php echo $service->description; ?><br />
                     <div class="d-flex w-100 justify-content-between">
                       <h5 class="mb-1" style="color: gold;font-weight: bold;margin-left: 20px;"><?php echo $service->user_name; ?> - <?php echo $service->allrating; ?></h5>
+                      <small class="text-muted"><?php echo $service->town; ?></small>
                       <small class="text-muted">Ksh <?php echo $service->cost; ?> per day</small>
                     </div>
                   </div>         

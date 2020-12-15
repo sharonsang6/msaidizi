@@ -9,7 +9,7 @@
 <div class="row postrow">
 <?php
 
-if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+5555550) { ?>
+if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+25) { ?>
 	<div class="btn-group btn-group-lg" role="group" aria-label="Basic example" style="width: 100%;">
 		<form action="mpesa/pesapal-iframe.php" method="post"  style="width: 100%;">
 		<input hidden type="text" name="amount" value="350" />
@@ -19,7 +19,7 @@ if ( $userRow['premium'] ==0 && time() > $userRow['public_id']+5555550) { ?>
 		<input hidden type="text" name="first_name" value="<?php echo $userRow['user_name']; ?>" />
 		<input hidden type="text" name="last_name" value="null" />
 		<input hidden type="text" name="email" value="<?php echo $userRow['user_email']; ?>" />
-	  <button type="submit" class="btn btn-secondary" style="width: inherit;">Make payment to enjoy services</button>
+	  <button type="submit" name="submitpayment" class="btn btn-secondary" style="width: inherit;">Make payment to enjoy services</button>
 		</form>
 	</div>	
 
@@ -28,11 +28,11 @@ else{ ?>
       <div class="postjobtitle">
     <h3>Kindly fill the form below to post a job</h3>
   </div>
-    <div class="col-md-2 postrowmimage">
+    <div class="col-md-3 postrowmimage">
         
     </div>
-    <div class="col-md-8" style="margin-left: 7%">
-    <form method="post" enctype="multipart/form-data" >
+    <div class="col-md-6" >
+    <form method="post" enctype="multipart/form-data" class="postjobform">
         <div class="form-group">
           <label for="exampleFormControlSelect1">Job type</label>
           <select class="form-control postjobinput" name="job_type" id="exampleFormControlSelect1">
@@ -48,7 +48,7 @@ else{ ?>
         </div>
         <div class="form-group">
           <label for="exampleFormControlSelect1">Type of Worker</label>
-          <select class="form-control postformselect" name="type_of_worker"id="exampleFormControlSelect1">
+          <select class="form-control postjobinput postformselect" name="type_of_worker"id="exampleFormControlSelect1">
             <option>Indoor</option>
             <option>Outdoor</option>
            
@@ -131,19 +131,20 @@ else{ ?>
             
                               
            <div class="form-group">
-          <label for="exampleFormControlInput1">Salary</label>
+          <label for="exampleFormControlInput1">Salary Ksh. (per day)</label>
           <input type="number" class="form-control postjobinput" pattern="d{1+}"  required name="salary"id="exampleFormControlInput1" >
         </div>
         
         <div class="form-group">
           <label for="exampleFormControlInput1">Experience(years)</label>
-          <input type="number" max="3"class="form-control postjobinput" required pattern="d{0+}" name="worker_experience" id="exampleFormControlInput1" >
+          <input type="number"  class="form-control postjobinput" required pattern="d{0+}" name="worker_experience" id="exampleFormControlInput1" >
         </div>
       
        
         <div class="form-group">
           <label for="exampleFormControlSelect1">Tribe</label>
-          <select class="form-control postformselect" name="tribe" id="exampleFormControlSelect1">
+          <select class="form-control postjobinput postformselect" name="tribe" id="exampleFormControlSelect1">
+            <option>Any</option>
             <option>Ameru</option>
             <option>Embu</option>
             <option>Kalenjin</option>
@@ -195,7 +196,7 @@ else{ ?>
         
         <div class="form-group">
               <label for="exampleFormControlTextarea1">Description <i>Max of 30 words</i></label>
-              <textarea id="descrptionjob" class="form-control postformselect" max="100" required name="job_description" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <textarea id="descrptionjob" class="form-control postjobinput postformselect" max="100" required name="job_description" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
        <script>
           $(document).ready(function() {
@@ -224,7 +225,7 @@ else{ ?>
         </div>
       </form>
     </div>
-    <div class="col-md-1"></div>
+    <div class="col-md-3"></div>
 
 </div>
 <?php } ?>

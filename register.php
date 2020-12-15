@@ -17,7 +17,7 @@ if($auth_user->is_loggedin()!="")
 <div class="card regcard">
 <div class="card-header loginheader">Register</div>
 <div class="card-body">
-    <P>P assword must contain atleast 8 characters, one capital letter, one small letter and one number</P>
+    <P style="color:red">Password must contain atleast 8 characters, one capital letter, one small letter and one number</P>
     <form method="POST" method="post">
         <div class="form-group row">
             <label for="name" class="col-md-4 col-form-label text-md-right">Username</label>

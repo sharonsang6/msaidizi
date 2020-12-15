@@ -121,8 +121,16 @@ content: '';
 	z-index: 1000;
 }
 #aboutus{
-	height: 400px;
-	margin:0 !important
+	
+	margin-bottom:10px !important
+}
+.hid{
+	display: none
+}
+.servicecardpart{
+	width: 48%;
+	float:left;
+	margin: 0.5%;
 }
 
 .nav-dots span {
@@ -1763,7 +1771,7 @@ margin: 0 5px 0;
 }
 .aboutimg{
 	margin-top: 60px;
-    margin-left: 20px;
+    
 }
 .call-btn{
 	background-color: #6eb6ff !important
@@ -2670,13 +2678,13 @@ margin-right: 10px;
 		width:75px
 	  }
 	  .postjobinput{
-		  width: 60% !important
+		  width: 100% !important
 	  }
 	  .ratepage{
 		  height:500px
 	  }
 	  .postformselect{
-		width: 60% !important
+		width: 100% !important
 	  }
 	  .jobbtn{
 		  background-color: #ff4700;

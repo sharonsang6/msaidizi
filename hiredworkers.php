@@ -19,7 +19,7 @@ if ($userRow['user_account'] != "employer") {
 
 
   <div class="col-md-3 card">
-  <p style="margin-top:20px">Filter your search by specifying the type of worker you need</p>
+ 
   <?php
 if (isset($_GET['id'])) {
   $id = $_GET['id'];
@@ -92,8 +92,8 @@ foreach ($offers as $offer) { ?>
     $stmt->execute(array());
     $users=$stmt->fetchAll(PDO::FETCH_OBJ);
     foreach ($users as $user) { ?>
-            <div class="card col-md-3" style="width: 100%;float:left;margin: 0.5%;">
-              <div class="modal-dialog" style="margin: 5px;max-width: fit-content;">
+            <div class="card col-md-3 hireddiv" style="width: 100%;float:left;margin: 0.5%;">
+              <div class="modal-dialog hiredworkersmodal" style="margin-left:5px;">
                   <div class="sunken">
                     <center>
                               <img src="<?php echo $user->profileimage; ?>" alt="image" style="width:100px;height: 100px;border-radius: 50%;border: 10px solid #f0f6f9;" /><br /><br />

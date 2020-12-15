@@ -12,6 +12,8 @@ if (isset($_POST['registrationbutton'])) {
     elseif($user_password != $cfuser_password){$alert ="Password does not match";}
     elseif(!filter_var($user_email, FILTER_VALIDATE_EMAIL)) { $alert = "enter valid email"; }
     elseif($user_password == "") {$alert = "Provide user_password"; }
+    elseif(!preg_match('/^(?=.*\d)(?=.*[A-Za-z])[0-9A-Za-z!@#$%]{8,12}$/', $user_password)) {
+    $alert =  "the password does not meet the requirements!";}
     else
     {
       try

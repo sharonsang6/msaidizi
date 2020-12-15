@@ -14,7 +14,7 @@ $title = "Registered users";
 <div id="app">
 <?php require_once 'navigation/top.php'; ?>
 <main>
-<div class="row" style="width: 100% !important;">
+<div class="row" style="width: 100% !important;height:fit-content">
 <style type="text/css">
   .findworkergroup{
     width: 100%;
@@ -26,13 +26,13 @@ $title = "Registered users";
 
     <div class="card row  table-responsive" style="margin:10px;">
          <center><strong>My user reports</strong></center>
-         <div class="row" style="height:130px !important">
-        <div class="card col-md-2" style="float:left; margin:25px">            
+         <div class="row" style="height:fit-content !important">
+        <div class="card col-md-2 summaryreport" style="float:left; margin:25px">            
             <p><strong>All Users</strong></p>
             <center>
              <?php
                   $stmt = $auth_user->runQuery("SELECT * FROM users 
-                  LEFT JOIN profile ON `profile`.`public_id`=`users`.`public_id` WHERE `users`.`userStatus`=0");
+                  ");
                   $stmt->execute(array());
                   $number_of_rows = $stmt->rowCount(); 
                  echo $number_of_rows;
@@ -42,12 +42,12 @@ $title = "Registered users";
 
                  
    </div> 
-   <div class="card col-md-2" style="float:left; margin:25px">            
-        <p><strong>Employers</strong></p>
+   <div class="card col-md-2 summaryreport" style="float:left; margin:25px">            
+        <p><strong>Active users</strong></p>
         <center>
             <?php
                  $stmt = $auth_user->runQuery("SELECT * FROM users 
-                 LEFT JOIN profile ON `profile`.`public_id`=`users`.`public_id` WHERE `user_account`='employer' AND  `users`.`userStatus`=0");
+                 LEFT JOIN profile ON `profile`.`public_id`=`users`.`public_id` WHERE `userStatus`='1' ");
                  $stmt->execute(array());
                  $number_of_rows = $stmt->rowCount(); 
                  echo $number_of_rows;
@@ -55,12 +55,12 @@ $title = "Registered users";
 </center>
                 
    </div> 
-     <div class="card col-md-2" style="float:left; margin:25px">            
+     <div class="card col-md-2 summaryreport" style="float:left; margin:25px">            
         <p><strong>Workers</strong></p>
         <center>
             <?php
                  $stmt = $auth_user->runQuery("SELECT * FROM users 
-                 LEFT JOIN profile ON `profile`.`public_id`=`users`.`public_id` WHERE `user_account`='worker' AND `users`.`userStatus`=0");
+                 LEFT JOIN profile ON `profile`.`public_id`=`users`.`public_id` WHERE `userStatus`='0'");
                  $stmt->execute(array());
                  $number_of_rows = $stmt->rowCount(); 
                  echo $number_of_rows;

@@ -207,6 +207,25 @@ class USER
 		}
 	}
 
+	public function postStat($pesapal_transaction_tracking_id, $amount, $pesapal_merchant_reference)
+	{
+		try
+		{
+			$stmt = $this->conn->prepare("INSERT INTO payments(pesapal_transaction_tracking_id, amount, pesapal_merchant_reference) VALUES(:pesapal_transaction_tracking_id, :amount, :pesapal_merchant_reference)");
+
+			$stmt->bindparam(":pesapal_transaction_tracking_id", $pesapal_transaction_tracking_id);
+			$stmt->bindparam(":amount", $amount);
+			$stmt->bindparam(":pesapal_merchant_reference", $pesapal_merchant_reference);
+			$stmt->execute();
+
+			return $stmt;
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
+		}
+	}
+
 	
 	public function postsubs($public_id, $pesapal_transaction_tracking_id, $pesapal_merchant_reference, $amount)
 	{

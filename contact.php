@@ -40,27 +40,49 @@
                 <form method="post">
                       <div class="md-form">
                         <!-- <i class="fa fa-user fa-2x "></i> -->
-                        <input type="text" id="form-name" required pattern="\D+" name="name" class="form-control">
                         <label for="form-name">Your name</label>
+                        <input type="text" id="form-name" required pattern="\D+" name="name" class="form-control">
+                      
                       </div>
             
                       <div class="md-form">
                         <!-- <i class="fa fa-envelope fa-2x  "></i> -->
-                        <input type="email" id="form-email" required name="email" class="form-control">
                         <label for="form-email">Your email</label>
+                        <input type="email" id="form-email" required name="email" class="form-control">
+                        
                       </div>
             
                       <div class="md-form">
                         <!-- <i class="fa fa-tag  fa-2x"></i> -->
-                        <input type="text" id="form-Subject" required pattern="\D+" name="subject" class="form-control">
                         <label for="form-Subject">Subject</label>
+                        <input type="text" id="form-Subject" required pattern="\D+" name="subject" class="form-control">
+                      
                       </div>
             
                       <div class="md-form">
                         <!-- <i class="fa fa-pencil-alt fa-2x"></i> -->
+                        <label for="form-text">Message <i>Max of 30 words</i></label>
                         <textarea id="form-text" name="message" required class="form-control md-textarea" rows="3"></textarea>
-                        <label for="form-text">Message</label>
+                       
                       </div>
+                           <script>
+          $(document).ready(function() {
+  $("#form-text").on('keyup', function() {
+    var words = this.value.match(/\S+/g).length;
+
+    if (words > 30) {
+      // Split the string on first 200 words and rejoin on spaces
+      var trimmed = $(this).val().split(/\s+/, 30).join(" ");
+      // Add a space at the end to make sure more typing creates new words
+      $(this).val(trimmed + " ");
+    }
+    else {
+      $('#display_count').text(words);
+      $('#word_left').text(30-words);
+    }
+  });
+});           
+       </script>
             
                       <div class="text-center mt-4">
                         <button class="btn contactbtn" type="submit" name="mailsend">Submit</button>
@@ -95,7 +117,7 @@
       
               <div class="col-md-4">
                 <a class="btn-floating blue accent-1"><i class="fa fa-phone fa-2x"></i></a>
-                <p>+257 720 467 383</p>
+                <p>+254 720 467 383</p>
                 <p>Mon - Fri, 8:00-22:00</p>
               </div>
       

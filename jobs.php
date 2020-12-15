@@ -16,9 +16,9 @@ if ($userRow['user_account'] !== "worker") {
   width: 100%;
   }
   </style>            
-  <div class="col-md-3 card">
+  <div class="col-md-3 card" >
   <p style="margin-top:20px"><strong>Filter your search by specifying the type of job you need</strong></p>
-          <form method="GET"  >
+          <form method="GET" style="margin-left: 10px"  >
         <div class="form-group">
           <label for="exampleFormControlSelect1">Job type</label>
           <select class="form-control postjobinput" name="job_type" id="exampleFormControlSelect1">
@@ -186,7 +186,7 @@ if ($userRow['user_account'] !== "worker") {
               $stmt->execute(array());
               $jobs=$stmt->fetchAll(PDO::FETCH_OBJ);
               foreach ($jobs as $job) { ?>
-              <div class="card" style="width: 48%;float:left;margin: 0.5%;">
+              <div class="card servicecardpart">
                 <div class="modal-dialog" style="margin: 5px;max-width: 98%;">
                     <div class="sunken">
                       <div class="d-flex w-100 justify-content-between">
@@ -206,11 +206,12 @@ if ($userRow['user_account'] !== "worker") {
                       </div>
                     </div>                             
                   </div>
-                  <?php } ?>
-                    <?php if ($job->your_file == "") { ?>
+                  <?php echo $job->town; ?>
+                  <?php if ($job->your_file == "") { ?>
                      <?php }else{ ?>
-                  	<a href="<?php echo $job->your_file; ?>" readonly target="_newTab">View document</a>  
+                    <a href="<?php echo $job->your_file; ?>" readonly target="_newTab">View document</a>  
                      <?php } ?>
+
 
                  <div class="btn-group btn-group-sm" role="group" aria-label="Basic example" style="width: 100%;">
                 <button type="button" class="btn btn-secondary" style="width: inherit;"  data-toggle="modal" data-target="#<?php echo $job->user_name; ?>">View employer</button>
@@ -237,7 +238,7 @@ if ($userRow['user_account'] !== "worker") {
             $stmt->execute(array());
             $jobs=$stmt->fetchAll(PDO::FETCH_OBJ);
             foreach ($jobs as $job) { ?>
-            <div class="card" style="width: 48%;float:left;margin: 0.5%;">
+            <div class="card servicecardpart">
               <div class="modal-dialog" style="margin: 5px;max-width: 98%;">
                   <div class="sunken">
                     <div class="d-flex w-100 justify-content-between">
@@ -248,6 +249,7 @@ if ($userRow['user_account'] !== "worker") {
                    <strong>Description: </strong>  <?php echo $job->job_description; ?><br />
                     <div class="d-flex w-100 justify-content-between">
                       <h5 class="mb-1" style="color: gold;font-weight: bold;margin-left: 20px;"><?php echo $job->user_name; ?> - <?php echo $job->allrating; ?></h5>
+                      <?php echo $job->town; ?>
                       <small class="text-muted">Ksh <?php echo $job->salary; ?> per day</small>
                     </div>
                   </div>         
@@ -265,7 +267,7 @@ if ($userRow['user_account'] !== "worker") {
                   	<a href="<?php echo $job->your_file; ?>" readonly target="_newTab">View document</a>  
                      <?php } ?>
 
-                    <button type="button" class="btn btn-secondary" style="width: inherit;"  data-toggle="modal" data-target="#<?php echo $job->user_name; ?>">View employer</button>
+                <button type="button" class="btn btn-secondary" style="width: inherit;"  data-toggle="modal" data-target="#<?php echo $job->user_name; ?>">View employer</button>
                   </div>  
                   
 

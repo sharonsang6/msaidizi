@@ -39,7 +39,7 @@
 			</div>
 			<div class="form-group findworkergroup">
 				<label>ID No/Passport No</label>
-				<input id="inputState" name="national_id" pattern=""  placeholder="" type="number" required class="form-control" value="<?php echo $user_profile['national_id']; ?>"/>
+				<input id="inputState" name="national_id"  maxlength="10"  type="number" required class="form-control" value="<?php echo $user_profile['national_id']; ?>"/>
 			</div>
 
 			<div class="form-group findworkergroup">
@@ -119,8 +119,8 @@
 				<!-- <input id="inputState" name="town" placeholder="town" type="text" class="form-control" /> -->
 			</div>
 			<div class="form-group findworkergroup">
-				<label>Phone number</label>
-				<input id="inputState" name="phonenumber" pattern="07\d{8}" placeholder="07xxxxxxxx" required   min="10" type="number" class="form-control" value="<?php echo $user_profile['phonenumber']; ?>" />
+				<label>Phone number <i>(format... +254..)</i></label>
+				<input id="inputState" name="phonenumber"  required   min="10" type="number" class="form-control" value="<?php echo $user_profile['phonenumber']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Profile image</label>
@@ -145,7 +145,7 @@
 			</div>
 			<div class="form-group findworkergroup">
 				<label>ID No/Passport No</label>
-				<input id="inputState" name="national_id" pattern=".{5,20}" required title="5 to 20 characters"   placeholder="" type="number" required class="form-control" />
+				<input id="inputState" name="national_id" maxlength="10" required title="5 to 10 characters"    type="number" required class="form-control" />
 			</div>
 
 			<div class="form-group findworkergroup">
@@ -225,8 +225,8 @@
 				<!-- <input id="inputState" name="town" placeholder="town" type="text" class="form-control" /> -->
 			</div>
 			<div class="form-group findworkergroup">
-				<label>Phone number</label>
-				<input id="inputState" name="phonenumber" pattern="07\d{8}" placeholder="07xxxxxxxx" required   min="10" type="number" class="form-control" />
+				<label>Phone number <i>(format... +254..)</i></label>
+				<input id="inputState" name="phonenumber"  required   min="10" type="number" class="form-control" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Profile image</label>
@@ -315,6 +315,25 @@ if (isset($_GET['pesapal_transaction_tracking_id'])) {
     $stmt->bindparam(":pesapal_merchant_reference", $pesapal_merchant_reference); 
     $stmt->execute();
     $alert = "Premium activated";
+
+
+	// $stmt = $auth_user->runQuery("INSERT INTO payments(pesapal_transaction_tracking_id, amount, pesapal_merchant_reference) VALUES(:pesapal_transaction_tracking_id, '350', :pesapal_merchant_reference)");
+ //    $stmt->bindparam(":pesapal_transaction_tracking_id", $pesapal_transaction_tracking_id); 
+ //    $stmt->bindparam(":amount", '350'); 
+ //    $stmt->bindparam(":pesapal_merchant_reference", $pesapal_merchant_reference); 
+ //    $stmt->execute();
+    	$pesapal_transaction_tracking_id = $pesapal_transaction_tracking_id;
+		$amount = 350;
+		$pesapal_merchant_reference = $pesapal_merchant_reference;
+
+		try {
+			if($user->postStat($pesapal_transaction_tracking_id, $amount, $pesapal_merchant_reference)){  
+				$alert = "posted";
+			}
+		}
+		catch(PDOException $e){
+			$alert = $e->getMessage();
+		}
 }
 
 ?>   
@@ -386,7 +405,7 @@ if (isset($_GET['pesapal_transaction_tracking_id'])) {
 			</div>
 			<div class="form-group findworkergroup">
 				<label>ID No/Passport No</label>
-				<input id="inputState" name="national_id" pattern=".{5,20}" required title="5 to 20 characters"  placeholder="id/passport" type="text" required class="form-control" value="<?php echo $user_profile['national_id']; ?>" />
+				<input id="inputState" name="national_id" maxlength="10" required title="5 to 10 characters"  placeholder="id/passport" type="text" required class="form-control" value="<?php echo $user_profile['national_id']; ?>" />
 			</div>
 
 			<div class="form-group findworkergroup">
@@ -467,8 +486,8 @@ if (isset($_GET['pesapal_transaction_tracking_id'])) {
 				<!-- <input id="inputState" name="town" placeholder="town" type="text" class="form-control" /> -->
 			</div>
 			<div class="form-group findworkergroup">
-				<label>Phone number</label>
-				<input id="inputState" name="phonenumber" pattern="07\d{8}" placeholder="07xxxxxxxx" required  min="10" type="number" class="form-control" value="<?php echo $user_profile['phonenumber']; ?>" />
+				<label>Phone number <i>(format... +254..)</i></label>
+				<input id="inputState" name="phonenumber"  required  min="10" type="number" class="form-control" value="<?php echo $user_profile['phonenumber']; ?>" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Profile image</label>
@@ -493,7 +512,7 @@ if (isset($_GET['pesapal_transaction_tracking_id'])) {
 			</div>
 			<div class="form-group findworkergroup">
 				<label>ID No/Passport No</label>
-				<input id="inputState" name="national_id" pattern=".{5,20}" required title="5 to 20 characters" placeholder="" type="number" required class="form-control" />
+				<input id="inputState" name="national_id" maxlength="10"  required title="5 to 10 characters"  type="number" required class="form-control" />
 				</div>
 
 			<div class="form-group findworkergroup">
@@ -573,8 +592,8 @@ if (isset($_GET['pesapal_transaction_tracking_id'])) {
 				<!-- <input id="inputState" name="town" placeholder="town" type="text" class="form-control" /> -->
 			</div>
 			<div class="form-group findworkergroup">
-				<label>Phone number</label>
-				<input id="inputState" name="phonenumber" pattern="07\d{8}" placeholder="07xxxxxxxx" required  min="10" type="number" class="form-control" />
+				<label>Phone number <i>(format... +254..)</i></label>
+				<input id="inputState" name="phonenumber"  required  min="10" type="number" class="form-control" />
 			</div>
 			<div class="form-group findworkergroup">
 				<label>Profile image</label>
@@ -617,7 +636,7 @@ if (isset($_GET['pesapal_transaction_tracking_id'])) {
 			<form method="post" enctype="multipart/form-data" >
 				<div class="form-group findworkergroup">
 					<label>First name ( Provided profile name should match with national ID )</label>
-					<input id="inputState" name="idimage" placeholder="National ID" type="file" class="form-control" />
+					<input id="inputState" name="idimage"  placeholder="National ID" type="file" class="form-control" />
 				</div>
 				<button type="submit" name="update_image" class="btn btn-primary btn-block findworkergroup">Upload ID image</button>
 			</form>
@@ -635,11 +654,11 @@ if (isset($_GET['pesapal_transaction_tracking_id'])) {
 				</div>
 				<div class="form-group findworkergroup">
 					<label>Enter job title</label>
-					<input id="inputState" name="job" placeholder="Job" type="text" class="form-control" />
+					<input id="inputState" name="job" value="<?php echo isset($_POST["job"]) ? $_POST["job"] : ''; ?>" placeholder="Job" type="text" class="form-control" />
 				</div>
 				<div class="form-group findworkergroup">
 					<label>Enter job experience ( years ) </label>
-					<input id="inputState" min="0" name="experience" placeholder="Experience" type="number" class="form-control" />
+					<input id="inputState" min="0" name="experience" placeholder="Experience" type="number" value="<?php echo isset($_POST["experience"]) ? $_POST["experience"] : ''; ?>"  class="form-control" />
 				</div>
 				
 				<div class="form-group findworkergroup">
@@ -715,7 +734,7 @@ if (isset($_GET['pesapal_transaction_tracking_id'])) {
 			</div>
 				<div class="form-group findworkergroup">
 					<label>Enter service description <i>Maximum of 30 words</i> </label>
-					<textarea rows="3" id="inputState " min="0" name="description" placeholder="Service description" type="text" class="form-control postserve"></textarea>
+					<textarea rows="3" id="inputState " min="0" name="description" placeholder="Service description" value="<?php echo isset($_POST["description"]) ? $_POST["description"] : ''; ?>" type="text" class="form-control postserve"></textarea>
 					<script>
 								$(document).ready(function() {
 						$(".postserve").on('keyup', function() {
@@ -737,7 +756,7 @@ if (isset($_GET['pesapal_transaction_tracking_id'])) {
 				</div>
 				<div class="form-group findworkergroup">
 					<label>Cost per day ( Ksh ) </label>
-					<input id="inputState" min="0" name="cost" placeholder="Enter service cost" type="number" class="form-control" />
+					<input id="inputState" min="0" name="cost" value="<?php echo isset($_POST["cost"]) ? $_POST["cost"] : ''; ?>" placeholder="Enter service cost" type="number" class="form-control" />
 				</div>
 				<button type="submit" name="service_post" class="btn btn-primary btn-block findworkergroup">Post service</button>
 			</form>
